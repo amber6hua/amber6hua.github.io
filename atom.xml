@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://ambercc.gitee.io</id>
+    <title>Amber</title>
+    <subtitle>六花丶紫</subtitle>
+    <icon>https://ambercc.gitee.io/images/favicon.ico</icon>
+    <link href="https://ambercc.gitee.io" />
+    <author>
+      <name>六花丶紫</name>
+    </author>
+    <updated>2021-07-16T09:46:06.000Z</updated>
+    <category term="六花" />
+    <category term="amber" />
+    <entry>
+        <id>https://ambercc.gitee.io/2021/07/16/sky-sword-food-menu/</id>
+        <title>天涯明月刀菜谱</title>
+        <link rel="alternate" href="https://ambercc.gitee.io/2021/07/16/sky-sword-food-menu/"/>
+        <content type="html">&lt;p&gt;大厨：QQ 四区 观沧海 雾鹤&lt;/p&gt;
+&lt;h1 id=&#34;秦川菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#秦川菜系&#34;&gt;#&lt;/a&gt; 秦川菜系&lt;/h1&gt;
+&lt;h2 id=&#34;葫芦鸡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#葫芦鸡&#34;&gt;#&lt;/a&gt; 葫芦鸡&lt;/h2&gt;
+&lt;p&gt;香料 调料 辅料 鸡肉&lt;/p&gt;
+&lt;h2 id=&#34;山药粥&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#山药粥&#34;&gt;#&lt;/a&gt; 山药粥&lt;/h2&gt;
+&lt;p&gt;大米 山药 调料 淀粉&lt;/p&gt;
+&lt;h2 id=&#34;水煮冰鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#水煮冰鱼&#34;&gt;#&lt;/a&gt; 水煮冰鱼&lt;/h2&gt;
+&lt;p&gt;冰鱼 辣椒 料酒 调料&lt;/p&gt;
+&lt;h2 id=&#34;萝卜烧排骨&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#萝卜烧排骨&#34;&gt;#&lt;/a&gt; 萝卜烧排骨&lt;/h2&gt;
+&lt;p&gt;排骨 萝卜 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;奶汤锅子鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#奶汤锅子鱼&#34;&gt;#&lt;/a&gt; 奶汤锅子鱼&lt;/h2&gt;
+&lt;p&gt;黄河鲤鱼 瘦肉 萝卜 调料&lt;/p&gt;
+&lt;h2 id=&#34;雪莲酥饼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#雪莲酥饼&#34;&gt;#&lt;/a&gt; 雪莲酥饼&lt;/h2&gt;
+&lt;p&gt;雪莲花瓣 面粉 料酒 香料&lt;/p&gt;
+&lt;h2 id=&#34;雪莲炖甲鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#雪莲炖甲鱼&#34;&gt;#&lt;/a&gt; 雪莲炖甲鱼&lt;/h2&gt;
+&lt;p&gt;雪莲 甲鱼 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;腊汁肉夹馍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#腊汁肉夹馍&#34;&gt;#&lt;/a&gt; 腊汁肉夹馍&lt;/h2&gt;
+&lt;p&gt;白饼 牛肉 香料 调料&lt;/p&gt;
+&lt;h2 id=&#34;羊肉泡馍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#羊肉泡馍&#34;&gt;#&lt;/a&gt; 羊肉泡馍&lt;/h2&gt;
+&lt;p&gt;白饼 羊肉 特质饴糖 辅料&lt;/p&gt;
+&lt;h1 id=&#34;东越菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#东越菜系&#34;&gt;#&lt;/a&gt; 东越菜系&lt;/h1&gt;
+&lt;h2 id=&#34;海鲜面&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#海鲜面&#34;&gt;#&lt;/a&gt; 海鲜面&lt;/h2&gt;
+&lt;p&gt;面粉 河虾 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;鲫鱼豆腐汤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#鲫鱼豆腐汤&#34;&gt;#&lt;/a&gt; 鲫鱼豆腐汤&lt;/h2&gt;
+&lt;p&gt;鲫鱼 豆腐 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;河豚玉脍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#河豚玉脍&#34;&gt;#&lt;/a&gt; 河豚玉脍&lt;/h2&gt;
+&lt;p&gt;河豚 料酒 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;白雪鸡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#白雪鸡&#34;&gt;#&lt;/a&gt; 白雪鸡&lt;/h2&gt;
+&lt;p&gt;鸡肉 鸭肉 糖 淀粉&lt;/p&gt;
+&lt;h2 id=&#34;香芋扣肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#香芋扣肉&#34;&gt;#&lt;/a&gt; 香芋扣肉&lt;/h2&gt;
+&lt;p&gt;五花肉 芋艿 调料 糖&lt;/p&gt;
+&lt;h2 id=&#34;鱼羊双鲜&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#鱼羊双鲜&#34;&gt;#&lt;/a&gt; 鱼羊双鲜&lt;/h2&gt;
+&lt;p&gt;羊肉 鳜鱼 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;清蒸鲈鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#清蒸鲈鱼&#34;&gt;#&lt;/a&gt; 清蒸鲈鱼&lt;/h2&gt;
+&lt;p&gt;河鲈 调酒 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;荷花鸭血&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#荷花鸭血&#34;&gt;#&lt;/a&gt; 荷花鸭血&lt;/h2&gt;
+&lt;p&gt;鸭肉 辣椒 荷花 调料&lt;/p&gt;
+&lt;h1 id=&#34;巴蜀菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#巴蜀菜系&#34;&gt;#&lt;/a&gt; 巴蜀菜系&lt;/h1&gt;
+&lt;h2 id=&#34;水煮鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#水煮鱼&#34;&gt;#&lt;/a&gt; 水煮鱼&lt;/h2&gt;
+&lt;p&gt;草鱼 辣椒 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;麻婆豆腐&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#麻婆豆腐&#34;&gt;#&lt;/a&gt; 麻婆豆腐&lt;/h2&gt;
+&lt;p&gt;豆腐 辣椒 辅料 香料&lt;/p&gt;
+&lt;h2 id=&#34;口水鸡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#口水鸡&#34;&gt;#&lt;/a&gt; 口水鸡&lt;/h2&gt;
+&lt;p&gt;鸡肉 辣椒 花生 调料&lt;/p&gt;
+&lt;h2 id=&#34;鱼香肉丝&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#鱼香肉丝&#34;&gt;#&lt;/a&gt; 鱼香肉丝&lt;/h2&gt;
+&lt;p&gt;瘦肉 豆瓣酱 辣椒 调料&lt;/p&gt;
+&lt;h2 id=&#34;回锅肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#回锅肉&#34;&gt;#&lt;/a&gt; 回锅肉&lt;/h2&gt;
+&lt;p&gt;五花肉 辣椒 豆瓣酱 调料&lt;/p&gt;
+&lt;h2 id=&#34;麻辣鲜笋&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#麻辣鲜笋&#34;&gt;#&lt;/a&gt; 麻辣鲜笋&lt;/h2&gt;
+&lt;p&gt;竹笋 辣椒 调料 香料&lt;/p&gt;
+&lt;h2 id=&#34;豆瓣青鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#豆瓣青鱼&#34;&gt;#&lt;/a&gt; 豆瓣青鱼&lt;/h2&gt;
+&lt;p&gt;青鱼 豆瓣酱 辣椒 调料&lt;/p&gt;
+&lt;h2 id=&#34;夫妻肺片&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#夫妻肺片&#34;&gt;#&lt;/a&gt; 夫妻肺片&lt;/h2&gt;
+&lt;p&gt;牛肉 辣椒 花生 香料&lt;/p&gt;
+&lt;h2 id=&#34;水煮肉片&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#水煮肉片&#34;&gt;#&lt;/a&gt; 水煮肉片&lt;/h2&gt;
+&lt;p&gt;瘦肉 鸡蛋 秘制底料 青菜&lt;/p&gt;
+&lt;h1 id=&#34;江南菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#江南菜系&#34;&gt;#&lt;/a&gt; 江南菜系&lt;/h1&gt;
+&lt;h2 id=&#34;三鲜炒饭&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三鲜炒饭&#34;&gt;#&lt;/a&gt; 三鲜炒饭&lt;/h2&gt;
+&lt;p&gt;大米 河虾 鸡蛋 调料&lt;/p&gt;
+&lt;h2 id=&#34;清蒸白鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#清蒸白鱼&#34;&gt;#&lt;/a&gt; 清蒸白鱼&lt;/h2&gt;
+&lt;p&gt;白鱼 调料 辅料 香料&lt;/p&gt;
+&lt;h2 id=&#34;江南青团&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#江南青团&#34;&gt;#&lt;/a&gt; 江南青团&lt;/h2&gt;
+&lt;p&gt;糯米 艾草 调料 香料&lt;/p&gt;
+&lt;h2 id=&#34;醉蟹&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#醉蟹&#34;&gt;#&lt;/a&gt; 醉蟹&lt;/h2&gt;
+&lt;p&gt;河蟹 调料 辅料 料酒&lt;/p&gt;
+&lt;h2 id=&#34;东坡肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#东坡肉&#34;&gt;#&lt;/a&gt; 东坡肉&lt;/h2&gt;
+&lt;p&gt;五花肉 糖 料酒 调料&lt;/p&gt;
+&lt;h2 id=&#34;火腿蒸甲鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#火腿蒸甲鱼&#34;&gt;#&lt;/a&gt; 火腿蒸甲鱼&lt;/h2&gt;
+&lt;p&gt;甲鱼 瘦肉 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;盐水鸭&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#盐水鸭&#34;&gt;#&lt;/a&gt; 盐水鸭&lt;/h2&gt;
+&lt;p&gt;鸭肉 调料 辅料 香料&lt;/p&gt;
+&lt;h2 id=&#34;松鼠鳜鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#松鼠鳜鱼&#34;&gt;#&lt;/a&gt; 松鼠鳜鱼&lt;/h2&gt;
+&lt;p&gt;鳜鱼 淀粉 糖 竹笋&lt;/p&gt;
+&lt;h2 id=&#34;霸王别姬&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#霸王别姬&#34;&gt;#&lt;/a&gt; 霸王别姬&lt;/h2&gt;
+&lt;p&gt;甲鱼 鸡肉 香蕈 竹笋&lt;/p&gt;
+&lt;h2 id=&#34;苏式糕点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#苏式糕点&#34;&gt;#&lt;/a&gt; 苏式糕点&lt;/h2&gt;
+&lt;p&gt;面粉 大米 大豆 鲜花&lt;/p&gt;
+&lt;h2 id=&#34;四鳃鲈鱼汤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#四鳃鲈鱼汤&#34;&gt;#&lt;/a&gt; 四鳃鲈鱼汤&lt;/h2&gt;
+&lt;p&gt;四鳃鲈鱼 竹笋 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;龙井虾仁&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#龙井虾仁&#34;&gt;#&lt;/a&gt; 龙井虾仁&lt;/h2&gt;
+&lt;p&gt;河虾 茶叶 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;茶香鸡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#茶香鸡&#34;&gt;#&lt;/a&gt; 茶香鸡&lt;/h2&gt;
+&lt;p&gt;鸡肉 茶叶 蜂蜜 香料&lt;/p&gt;
+&lt;h2 id=&#34;雪霞羹&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#雪霞羹&#34;&gt;#&lt;/a&gt; 雪霞羹&lt;/h2&gt;
+&lt;p&gt;豆腐 荷花 淀粉 香料&lt;/p&gt;
+&lt;h2 id=&#34;大汤黄鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#大汤黄鱼&#34;&gt;#&lt;/a&gt; 大汤黄鱼&lt;/h2&gt;
+&lt;p&gt;大黄鱼 竹笋 调料 辅料&lt;/p&gt;
+&lt;h1 id=&#34;燕云菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#燕云菜系&#34;&gt;#&lt;/a&gt; 燕云菜系&lt;/h1&gt;
+&lt;h2 id=&#34;烤鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#烤鱼&#34;&gt;#&lt;/a&gt; 烤鱼&lt;/h2&gt;
+&lt;p&gt;鲤鱼 调料 辅料 香料&lt;/p&gt;
+&lt;h2 id=&#34;烤肉串&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#烤肉串&#34;&gt;#&lt;/a&gt; 烤肉串&lt;/h2&gt;
+&lt;p&gt;五花肉 调料 辅料 香料&lt;/p&gt;
+&lt;h2 id=&#34;炖肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#炖肉&#34;&gt;#&lt;/a&gt; 炖肉&lt;/h2&gt;
+&lt;p&gt;五花肉 鸡肉 调料 香料&lt;/p&gt;
+&lt;h2 id=&#34;干烧鲤鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#干烧鲤鱼&#34;&gt;#&lt;/a&gt; 干烧鲤鱼&lt;/h2&gt;
+&lt;p&gt;鲤鱼 辣椒 料酒 调料&lt;/p&gt;
+&lt;h2 id=&#34;手抓羊肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#手抓羊肉&#34;&gt;#&lt;/a&gt; 手抓羊肉&lt;/h2&gt;
+&lt;p&gt;羊肉 辣椒 料酒 香料&lt;/p&gt;
+&lt;h2 id=&#34;驼峰炙&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#驼峰炙&#34;&gt;#&lt;/a&gt; 驼峰炙&lt;/h2&gt;
+&lt;p&gt;驼峰 辣椒 料酒 调料&lt;/p&gt;
+&lt;h1 id=&#34;荆湖菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#荆湖菜系&#34;&gt;#&lt;/a&gt; 荆湖菜系&lt;/h1&gt;
+&lt;h2 id=&#34;小炒肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#小炒肉&#34;&gt;#&lt;/a&gt; 小炒肉&lt;/h2&gt;
+&lt;p&gt;五花肉 调料 辅料 辣椒&lt;/p&gt;
+&lt;h2 id=&#34;一碗香&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一碗香&#34;&gt;#&lt;/a&gt; 一碗香&lt;/h2&gt;
+&lt;p&gt;五花肉 竹笋 鸡蛋 辣椒&lt;/p&gt;
+&lt;h2 id=&#34;剁椒鱼头&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#剁椒鱼头&#34;&gt;#&lt;/a&gt; 剁椒鱼头&lt;/h2&gt;
+&lt;p&gt;花鲢 辣椒 豆瓣酱 调料&lt;/p&gt;
+&lt;h2 id=&#34;百鸟朝凤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#百鸟朝凤&#34;&gt;#&lt;/a&gt; 百鸟朝凤&lt;/h2&gt;
+&lt;p&gt;鸡肉 瘦肉 香蕈 料酒&lt;/p&gt;
+&lt;h2 id=&#34;花菇无黄蛋&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#花菇无黄蛋&#34;&gt;#&lt;/a&gt; 花菇无黄蛋&lt;/h2&gt;
+&lt;p&gt;香蕈 竹笋 鸡蛋 辣椒&lt;/p&gt;
+&lt;h2 id=&#34;小炒黄牛肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#小炒黄牛肉&#34;&gt;#&lt;/a&gt; 小炒黄牛肉&lt;/h2&gt;
+&lt;p&gt;牛肉 辣椒 淀粉 辅料&lt;/p&gt;
+&lt;h2 id=&#34;叫花鸡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#叫花鸡&#34;&gt;#&lt;/a&gt; 叫花鸡&lt;/h2&gt;
+&lt;p&gt;荷叶 鸡肉 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;雷公鸭&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#雷公鸭&#34;&gt;#&lt;/a&gt; 雷公鸭&lt;/h2&gt;
+&lt;p&gt;鸭肉 糯米 荷叶 辅料&lt;/p&gt;
+&lt;h2 id=&#34;清蒸鲥鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#清蒸鲥鱼&#34;&gt;#&lt;/a&gt; 清蒸鲥鱼&lt;/h2&gt;
+&lt;p&gt;鲥鱼 瘦肉 料酒 辅料&lt;/p&gt;
+&lt;h1 id=&#34;通用菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#通用菜系&#34;&gt;#&lt;/a&gt; 通用菜系&lt;/h1&gt;
+&lt;h2 id=&#34;柴胡姜桂汤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#柴胡姜桂汤&#34;&gt;#&lt;/a&gt; 柴胡姜桂汤&lt;/h2&gt;
+&lt;p&gt;柴胡 调料 辅料 香料&lt;/p&gt;
+&lt;h2 id=&#34;清炒时蔬&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#清炒时蔬&#34;&gt;#&lt;/a&gt; 清炒时蔬&lt;/h2&gt;
+&lt;p&gt;青菜 调料 辅料 香料&lt;/p&gt;
+&lt;h2 id=&#34;菜包子&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#菜包子&#34;&gt;#&lt;/a&gt; 菜包子&lt;/h2&gt;
+&lt;p&gt;面粉 青菜 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;肉包子&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#肉包子&#34;&gt;#&lt;/a&gt; 肉包子&lt;/h2&gt;
+&lt;p&gt;面粉 五花肉 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;饺子&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#饺子&#34;&gt;#&lt;/a&gt; 饺子&lt;/h2&gt;
+&lt;p&gt;面粉 青菜 五花肉 调料&lt;/p&gt;
+&lt;h2 id=&#34;蛋炒饭&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#蛋炒饭&#34;&gt;#&lt;/a&gt; 蛋炒饭&lt;/h2&gt;
+&lt;p&gt;大米 鸡蛋 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;清蒸螃蟹&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#清蒸螃蟹&#34;&gt;#&lt;/a&gt; 清蒸螃蟹&lt;/h2&gt;
+&lt;p&gt;河蟹 调料 辅料 香料&lt;/p&gt;
+&lt;h2 id=&#34;麻辣小龙虾&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#麻辣小龙虾&#34;&gt;#&lt;/a&gt; 麻辣小龙虾&lt;/h2&gt;
+&lt;p&gt;小龙虾 辣椒 豆瓣酱 辅料&lt;/p&gt;
+&lt;h1 id=&#34;开封菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开封菜系&#34;&gt;#&lt;/a&gt; 开封菜系&lt;/h1&gt;
+&lt;h2 id=&#34;红烧鲫鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#红烧鲫鱼&#34;&gt;#&lt;/a&gt; 红烧鲫鱼&lt;/h2&gt;
+&lt;p&gt;鲫鱼 料酒 糖 辅料&lt;/p&gt;
+&lt;h2 id=&#34;大葱烧海参&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#大葱烧海参&#34;&gt;#&lt;/a&gt; 大葱烧海参&lt;/h2&gt;
+&lt;p&gt;海参 调料 辅料 料酒&lt;/p&gt;
+&lt;h2 id=&#34;汴京烤鸭&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#汴京烤鸭&#34;&gt;#&lt;/a&gt; 汴京烤鸭&lt;/h2&gt;
+&lt;p&gt;鸭肉 蜂蜜 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;红烧黄河鲤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#红烧黄河鲤&#34;&gt;#&lt;/a&gt; 红烧黄河鲤&lt;/h2&gt;
+&lt;p&gt;黄河鲤鱼 料酒 糖 调料&lt;/p&gt;
+&lt;h2 id=&#34;梅花汤饼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#梅花汤饼&#34;&gt;#&lt;/a&gt; 梅花汤饼&lt;/h2&gt;
+&lt;p&gt;面粉 鲜花 蜂蜜 糖&lt;/p&gt;
+&lt;h2 id=&#34;胡辣汤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#胡辣汤&#34;&gt;#&lt;/a&gt; 胡辣汤&lt;/h2&gt;
+&lt;p&gt;羊肉 面粉 淀粉 面筋&lt;/p&gt;
+&lt;h2 id=&#34;红烧牛肉面&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#红烧牛肉面&#34;&gt;#&lt;/a&gt; 红烧牛肉面&lt;/h2&gt;
+&lt;p&gt;面粉 牛肉 青菜 调料&lt;/p&gt;
+&lt;h2 id=&#34;花生糕&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#花生糕&#34;&gt;#&lt;/a&gt; 花生糕&lt;/h2&gt;
+&lt;p&gt;花生 糖 特制饴糖 香料&lt;/p&gt;
+&lt;h1 id=&#34;移花菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#移花菜系&#34;&gt;#&lt;/a&gt; 移花菜系&lt;/h1&gt;
+&lt;h2 id=&#34;炖鱼汤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#炖鱼汤&#34;&gt;#&lt;/a&gt; 炖鱼汤&lt;/h2&gt;
+&lt;p&gt;鲤鱼 鲫鱼 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;羊肉煲&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#羊肉煲&#34;&gt;#&lt;/a&gt; 羊肉煲&lt;/h2&gt;
+&lt;p&gt;羊肉 萝卜 料酒 调料&lt;/p&gt;
+&lt;h2 id=&#34;鲷鱼刺身&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#鲷鱼刺身&#34;&gt;#&lt;/a&gt; 鲷鱼刺身&lt;/h2&gt;
+&lt;p&gt;鲷鱼 调料 辅料 料酒&lt;/p&gt;
+&lt;h2 id=&#34;佛跳墙&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#佛跳墙&#34;&gt;#&lt;/a&gt; 佛跳墙&lt;/h2&gt;
+&lt;p&gt;鲍鱼 海参 料酒 五花肉&lt;/p&gt;
+&lt;h2 id=&#34;清汤鲍鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#清汤鲍鱼&#34;&gt;#&lt;/a&gt; 清汤鲍鱼&lt;/h2&gt;
+&lt;p&gt;鲍鱼 调料 淀粉 料酒&lt;/p&gt;
+&lt;h2 id=&#34;小炒鲍鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#小炒鲍鱼&#34;&gt;#&lt;/a&gt; 小炒鲍鱼&lt;/h2&gt;
+&lt;p&gt;鲍鱼 辣椒 料酒 辅料&lt;/p&gt;
+&lt;h2 id=&#34;凉拌明玉子&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#凉拌明玉子&#34;&gt;#&lt;/a&gt; 凉拌明玉子&lt;/h2&gt;
+&lt;p&gt;明玉子 调料 辅料 料酒&lt;/p&gt;
+&lt;h1 id=&#34;徐海菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#徐海菜系&#34;&gt;#&lt;/a&gt; 徐海菜系&lt;/h1&gt;
+&lt;h2 id=&#34;大盘鸡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#大盘鸡&#34;&gt;#&lt;/a&gt; 大盘鸡&lt;/h2&gt;
+&lt;p&gt;鸡肉 土豆 辣椒 调料&lt;/p&gt;
+&lt;h2 id=&#34;葱爆羊肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#葱爆羊肉&#34;&gt;#&lt;/a&gt; 葱爆羊肉&lt;/h2&gt;
+&lt;p&gt;羊肉 香料 辅料 料酒&lt;/p&gt;
+&lt;h2 id=&#34;手抓饭&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#手抓饭&#34;&gt;#&lt;/a&gt; 手抓饭&lt;/h2&gt;
+&lt;p&gt;大米 羊肉 萝卜 调料&lt;/p&gt;
+&lt;h2 id=&#34;酿皮&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#酿皮&#34;&gt;#&lt;/a&gt; 酿皮&lt;/h2&gt;
+&lt;p&gt;面粉 面筋 辣椒 花生&lt;/p&gt;
+&lt;h2 id=&#34;蜜汁羊腿&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#蜜汁羊腿&#34;&gt;#&lt;/a&gt; 蜜汁羊腿&lt;/h2&gt;
+&lt;p&gt;羊腿肉 蜂蜜 调料 香料&lt;/p&gt;
+&lt;h2 id=&#34;馕包肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#馕包肉&#34;&gt;#&lt;/a&gt; 馕包肉&lt;/h2&gt;
+&lt;p&gt;馕 羊肉 辣椒 调料&lt;/p&gt;
+&lt;h1 id=&#34;云滇菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#云滇菜系&#34;&gt;#&lt;/a&gt; 云滇菜系&lt;/h1&gt;
+&lt;h2 id=&#34;圆子鸡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#圆子鸡&#34;&gt;#&lt;/a&gt; 圆子鸡&lt;/h2&gt;
+&lt;p&gt;鸡肉 豆腐 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;竹笋豆腐汤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#竹笋豆腐汤&#34;&gt;#&lt;/a&gt; 竹笋豆腐汤&lt;/h2&gt;
+&lt;p&gt;豆腐 竹笋 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;竹笋焖肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#竹笋焖肉&#34;&gt;#&lt;/a&gt; 竹笋焖肉&lt;/h2&gt;
+&lt;p&gt;五花肉 竹笋 料酒 调料&lt;/p&gt;
+&lt;h2 id=&#34;山官牛头&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#山官牛头&#34;&gt;#&lt;/a&gt; 山官牛头&lt;/h2&gt;
+&lt;p&gt;牛肉 调料 辅料 香料&lt;/p&gt;
+&lt;h2 id=&#34;爆炒见手青&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#爆炒见手青&#34;&gt;#&lt;/a&gt; 爆炒见手青&lt;/h2&gt;
+&lt;p&gt;见手青 辣椒 料酒 调料&lt;/p&gt;
+&lt;h2 id=&#34;酥炸见手青&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#酥炸见手青&#34;&gt;#&lt;/a&gt; 酥炸见手青&lt;/h2&gt;
+&lt;p&gt;见手青 辣椒 鸡蛋 香料&lt;/p&gt;
+&lt;h2 id=&#34;杜鹃醉鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#杜鹃醉鱼&#34;&gt;#&lt;/a&gt; 杜鹃醉鱼&lt;/h2&gt;
+&lt;p&gt;裸鲤 料酒 调料 辅料&lt;/p&gt;
+&lt;h1 id=&#34;襄州菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#襄州菜系&#34;&gt;#&lt;/a&gt; 襄州菜系&lt;/h1&gt;
+&lt;h2 id=&#34;糯米丸子&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#糯米丸子&#34;&gt;#&lt;/a&gt; 糯米丸子&lt;/h2&gt;
+&lt;p&gt;糯米 五花肉 鸡蛋 调料&lt;/p&gt;
+&lt;h2 id=&#34;糍粑&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#糍粑&#34;&gt;#&lt;/a&gt; 糍粑&lt;/h2&gt;
+&lt;p&gt;糯米 大豆 花生 香料&lt;/p&gt;
+&lt;h2 id=&#34;煿金煮玉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#煿金煮玉&#34;&gt;#&lt;/a&gt; 煿金煮玉&lt;/h2&gt;
+&lt;p&gt;面粉 大米 竹笋 辅料&lt;/p&gt;
+&lt;h2 id=&#34;芋艿排骨汤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#芋艿排骨汤&#34;&gt;#&lt;/a&gt; 芋艿排骨汤&lt;/h2&gt;
+&lt;p&gt;排骨 芋艿 料酒 调料&lt;/p&gt;
+&lt;h2 id=&#34;荆沙甲鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#荆沙甲鱼&#34;&gt;#&lt;/a&gt; 荆沙甲鱼&lt;/h2&gt;
+&lt;p&gt;甲鱼 豆瓣酱 调料 辅料&lt;/p&gt;
+&lt;h2 id=&#34;芋儿鸡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#芋儿鸡&#34;&gt;#&lt;/a&gt; 芋儿鸡&lt;/h2&gt;
+&lt;p&gt;鸡肉 芋艿 辣椒 调料&lt;/p&gt;
+&lt;h2 id=&#34;开屏武昌鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开屏武昌鱼&#34;&gt;#&lt;/a&gt; 开屏武昌鱼&lt;/h2&gt;
+&lt;p&gt;武昌鱼 调料 辅料 料酒&lt;/p&gt;
+&lt;h2 id=&#34;粉蒸鮰鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#粉蒸鮰鱼&#34;&gt;#&lt;/a&gt; 粉蒸鮰鱼&lt;/h2&gt;
+&lt;p&gt;江团 大米 豆瓣酱 调料&lt;/p&gt;
+&lt;h2 id=&#34;太极芋泥&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#太极芋泥&#34;&gt;#&lt;/a&gt; 太极芋泥&lt;/h2&gt;
+&lt;p&gt;芋艿 特制饴糖 调料 辅料&lt;/p&gt;
+</content>
+        <category term="天刀" scheme="https://ambercc.gitee.io/categories/%E5%A4%A9%E5%88%80/" />
+        <category term="天刀" scheme="https://ambercc.gitee.io/tags/%E5%A4%A9%E5%88%80/" />
+        <updated>2021-07-16T09:46:06.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://ambercc.gitee.io/2021/07/16/hexo-setting-doc/</id>
+        <title>Hexo Setting Doc</title>
+        <link rel="alternate" href="https://ambercc.gitee.io/2021/07/16/hexo-setting-doc/"/>
+        <content type="html">&lt;h1 id=&#34;hexo配置文档&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#hexo配置文档&#34;&gt;#&lt;/a&gt; hexo 配置文档&lt;/h1&gt;
+&lt;h2 id=&#34;hexo-主题选择&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#hexo-主题选择&#34;&gt;#&lt;/a&gt; hexo 主题选择&lt;/h2&gt;
+&lt;p&gt;因为也想整一个好看的静态 blog 站，挑了好久，终于找到了这个主题&lt;br /&gt;
+在此感谢！&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==&#34;&gt;hexo-theme-shoka&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;hexo-主题安装依赖安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#hexo-主题安装依赖安装&#34;&gt;#&lt;/a&gt; hexo 主题安装依赖安装&lt;/h2&gt;
+&lt;p&gt;主题从 git clone 下来，才是开始，还要安装需要的依赖，但是安装过程并不顺利，因为各自的环境总会有些差异。&lt;br /&gt;
+需要安装那些依赖主题站有&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWUvY29tcHV0ZXItc2NpZW5jZS9ub3RlL3RoZW1lLXNob2thLWRvYw==&#34;&gt;中文文档&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Theme Shoka 依赖以下 Hexo 插件&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;插件名称&lt;/th&gt;
+&lt;th&gt;npm 地址&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;依赖程度&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;hexo-renderer-multi-markdown-it&lt;/td&gt;
+&lt;td&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubnBtanMuY29tL3BhY2thZ2UvaGV4by1yZW5kZXJlci1tdWx0aS1tYXJrZG93bi1pdA==&#34;&gt;链接&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;md 文件渲染器，压缩 css/js/html&lt;/td&gt;
+&lt;td&gt;必需&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hexo-autoprefixer&lt;/td&gt;
+&lt;td&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubnBtanMuY29tL3BhY2thZ2UvaGV4by1hdXRvcHJlZml4ZXI=&#34;&gt;链接&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;给生成的 css 文件们添加浏览器前缀&lt;/td&gt;
+&lt;td&gt;必需&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hexo-algoliasearch&lt;/td&gt;
+&lt;td&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubnBtanMuY29tL3BhY2thZ2UvaGV4by1hbGdvbGlhc2VhcmNo&#34;&gt;链接&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;站内搜索功能&lt;/td&gt;
+&lt;td&gt;搜索按钮失灵&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hexo-symbols-count-time&lt;/td&gt;
+&lt;td&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubnBtanMuY29tL3BhY2thZ2UvaGV4by1zeW1ib2xzLWNvdW50LXRpbWU=&#34;&gt;链接&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;文章或站点字数及阅读时间统计&lt;/td&gt;
+&lt;td&gt;统计没有&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hexo-feed&lt;/td&gt;
+&lt;td&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubnBtanMuY29tL3BhY2thZ2UvaGV4by1mZWVk&#34;&gt;链接&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;生成 Feed 文件&lt;/td&gt;
+&lt;td&gt;Feed 文件没有&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;安装完以上插件后，修改站点配置文件，加入相关配置。&lt;/p&gt;
+&lt;p&gt;用 npm 安装必须的 hexo-renderer-multi-markdown-it 后，渲染的页面不完整，和主题的效果相差甚远。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; un hexo-renderer-marked --save &lt;span class=&#34;token comment&#34;&gt;#首先卸载原本的文本渲染器&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; i hexo-renderer-multi-markdown-it --save &lt;span class=&#34;token comment&#34;&gt;#安装&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;也可使用 cnpm 安装&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; -g cnpm –registry&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;http://registry.npm.taobao.org &lt;span class=&#34;token comment&#34;&gt;#安装 cnpm 管理器&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;cnpm i hexo-renderer-multi-markdown-it –save &lt;span class=&#34;token comment&#34;&gt;#用 cnpm 重新安装&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;valine-配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#valine-配置&#34;&gt;#&lt;/a&gt; Valine 配置&lt;/h2&gt;
+&lt;p&gt;Valine 是一款基于 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jb25zb2xlLmxlYW5jbG91ZC5jbi8=&#34;&gt;LeanCloud&lt;/span&gt; 的快速、简洁且高效的无后端评论系统。&lt;br /&gt;
+注册创建应用简单，拿到 appId 和 appKey, 填到主题的配置中就行了&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;valine&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;appId&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#Your_appId&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;appKey&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#Your_appkey&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;placeholder&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; ヽ(○´∀`)ﾉ♪ &lt;span class=&#34;token comment&#34;&gt;# Comment box placeholder&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;avatar&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; mp &lt;span class=&#34;token comment&#34;&gt;# Gravatar style : mp, identicon, monsterid, wavatar, robohash, retro&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;pageSize&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# Pagination size&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;lang&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; zh&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;CN&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;visitor&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean important&#34;&gt;true&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# Article reading statistic&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;NoRecordIP&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean important&#34;&gt;false&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# Whether to record the commenter IP&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;serverURLs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;powerMode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean important&#34;&gt;true&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;tagMeta&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;visitor&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 新朋友&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;master&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 主人&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;friend&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 小伙伴&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;investor&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 金主粑粑&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;tagColor&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;master&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;var(--color-orange)&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;friend&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;var(--color-aqua)&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;investor&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;var(--color-pink)&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;tagMember&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;master&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token comment&#34;&gt;# - hash of master@email.com&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token comment&#34;&gt;# - hash of master2@email.com&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;friend&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token comment&#34;&gt;# - hash of friend@email.com&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token comment&#34;&gt;# - hash of friend2@email.com&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;investor&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token comment&#34;&gt;# - hash of investor1@email.com&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;本地测试问题不大，但是在线上，需要在 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jb25zb2xlLmxlYW5jbG91ZC5jbi8=&#34;&gt;LeanCloud&lt;/span&gt; 设置安全域名&lt;br /&gt;
+控制台 =&amp;gt; 设置 =&amp;gt; 安全中心 =&amp;gt; 设置 Web 安全域名&lt;/p&gt;
+&lt;h2 id=&#34;algolia-配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#algolia-配置&#34;&gt;#&lt;/a&gt; algolia 配置&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYWxnb2xpYS5jb20v&#34;&gt;Algolia&lt;/span&gt; 是一家为网站与移动应用提供托管式搜索 API&lt;br /&gt;
+ 同样注册创建&lt;br /&gt;
+需要注意的是，需要创建一个有权限的 apiKey，能给的都给&lt;br /&gt;
+补充：由于 algolia 服务到期，搜索提示超出配额，并且影响到评论功能无法正确显示。&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;algolia&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;appId&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;#Your appId&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;apiKey&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;#Your apiKey&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;adminApiKey&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#Your adminApiKey&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;chunkSize&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;5000&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;indexName&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;amber&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;fields&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; title &lt;span class=&#34;token comment&#34;&gt;#必须配置&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; path &lt;span class=&#34;token comment&#34;&gt;#必须配置&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; categories &lt;span class=&#34;token comment&#34;&gt;#推荐配置&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; content&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;strip&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;truncate&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2000&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; gallery&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; photos&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; tags&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;fields 中的 title 和 path 必须在文章的 md 设置&lt;br /&gt;
+通过 hexo 命令创建文章，会自动生成 md 文件&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;hexo new &lt;span class=&#34;token string&#34;&gt;&#34;*****&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;默认生成的 md 只有 title 和 date 两个属性&lt;br /&gt;
+可以修改 scaffolds 下的模板文件，增加 path 属性，这是我生成静态的路径 path: :year/:month/:day/:title/&lt;br /&gt;
+ 也可以设置其他的 /test/note/doc 等&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;figcaption data-lang=&#34;markdown&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token front-matter-block&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;---&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token font-matter yaml language-yaml&#34;&gt;&lt;span class=&#34;token key atrule&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;\&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; title \&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;year/&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;month/&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;day/&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;title/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;\&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; date \&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;tags&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;category&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;最后在执行以下命令，生成索引&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;hexo algolia&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;live2d&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#live2d&#34;&gt;#&lt;/a&gt; live2d&lt;/h2&gt;
+&lt;p&gt;给个人站点添加喜欢的 live2d 形象&lt;br /&gt;
+首先安装 hexo-helper-live2d&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; i hexo-helper-live2d --save&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;然后到&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuanNkZWxpdnIuY29tLw==&#34;&gt; jsdelivr&lt;/span&gt; 查找自己喜欢的 live2d 形象&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; i live2d-widget-model-nico --save&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; i live2d-widget-model-aoba --save &lt;span class=&#34;token comment&#34;&gt;#青叶的 lvie2d 有的包不完整需要自己修改源文件&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;然后把配置写入 _config.yml 根据需要修改&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;## Live2D 看板娘&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;live2d&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;enable&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean important&#34;&gt;true&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#启用&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;scriptFrom&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; local&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;pluginRootPath&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; live2dw/ &lt;span class=&#34;token comment&#34;&gt;#生成的静态目录&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;pluginJsPath&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; lib/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;pluginModelPath&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; assets/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;tagMode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean important&#34;&gt;false&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;debug&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean important&#34;&gt;false&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; live2d&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;widget&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;model&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;aoba &lt;span class=&#34;token comment&#34;&gt;#自己安装的 live2d&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;display&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;position&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; left &lt;span class=&#34;token comment&#34;&gt;#形象的定位左 右&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;width&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;300&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;#大小&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;height&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;600&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;mobile&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean important&#34;&gt;false&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#手机版是否显示&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;react&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;opacity&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;#透明度&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;遇到的问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#遇到的问题&#34;&gt;#&lt;/a&gt; 遇到的问题&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;npm 安装时可能网络原因，无法安装 可以切换中国镜像&lt;/li&gt;
+&lt;li&gt;hexo-theme-shoka 主题因为作者许久未更新，部分方法过时报错&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;err: TypeError: yaml.Load is not a function&lt;br /&gt;
+ 原因是最新版的 js-yaml 不支持 safeLoad 方法了，搜索一下主题目录里全部的 safeLoad，大概有三处，改成 load&lt;br /&gt;
+ 分别在 config.js links.js 和 media.js 文件里&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="hexo" scheme="https://ambercc.gitee.io/categories/hexo/" />
+        <category term="hexo" scheme="https://ambercc.gitee.io/tags/hexo/" />
+        <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
+        <updated>2021-07-16T07:32:18.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://ambercc.gitee.io/2021/07/14/hello-world/</id>
+        <title>Hello World</title>
+        <link rel="alternate" href="https://ambercc.gitee.io/2021/07/14/hello-world/"/>
+        <content type="html">&lt;p&gt;Welcome to &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvLw==&#34;&gt;Hexo&lt;/span&gt;! This is your very first post. Check &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv&#34;&gt;documentation&lt;/span&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3MvdHJvdWJsZXNob290aW5nLmh0bWw=&#34;&gt;troubleshooting&lt;/span&gt; or you can ask me on &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL2lzc3Vlcw==&#34;&gt;GitHub&lt;/span&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
+&lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo new &lt;span class=&#34;token string&#34;&gt;&#34;My New Post&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s&#34;&gt;Writing&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;run-server&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#run-server&#34;&gt;#&lt;/a&gt; Run server&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo server&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvc2VydmVyLmh0bWw=&#34;&gt;Server&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;generate-static-files&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#generate-static-files&#34;&gt;#&lt;/a&gt; Generate static files&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo generate&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZ2VuZXJhdGluZy5odG1s&#34;&gt;Generating&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;deploy-to-remote-sites&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#deploy-to-remote-sites&#34;&gt;#&lt;/a&gt; Deploy to remote sites&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo deploy&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s&#34;&gt;Deployment&lt;/span&gt;&lt;/p&gt;
+</content>
+        <updated>2021-07-14T09:32:39.534Z</updated>
+    </entry>
+</feed>
