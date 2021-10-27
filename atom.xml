@@ -8,9 +8,106 @@
     <author>
       <name>六花丶紫</name>
     </author>
-    <updated>2021-09-10T09:33:29.000Z</updated>
+    <updated>2021-10-27T06:15:09.000Z</updated>
     <category term="六花" />
     <category term="amber" />
+    <entry>
+        <id>https://ambercc.gitee.io/linux/linux-doc/</id>
+        <title>linux命令助记</title>
+        <link rel="alternate" href="https://ambercc.gitee.io/linux/linux-doc/"/>
+        <content type="html">&lt;h2 id=&#34;tail&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tail&#34;&gt;#&lt;/a&gt; tail&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;tail -f filename 会把 filename 文件里的最尾部的内容显示在屏幕上，并且不断刷新，只要 filename 更新就可以看到最新的文件内容。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;-f 循环读取&lt;/li&gt;
+&lt;li&gt;-q 不显示处理信息&lt;/li&gt;
+&lt;li&gt;-v 显示详细的处理信息&lt;/li&gt;
+&lt;li&gt;-c &amp;lt;数目&amp;gt; 显示的字节数&lt;/li&gt;
+&lt;li&gt;-n &amp;lt;行数&amp;gt; 显示文件的尾部 n 行内容&lt;/li&gt;
+&lt;li&gt;--pid=PID 与 - f 合用，表示在进程 ID,PID 死掉之后结束&lt;/li&gt;
+&lt;li&gt;-q, --quiet, --silent 从不输出给出文件名的首部&lt;/li&gt;
+&lt;li&gt;-s, --sleep-interval=S 与 - f 合用，表示在每次反复的间隔休眠 S 秒&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vim命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vim命令&#34;&gt;#&lt;/a&gt; vim 命令&lt;/h2&gt;
+&lt;h3 id=&#34;在一个窗口中vim-的小tab标签页命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在一个窗口中vim-的小tab标签页命令&#34;&gt;#&lt;/a&gt; 在一个窗口中，VIM 的小 tab 标签页命令：&lt;/h3&gt;
+&lt;p&gt;:tabnew [++opt 选项] ［＋cmd］ 文件            建立对指定文件新的 tab 例子 :tabnew file.txt&lt;br /&gt;
+:tabc       关闭当前的 tab&lt;br /&gt;
+:tabo       关闭所有其他的 tab&lt;br /&gt;
+:tabs       查看所有打开的 tab&lt;br /&gt;
+:tabfirst 切换到第一个标签&lt;br /&gt;
+:tablast 切换到最后一个标签&lt;br /&gt;
+:tabp      前一个&lt;br /&gt;
+:tabn      后一个&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一般使用标准模式下的 Ngt 来进行切换，这个很方便。另外，如果需要在当前的 tab 页中也可以打开多个文件，文件之间用 ctrl + 6 来切换。如果习惯了前一种方法，后面这种基本上是用不到了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;分屏&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#分屏&#34;&gt;#&lt;/a&gt; 分屏&lt;/h3&gt;
+&lt;p&gt;:vsplit 这个命令太长，没人用的。大家都用 :vsp ，:sp filename 来分屏。&lt;br /&gt;
+分屏的相关动作都是 ctrl+w 开始的，然后再跟一个其他字母&lt;br /&gt;
+ ctrl+w = ：让左右上下各个分屏宽度，高度均等。&lt;br /&gt;
+ctrl+w _(shift + -) : 当前屏幕高度扩展到最大&lt;br /&gt;
+ ctrl+w |(shift +) : 当前屏幕宽度扩展到最大&lt;br /&gt;
+ ctrl+w c：关闭当前屏幕&lt;/p&gt;
+&lt;h2 id=&#34;nohup-后台常驻命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nohup-后台常驻命令&#34;&gt;#&lt;/a&gt; nohup &amp;amp; 后台常驻命令&lt;/h2&gt;
+&lt;p&gt;语法&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;nohup Command [ Arg … ] [　&amp;amp; ]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;nohup 英文全称 no hang up（不挂起），用于在系统后台不挂断地运行命令，退出终端不会影响程序的运行。&lt;br /&gt;
+&amp;amp;：让命令在后台执行，终端退出后命令仍旧执行。&lt;/p&gt;
+&lt;p&gt;例子：nohup /root/runoob.sh &amp;gt; runoob.log 2&amp;gt;&amp;amp;1 &amp;amp;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2&amp;gt;&amp;amp;1 解释：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;将标准错误 2 重定向到标准输出 &amp;amp;1 ，标准输出 &amp;amp;1 再被重定向输入到 runoob.log 文件中。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0 – stdin (standard input，标准输入)&lt;/li&gt;
+&lt;li&gt;1 – stdout (standard output，标准输出)&lt;/li&gt;
+&lt;li&gt;2 – stderr (standard error，标准错误输出)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cut-和-xargs&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cut-和-xargs&#34;&gt;#&lt;/a&gt; cut 和 xargs&lt;/h2&gt;
+&lt;p&gt;例子：查询并删除退出的 docker 容器&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;docker ps -a | grep Exited | cut -d&amp;quot; &amp;quot; -f 1 | xargs docker rm&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;cut&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cut&#34;&gt;#&lt;/a&gt; cut&lt;/h3&gt;
+&lt;p&gt;语法&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;cut&lt;/span&gt;  &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;-bn&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;file&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;cut&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;-c&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;file&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;cut&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;-df&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;file&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ul&gt;
+&lt;li&gt;-b ：以字节为单位进行分割。这些字节位置将忽略多字节字符边界，除非也指定了 -n 标志。&lt;/li&gt;
+&lt;li&gt;-c ：以字符为单位进行分割。&lt;/li&gt;
+&lt;li&gt;-d ：自定义分隔符，默认为制表符。&lt;/li&gt;
+&lt;li&gt;-f ：与 - d 一起使用，指定显示哪个区域。&lt;/li&gt;
+&lt;li&gt;-n ：取消分割多字节字符。仅和 -b 标志一起使用。如果字符的最后一个字节落在由 -b 标志的 List 参数指示的&lt;br /&gt;
+范围之内，该字符将被写出；否则，该字符将被排除&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;xargs&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#xargs&#34;&gt;#&lt;/a&gt; xargs&lt;/h3&gt;
+&lt;p&gt;xargs（英文全拼： eXtended ARGuments）是给命令传递参数的一个过滤器，也是组合多个命令的一个工具。&lt;br /&gt;
+xargs 可以将管道或标准输入（stdin）数据转换成命令行参数，也能够从文件的输出中读取数据。&lt;br /&gt;
+xargs 也可以将单行或多行文本输入转换为其他格式，例如多行变单行，单行变多行。&lt;br /&gt;
+xargs 默认的命令是 echo，这意味着通过管道传递给 xargs 的输入将会包含换行和空白，不过通过 xargs 的处理，换行和空白将被空格取代。&lt;br /&gt;
+xargs 是一个强有力的命令，它能够捕获一个命令的输出，然后传递给另外一个命令。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;-a file 从文件中读入作为 stdin&lt;/li&gt;
+&lt;li&gt;-e flag ，注意有的时候可能会是 - E，flag 必须是一个以空格分隔的标志，当 xargs 分析到含有 flag 这个标志的时候就停止。&lt;/li&gt;
+&lt;li&gt;-p 当每次执行一个 argument 的时候询问一次用户。&lt;/li&gt;
+&lt;li&gt;-n num 后面加次数，表示命令在执行的时候一次用的 argument 的个数，默认是用所有的。&lt;/li&gt;
+&lt;li&gt;-t 表示先打印命令，然后再执行。&lt;/li&gt;
+&lt;li&gt;-i 或者是 - I，这得看 linux 支持了，将 xargs 的每项名称，一般是一行一行赋值给 {}，可以用 {} 代替。&lt;/li&gt;
+&lt;li&gt;-r no-run-if-empty 当 xargs 的输入为空的时候则停止 xargs，不用再去执行了。&lt;/li&gt;
+&lt;li&gt;-s num 命令行的最大字符数，指的是 xargs 后面那个命令的最大命令行字符数。&lt;/li&gt;
+&lt;li&gt;-L num 从标准输入一次读取 num 行送给 command 命令。&lt;/li&gt;
+&lt;li&gt;-l 同 -L。&lt;/li&gt;
+&lt;li&gt;-d delim 分隔符，默认的 xargs 分隔符是回车，argument 的分隔符是空格，这里修改的是 xargs 的分隔符。&lt;/li&gt;
+&lt;li&gt;-x exit 的意思，主要是配合 - s 使用。。&lt;/li&gt;
+&lt;li&gt;-P 修改最大的进程数，默认是 1，为 0 时候为 as many as it can ，这个例子我没有想到，应该平时都用不到的吧。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="Linux" scheme="https://ambercc.gitee.io/categories/linux/" />
+        <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
+        <category term="Linux" scheme="https://ambercc.gitee.io/tags/Linux/" />
+        <updated>2021-10-27T06:15:09.000Z</updated>
+    </entry>
     <entry>
         <id>https://ambercc.gitee.io/fastadmin/fastadmin-doc-5/</id>
         <title>FastAdmin 个人记录 - behavior解决跨域问题</title>
