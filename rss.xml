@@ -10,10 +10,169 @@
         </author>
         <description>Amber Room</description>
         <language>zh-CN</language>
-        <pubDate>Wed, 27 Oct 2021 14:15:09 +0800</pubDate>
-        <lastBuildDate>Wed, 27 Oct 2021 14:15:09 +0800</lastBuildDate>
+        <pubDate>Mon, 29 Nov 2021 10:14:14 +0800</pubDate>
+        <lastBuildDate>Mon, 29 Nov 2021 10:14:14 +0800</lastBuildDate>
         <category term="六花" />
         <category term="amber" />
+        <item>
+            <guid isPermalink="true">https://ambercc.gitee.io/nazurin-doc/</guid>
+            <title>nazurin搭建-基于 Telegram, Heroku, MEGA 及 Firebase 的图片收藏自动工作流</title>
+            <link>https://ambercc.gitee.io/nazurin-doc/</link>
+            <category term="教程" scheme="https://ambercc.gitee.io/categories/%E6%95%99%E7%A8%8B/" />
+            <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
+            <pubDate>Mon, 29 Nov 2021 10:14:14 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;背景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#背景&#34;&gt;#&lt;/a&gt; 背景&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本来就想收藏点好看的图片，想找个好用的下载图片的工具。&lt;br /&gt;
+发散着就在 github 上发现了&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3kteW91bmcvbmF6dXJpbg==&#34;&gt; nazurin&lt;/span&gt;&lt;br /&gt;
+ 看起来挺有趣的就试着搭建一下。&lt;br /&gt;
+这里只记录大致流程和一些坑&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;nazurin简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nazurin简介&#34;&gt;#&lt;/a&gt; nazurin 简介&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Telegram bot 作为前端调用后端服务&lt;/li&gt;
+&lt;li&gt;Heroku 作为 python 后端的服务器&lt;/li&gt;
+&lt;li&gt;MEGA 作为图片数据库&lt;/li&gt;
+&lt;li&gt;Firebase 作为存储 pixiv token 的数据库（方便 token 更新）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;申请heroku-作为服务器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#申请heroku-作为服务器&#34;&gt;#&lt;/a&gt; 申请 Heroku 作为服务器&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kYXNoYm9hcmQuaGVyb2t1LmNvbS8=&#34;&gt;Heroku&lt;/span&gt; 需要挂个梯子，填写几个基本信息，通过邮箱就能快速注册一个账户&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可以把&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3kteW91bmcvbmF6dXJpbg==&#34;&gt; nazurin&lt;/span&gt; fork 到自己的 github 上，关联到 heroku 上的 git&lt;/p&gt;
+&lt;p&gt;也可以通过&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kZXZjZW50ZXIuaGVyb2t1LmNvbS9hcnRpY2xlcy9oZXJva3UtY2xp&#34;&gt; Heroku CLI&lt;/span&gt; 在本地环境安装 (windows 可以用对应的安装包，其他系统也有对应的安装方式）&lt;/p&gt;
+&lt;p&gt;通过以下命令，输入注册 Heroku 的邮箱和密码登录 cli 工具&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;heroku login -i&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;然后 git clone nazurin 项目，创建一个空的远程仓库，推送到 Heroku 的 git 上&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; ~/myapp&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;heroku create &lt;span class=&#34;token comment&#34;&gt;# 创建新应用 然后就可以像 git 修改提交&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; push heroku master &lt;span class=&#34;token comment&#34;&gt;#提交到 heroku 回自动重启 heroku&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;heroku logs --tail &lt;span class=&#34;token comment&#34;&gt;# 查看日志&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;env-自定义配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#env-自定义配置&#34;&gt;#&lt;/a&gt; env 自定义配置&lt;/h3&gt;
+&lt;p&gt;发布到 Heroku 后可以在应用中查看，tab 分页选择 settings 项下的 Config Vars&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TOKEN Telegram Bot 的 API token，可通过 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90Lm1lL0JvdEZhdGhlcg==&#34;&gt;@BotFather&lt;/span&gt; 获取&lt;/li&gt;
+&lt;li&gt;ENV production 生产模式 使用 webhook 模式&lt;/li&gt;
+&lt;li&gt;WEBHOOK_URL  Heroku 部署填写 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kZW1vLTEyMy5oZXJva3VhcHAuY29tLw==&#34;&gt;https://demo-123.herokuapp.com/&lt;/span&gt;  demo-123 为 app 名&lt;/li&gt;
+&lt;li&gt;ADMIN_ID  Telegram 的管理员 id 通过 [@GetIds Bot] 获得自己的 id&lt;/li&gt;
+&lt;li&gt;ALBUM_ID 创建一个群聊，获取群聊的 id 用于存放原图文件的 Telegram Channel ID&lt;/li&gt;
+&lt;li&gt;GALLERY_ID 创建一个群聊，获取群聊的 id 用于存放转发消息的 Telegram Channel ID&lt;/li&gt;
+&lt;li&gt;DATABASE  Firebase 存放 pixiv token 的数据库&lt;/li&gt;
+&lt;li&gt;GOOGLE_APPLICATION_CREDENTIALS Firebase SDK 的登录凭据，详见 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9maXJlYmFzZS5nb29nbGUuY29tL2RvY3MvYWRtaW4vc2V0dXAjaW5pdGlhbGl6ZV90aGVfc2Rr&#34;&gt;Firebase&lt;/span&gt; 文档&lt;/li&gt;
+&lt;li&gt;STORAGE Mega 存储方式&lt;/li&gt;
+&lt;li&gt;STORAGE_DIR 存储目录&lt;/li&gt;
+&lt;li&gt;MEGA_USER mega 的用户名&lt;/li&gt;
+&lt;li&gt;MEGA_PASS mega 的密码&lt;/li&gt;
+&lt;li&gt;PIXIV_TOKEN 通过&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXN0LmdpdGh1Yi5jb20vdXBiaXQvNmVkZGEyN2NiMTY0NGU5NDE4MzI5MTEwOWI4YTVmZGU=&#34;&gt; Retrieving Auth Token (with Selenium)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXN0LmdpdGh1Yi5jb20vdXBiaXQvNmVkZGEyN2NiMTY0NGU5NDE4MzI5MTEwOWI4YTVmZGU=&#34;&gt;Retrieving Auth Token (with Selenium)&lt;/span&gt; 踩坑，架了梯子，才能访问 pixiv 但是，脚本中请求获取 token 时又报错，好像是梯子的原因&lt;br /&gt;
+最后只能通过梯子，使用脚本的一部分，获取 pixiv 的一些基本参数，再通过 postman urlencode 传递参数 请求&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9vYXV0aC5zZWN1cmUucGl4aXYubmV0L2F1dGgvdG9rZW4=&#34;&gt;接口&lt;/span&gt; 获得 token&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;firebase-解决pixiv-token刷新&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#firebase-解决pixiv-token刷新&#34;&gt;#&lt;/a&gt; Firebase 解决 pixiv token 刷新&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9maXJlYmFzZS5nb29nbGUuY24v&#34;&gt;Firebase&lt;/span&gt; 用于存储 pixiv Access Token 和 Refresh Token 和 updated_time&lt;br /&gt;
+ 用自己的谷歌账户就能登录&lt;br /&gt;
+在 firestore database 创建 nazurin =&amp;gt; pixiv =&amp;gt; Access Token 和 Refresh Token 和 updated_time&lt;/p&gt;
+&lt;h2 id=&#34;mega-云存储&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mega-云存储&#34;&gt;#&lt;/a&gt; Mega 云存储&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9tZWdhLmNvLm56Lw==&#34;&gt;Mega&lt;/span&gt; 有免费的空间，注册方便，可以作为图片收藏的云存储&lt;/p&gt;
+&lt;h2 id=&#34;usage&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#usage&#34;&gt;#&lt;/a&gt; Usage&lt;/h2&gt;
+&lt;p&gt;Commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/ping&lt;/code&gt;  - pong&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/pixiv &amp;lt;id&amp;gt;&lt;/code&gt;  - view pixiv artwork&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/pixiv_download &amp;lt;id&amp;gt;&lt;/code&gt;  - download pixiv artwork&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/danbooru &amp;lt;id&amp;gt;&lt;/code&gt;  - view danbooru post&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/danbooru_download &amp;lt;id&amp;gt;&lt;/code&gt;  - download danbooru post&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/yandere &amp;lt;id&amp;gt;&lt;/code&gt;  - view yandere post&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/yandere_download &amp;lt;id&amp;gt;&lt;/code&gt;  - download yandere post&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/konachan &amp;lt;id&amp;gt;&lt;/code&gt;  - view konachan post&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/konachan_download &amp;lt;id&amp;gt;&lt;/code&gt;  - download konachan post&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/zerochan &amp;lt;id&amp;gt;&lt;/code&gt;  - view zerochan post&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/zerochan_download &amp;lt;id&amp;gt;&lt;/code&gt;  - download zerochan post&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/bookmark &amp;lt;id&amp;gt;&lt;/code&gt;  - bookmark pixiv artwork&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/clear_cache&lt;/code&gt;  - clear download cache&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/help&lt;/code&gt;  - get help text&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;collection-update&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#collection-update&#34;&gt;#&lt;/a&gt; Collection Update&lt;/h3&gt;
+&lt;p&gt;向 Bot 发送或转发一条带有 支持的网站 链接的消息（一条消息暂时只能处理一条链接），此后这条消息将会被转发至 GALLERY Channel，随后 Bot 将从图片来源站点下载最清晰的原图文件并发送至 ALBUM Channel，最后文件会被上传至 MEGA 云盘作为备份。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Tips: 在手机上操作时可使用 “分享” 按钮，最后生成的分享信息带有链接即可。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;artstation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYXJ0c3RhdGlvbi5jb20vYXJ0d29yay8yeDNMYUI=&#34;&gt;https://www.artstation.com/artwork/2x3LaB&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jYXR6ei5hcnRzdGF0aW9uLmNvbS9wcm9qZWN0cy9BOUVMZXE=&#34;&gt;https://catzz.artstation.com/projects/A9ELeq&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;bilibili&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90LmJpbGliaWxpLmNvbS8xMjM0NTY3ODkwMTIzNDU2Nzg=&#34;&gt;https://t.bilibili.com/123456789012345678&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90LmJpbGliaWxpLmNvbS9oNS9keW5hbWljL2RldGFpbC8xMjM0NTY3ODkwMTIzNDU2Nzg=&#34;&gt;https://t.bilibili.com/h5/dynamic/detail/123456789012345678&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;danbooru&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kYW5ib29ydS5kb25tYWkudXMvcG9zdHMvMTIzNDU2&#34;&gt;https://danbooru.donmai.us/posts/123456&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zYWZlYm9vcnUuZG9ubWFpLnVzL3Bvc3RzLzEyMzQ1Ng==&#34;&gt;https://safebooru.donmai.us/posts/123456&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jZG4uZG9ubWFpLnVzL29yaWdpbmFsLzEyL2FiLzEyYWIzNGNkNTZlZjc4OTBhYjEyY2QzNGVmNTY3ODkwLnBuZw==&#34;&gt;https://cdn.donmai.us/original/12/ab/12ab34cd56ef7890ab12cd34ef567890.png&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kYW5ib29ydS5kb25tYWkudXMvZGF0YS9zYW1wbGUvc2FtcGxlLTEyYWIzNGNkNTZlZjc4OTBhYjEyY2QzNGVmNTY3ODkwLmpwZw==&#34;&gt;https://danbooru.donmai.us/data/sample/sample-12ab34cd56ef7890ab12cd34ef567890.jpg&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zYWZlYm9vcnUuZG9ubWFpLnVzL2RhdGEvX19fb3JpZ2luYWxfX2RyYXduX2J5X18xMmFiMzRjZDU2ZWY3ODkwYWIxMmNkMzRlZjU2Nzg5MC5wbmc=&#34;&gt;https://safebooru.donmai.us/data/___original__drawn_by__12ab34cd56ef7890ab12cd34ef567890.png&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9nZWxib29ydS5jb20vaW5kZXgucGhwP3BhZ2U9cG9zdCZhbXA7cz12aWV3JmFtcDtpZD0xMjM0NTY=&#34;&gt;https://gelbooru.com/index.php?page=post&amp;amp;s=view&amp;amp;id=123456&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly95YW5kZS5yZS9wb3N0L3Nob3cvMTIzNDU2&#34;&gt;https://yande.re/post/show/123456&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9maWxlcy55YW5kZS5yZS9pbWFnZS8xMjM0NTY3ODkwYWJjZGVmMTIzNDU2Nzg5MGFiY2RlZi95YW5kZS5yZSUyMDEyMzQ1NiUyMGFhYS1iYmIlMjBjY2NfZGRkJTIwZGRkJTIwZWVlLmpwZw==&#34;&gt;https://files.yande.re/image/1234567890abcdef1234567890abcdef/yande.re 123456 aaa-bbb ccc_ddd ddd eee.jpg&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9rb25hY2hhbi5jb20vcG9zdC9zaG93LzEyMzQ1Ng==&#34;&gt;https://konachan.com/post/show/123456&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9rb25hY2hhbi5jb20vaW1hZ2UvMTIzNDU2Nzg5MGFiY2RlZjEyMzQ1Njc4OTBhYmNkZWYvS29uYWNoYW4uY29tJTIwLSUyMDEyMzQ1NiUyMGFhYS1iYmIlMjBjY2NfZGRkJTIwZGRkJTIwZWVlLmpwZw==&#34;&gt;https://konachan.com/image/1234567890abcdef1234567890abcdef/Konachan.com - 123456 aaa-bbb ccc_ddd ddd eee.jpg&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9sb2xpYm9vcnUubW9lL3Bvc3Qvc2hvdy8xMjM0NTY=&#34;&gt;https://lolibooru.moe/post/show/123456&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9sb2xpYm9vcnUubW9lL2ltYWdlLzEyMzQ1Njc4OTBhYmNkZWYxMjM0NTY3ODkwYWJjZGVmL2xvbGlib29ydSUyMDEyMzQ1NiUyMGFhYS1iYmIlMjBjY2NfZGRkJTIwZGRkJTIwZWVlLmpwZw==&#34;&gt;https://lolibooru.moe/image/1234567890abcdef1234567890abcdef/lolibooru 123456 aaa-bbb ccc_ddd ddd eee.jpg&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;pixiv&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9waXhpdi5uZXQvaS8xMjM0NTY=&#34;&gt;https://pixiv.net/i/123456&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9waXhpdi5uZXQvYXJ0d29ya3MvMTIzNDU2&#34;&gt;https://pixiv.net/artworks/123456&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucGl4aXYubmV0L2VuL2FydHdvcmtzLzEyMzQ1Ng==&#34;&gt;https://www.pixiv.net/en/artworks/123456&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucGl4aXYubmV0L21lbWJlcl9pbGx1c3QucGhwP21vZGU9bWVkaXVtJmFtcDtpbGx1c3RfaWQ9MTIzNDU2&#34;&gt;https://www.pixiv.net/member_illust.php?mode=medium&amp;amp;illust_id=123456&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pLnB4aW1nLm5ldC9pbWctb3JpZ2luYWwvaW1nLzIwMjAvMDIvMDIvMjAvMDAvMDIvMTIzNDU2X3AwLnBuZw==&#34;&gt;https://i.pximg.net/img-original/img/2020/02/02/20/00/02/123456_p0.png&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pMS5waXhpdi5uZXQvaW1nLW9yaWdpbmFsL2ltZy8yMDIwLzAyLzAyLzIwLzAwLzAyLzEyMzQ1Nl9wMC5wbmc=&#34;&gt;https://i1.pixiv.net/img-original/img/2020/02/02/20/00/02/123456_p0.png&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pLWYucHhpbWcubmV0L2ltZy1vcmlnaW5hbC9pbWcvMjAyMC8wMi8wMi8yMC8wMC8wMi8xMjM0NTZfcDAucG5n&#34;&gt;https://i-f.pximg.net/img-original/img/2020/02/02/20/00/02/123456_p0.png&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pLnB4aW1nLm5ldC9pbWctbWFzdGVyL2ltZy8yMDIwLzAyLzAyLzIwLzAwLzAyLzEyMzQ1Nl9wMF9tYXN0ZXIxMjAwLmpwZw==&#34;&gt;https://i.pximg.net/img-master/img/2020/02/02/20/00/02/123456_p0_master1200.jpg&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pMS5waXhpdi5uZXQvaW1nLW9yaWdpbmFsL2ltZy8yMDIwLzAyLzAyLzIwLzAwLzAyLzEyMzQ1Nl91Z29pcmExOTIweDEwODAuemlw&#34;&gt;https://i1.pixiv.net/img-original/img/2020/02/02/20/00/02/123456_ugoira1920x1080.zip&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pLnB4aW1nLm5ldC9jLzU0MHg1NDBfMTBfd2VicC9pbWctbWFzdGVyL2ltZy8yMDIwLzAyLzAyLzIwLzAwLzAyLzEyMzQ1Nl9wMF9zcXVhcmUxMjAwLmpwZw==&#34;&gt;https://i.pximg.net/c/540x540_10_webp/img-master/img/2020/02/02/20/00/02/123456_p0_square1200.jpg&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2ltZzEucGl4aXYubmV0L2ltZy9hYmNkZWYvMTIzNDU2LmpwZw==&#34;&gt;http://img1.pixiv.net/img/abcdef/123456.jpg&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2ltZzEucGl4aXYubmV0L2ltZy9hYmNkZWYvMTIzNDU2X3MuanBn&#34;&gt;http://img1.pixiv.net/img/abcdef/123456_s.jpg&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2kxLnBpeGl2Lm5ldC9pbWcwMS9pbWcvYWJjZGVmLzEyMzQ1Ni5qcGc=&#34;&gt;http://i1.pixiv.net/img01/img/abcdef/123456.jpg&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2kxLnBpeGl2Lm5ldC9pbWcwMS9pbWcvYWJjZGVmLzEyMzQ1Nl9wMC5qcGc=&#34;&gt;http://i1.pixiv.net/img01/img/abcdef/123456_p0.jpg&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;twitter&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90d2l0dGVyLmNvbS9pL3dlYi9zdGF0dXMvMTIzNDU2Nzg5MDEyMzQ1Njc4OQ==&#34;&gt;https://twitter.com/i/web/status/1234567890123456789&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90d2l0dGVyLmNvbS9hYmNkZWZnL3N0YXR1cy8xMjM0NTY3ODkwMTIzNDU2Nzg5&#34;&gt;https://twitter.com/abcdefg/status/1234567890123456789&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudHdpdHRlci5jb20vYWJjZGVmZy9zdGF0dXMvMTIzNDU2Nzg5MDEyMzQ1Njc4OQ==&#34;&gt;https://www.twitter.com/abcdefg/status/1234567890123456789&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9tb2JpbGUudHdpdHRlci5jb20vYWJjZGVmZy9zdGF0dXMvMTIzNDU2Nzg5MDEyMzQ1Njc4OQ==&#34;&gt;https://mobile.twitter.com/abcdefg/status/1234567890123456789&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;weibo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93ZWliby5jb20vMTgwNDM0MjUyMC9LRWxpNDJ6NHE=&#34;&gt;https://weibo.com/1804342520/KEli42z4q&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9tLndlaWJvLmNuL2RldGFpbC9LRWxpNDJ6NHE=&#34;&gt;https://m.weibo.cn/detail/KEli42z4q&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9tLndlaWJvLmNuL2RldGFpbC80Njk2MTQ5NjQwNjExNDcw&#34;&gt;https://m.weibo.cn/detail/4696149640611470&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9tLndlaWJvLmNuL3N0YXR1cy80Njk2MTQ5NjQwNjExNDcw&#34;&gt;https://m.weibo.cn/status/4696149640611470&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93ZWliby5jbi9hcHB1cmw/c2NoZW1lPXNpbmF3ZWlibyUzQSUyRiUyRmRldGFpbCUzRm1ibG9naWQlM0Q0Njk2MTQ5NjQwNjExNDcwJTI2bHVpY29kZSUzRDIwMDAwMDYxJTI2bGZpZCUzRDQ2OTYxNDk2NDA2MTE0NzAmYW1wO2x1aWNvZGU9MjAwMDAwNjEmYW1wO2xmaWQ9NDY5NjE0OTY0MDYxMTQ3MA==&#34;&gt;https://weibo.cn/appurl?scheme=sinaweibo%3A%2F%2Fdetail%3Fmblogid%3D4696149640611470%26luicode%3D20000061%26lfid%3D4696149640611470&amp;amp;luicode=20000061&amp;amp;lfid=4696149640611470&lt;/span&gt;&lt;br /&gt;
+sinaweibo://detail?mblogid=4696149640611470&amp;amp;luicode=20000061&amp;amp;lfid=4696149640611470&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;zerochan&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuemVyb2NoYW4ubmV0LzEyMzQ1Ng==&#34;&gt;https://www.zerochan.net/123456&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zMS56ZXJvY2hhbi5uZXQvQWJjZGVmLjYwMC4xMjM0NTYuanBn&#34;&gt;https://s1.zerochan.net/Abcdef.600.123456.jpg&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zdGF0aWMuemVyb2NoYW4ubmV0L0FiY2RlZi5mdWxsLjEyMzQ1Ni5qcGc=&#34;&gt;https://static.zerochan.net/Abcdef.full.123456.jpg&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://ambercc.gitee.io/linux/linux-doc/</guid>
             <title>linux命令助记</title>
@@ -116,8 +275,8 @@ xargs 是一个强有力的命令，它能够捕获一个命令的输出，然�
             <title>FastAdmin 个人记录 - behavior解决跨域问题</title>
             <link>https://ambercc.gitee.io/fastadmin/fastadmin-doc-5/</link>
             <category term="FastAdmin" scheme="https://ambercc.gitee.io/categories/fastadmin/" />
-            <category term="FastAdmin" scheme="https://ambercc.gitee.io/tags/FastAdmin/" />
             <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="FastAdmin" scheme="https://ambercc.gitee.io/tags/FastAdmin/" />
             <pubDate>Fri, 10 Sep 2021 17:33:29 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;api接口跨域&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#api接口跨域&#34;&gt;#&lt;/a&gt; API 接口跨域&lt;/h2&gt;
 &lt;ol&gt;
@@ -137,8 +296,8 @@ xargs 是一个强有力的命令，它能够捕获一个命令的输出，然�
             <title>FastAdmin 个人记录 - js、控件应用示例</title>
             <link>https://ambercc.gitee.io/fastadmin/fastadmin-doc-4/</link>
             <category term="FastAdmin" scheme="https://ambercc.gitee.io/categories/fastadmin/" />
-            <category term="FastAdmin" scheme="https://ambercc.gitee.io/tags/FastAdmin/" />
             <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="FastAdmin" scheme="https://ambercc.gitee.io/tags/FastAdmin/" />
             <pubDate>Fri, 10 Sep 2021 17:20:14 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;统计图&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#统计图&#34;&gt;#&lt;/a&gt; 统计图&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -160,8 +319,8 @@ xargs 是一个强有力的命令，它能够捕获一个命令的输出，然�
             <title>FastAdmin 个人记录 - bootstrap table</title>
             <link>https://ambercc.gitee.io/fastadmin/fastadmin-doc-3/</link>
             <category term="FastAdmin" scheme="https://ambercc.gitee.io/categories/fastadmin/" />
-            <category term="FastAdmin" scheme="https://ambercc.gitee.io/tags/FastAdmin/" />
             <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="FastAdmin" scheme="https://ambercc.gitee.io/tags/FastAdmin/" />
             <pubDate>Fri, 10 Sep 2021 16:19:53 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;bootstrap-table-重构queryparams&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#bootstrap-table-重构queryparams&#34;&gt;#&lt;/a&gt; bootstrap table 重构 queryParams&lt;/h2&gt;
 &lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption data-lang=&#34;javascript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function-variable function&#34;&gt;queryParams&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; filter &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;parse&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;params&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;filter&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; op &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;parse&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;params&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;op&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   &lt;span class=&#34;token comment&#34;&gt;// 重构搜索条件&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   filter&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;game.game_mode&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   filter&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;game.play_mode&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   op&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;game.game_mode&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;=&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   op&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;game.play_mode&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;=&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   params&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;filter &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;stringify&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;filter&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   params&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;op &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;stringify&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;op&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;params&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; params&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;table页脚统计和按钮复制到剪贴板等小技巧&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#table页脚统计和按钮复制到剪贴板等小技巧&#34;&gt;#&lt;/a&gt; table 页脚统计和按钮复制到剪贴板等小技巧&lt;/h2&gt;
@@ -182,8 +341,8 @@ return sumFormatter(rows,this.field)&lt;br /&gt;
             <title>FastAdmin 个人记录 - Layui加载和语言包加载</title>
             <link>https://ambercc.gitee.io/fastadmin/fastadmin-doc-2/</link>
             <category term="FastAdmin" scheme="https://ambercc.gitee.io/categories/fastadmin/" />
-            <category term="FastAdmin" scheme="https://ambercc.gitee.io/tags/FastAdmin/" />
             <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="FastAdmin" scheme="https://ambercc.gitee.io/tags/FastAdmin/" />
             <pubDate>Fri, 10 Sep 2021 16:08:54 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;layui加载和语言包加载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#layui加载和语言包加载&#34;&gt;#&lt;/a&gt; Layui 加载和语言包加载&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -191,7 +350,7 @@ return sumFormatter(rows,this.field)&lt;br /&gt;
  并且发现 fastadmin 后台切换英文时，nice-validator 不能显示英文&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ol&gt;
-&lt;li&gt;至 layui 官网下载源码，放入 public/assets/libs 下 文件名 layui&lt;/li&gt;
+&lt;li&gt;至 layui 官网下载源码，放入 public/assets/libs 下 文件夹名 layui&lt;/li&gt;
 &lt;li&gt;修改文件 public/assets/js.backend-init.js 内容如下&lt;/li&gt;
 &lt;li&gt;执行 php think min -m all -r all 压缩 js，使 debug=false 也能使用&lt;/li&gt;
 &lt;/ol&gt;
@@ -202,8 +361,8 @@ return sumFormatter(rows,this.field)&lt;br /&gt;
             <title>FastAdmin 个人记录 - Bootstrap 自定义按钮</title>
             <link>https://ambercc.gitee.io/fastadmin/fastadmin-doc-1/</link>
             <category term="FastAdmin" scheme="https://ambercc.gitee.io/categories/fastadmin/" />
-            <category term="FastAdmin" scheme="https://ambercc.gitee.io/tags/FastAdmin/" />
             <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="FastAdmin" scheme="https://ambercc.gitee.io/tags/FastAdmin/" />
             <pubDate>Fri, 10 Sep 2021 16:01:46 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;bootstrap-按钮颜色属性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#bootstrap-按钮颜色属性&#34;&gt;#&lt;/a&gt; bootstrap 按钮颜色属性&lt;/h2&gt;
 &lt;table&gt;
