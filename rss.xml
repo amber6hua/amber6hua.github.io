@@ -61,8 +61,9 @@
 &lt;li&gt;PIXIV_TOKEN 通过&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXN0LmdpdGh1Yi5jb20vdXBiaXQvNmVkZGEyN2NiMTY0NGU5NDE4MzI5MTEwOWI4YTVmZGU=&#34;&gt; Retrieving Auth Token (with Selenium)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;注意: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXN0LmdpdGh1Yi5jb20vdXBiaXQvNmVkZGEyN2NiMTY0NGU5NDE4MzI5MTEwOWI4YTVmZGU=&#34;&gt;Retrieving Auth Token (with Selenium)&lt;/span&gt; 踩坑，架了梯子，才能访问 pixiv 但是，脚本中请求获取 token 时又报错，好像是梯子的原因&lt;br /&gt;
-最后只能通过梯子，使用脚本的一部分，获取 pixiv 的一些基本参数，再通过 postman urlencode 传递参数 请求&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9vYXV0aC5zZWN1cmUucGl4aXYubmV0L2F1dGgvdG9rZW4=&#34;&gt;接口&lt;/span&gt; 获得 token&lt;/p&gt;
+&lt;p&gt;注意: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXN0LmdpdGh1Yi5jb20vdXBiaXQvNmVkZGEyN2NiMTY0NGU5NDE4MzI5MTEwOWI4YTVmZGU=&#34;&gt;Retrieving Auth Token (with Selenium)&lt;/span&gt; 踩坑，架了梯子，才能访问 pixiv 但是，脚本中请求获取 token 时又报错&lt;br /&gt;
+ v2rayN 软件底部显示 http 127.0.0.1:10809 把这个填写到脚本的代理中，可以正常接收到 token&lt;br /&gt;
+ 或者使用脚本的一部分，获取 pixiv 的一些基本参数，再通过 postman urlencode 传递参数 请求&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9vYXV0aC5zZWN1cmUucGl4aXYubmV0L2F1dGgvdG9rZW4=&#34;&gt;接口&lt;/span&gt; 获得 token&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;firebase-解决pixiv-token刷新&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#firebase-解决pixiv-token刷新&#34;&gt;#&lt;/a&gt; Firebase 解决 pixiv token 刷新&lt;/h2&gt;
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9maXJlYmFzZS5nb29nbGUuY24v&#34;&gt;Firebase&lt;/span&gt; 用于存储 pixiv Access Token 和 Refresh Token 和 updated_time&lt;br /&gt;
