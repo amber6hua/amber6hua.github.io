@@ -8,13 +8,104 @@
     <author>
       <name>六花丶紫</name>
     </author>
-    <updated>2022-01-19T07:53:10.000Z</updated>
+    <updated>2022-01-21T06:47:41.000Z</updated>
     <category term="六花" />
     <category term="amber" />
     <entry>
-        <id>https://ambercc.gitee.io/vbox-share-folder/</id>
+        <id>https://ambercc.gitee.io/node-java-urlencode/</id>
+        <title>node和java的urlencode踩坑</title>
+        <link rel="alternate" href="https://ambercc.gitee.io/node-java-urlencode/"/>
+        <content type="html">&lt;h2 id=&#34;说明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#说明&#34;&gt;#&lt;/a&gt; 说明&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;之前用 node 接入一个 api 的时候，对方用 urlencode 处理验签&lt;br /&gt;
+结果总是和对方的 sign 不必配&lt;br /&gt;
+对比后发现对方的 urlencode 处理出来的结果和 node 处理的有些差别&lt;br /&gt;
+网上查了下 java 的 urlencode 的差异&lt;br /&gt;
+这里记录下 node 的处理方法&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;node的处理方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#node的处理方法&#34;&gt;#&lt;/a&gt; node 的处理方法&lt;/h2&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption data-lang=&#34;javascript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;token function-variable function&#34;&gt;urlEncodeJava&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;// string → urlCodeStr&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; urlCodeStr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;encodeURIComponent&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;string&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;replace&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token regex&#34;&gt;&lt;span class=&#34;token regex-delimiter&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token regex-source language-regex&#34;&gt;%20&lt;/span&gt;&lt;span class=&#34;token regex-delimiter&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token regex-flags&#34;&gt;gi&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;+&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;replace&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token regex&#34;&gt;&lt;span class=&#34;token regex-delimiter&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token regex-source language-regex&#34;&gt;(!)|(&#39;)|(\()|(\))|(\~)&lt;/span&gt;&lt;span class=&#34;token regex-delimiter&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token regex-flags&#34;&gt;gi&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token parameter&#34;&gt;item&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;%&#39;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; item&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;charCodeAt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;toLocaleUpperCase&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; urlCodeStr&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <category term="node" scheme="https://ambercc.gitee.io/categories/node/" />
+        <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
+        <category term="node" scheme="https://ambercc.gitee.io/tags/node/" />
+        <updated>2022-01-21T06:47:41.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://ambercc.gitee.io/linux/linux-mount-windows-share-folder/</id>
+        <title>Linux挂载windows共享文件夹</title>
+        <link rel="alternate" href="https://ambercc.gitee.io/linux/linux-mount-windows-share-folder/"/>
+        <content type="html">&lt;h2 id=&#34;说明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#说明&#34;&gt;#&lt;/a&gt; 说明&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本来 Vbox 虚拟机的共享文件夹用的好好的&lt;br /&gt;
+因为电脑突然断电，重新挂载共享文件夹后发现，nginx 无法访问共享文件夹的静态文件&lt;br /&gt;
+其他目录下，nginx 倒是访问好好的&lt;br /&gt;
+始终没找到解决办法&lt;br /&gt;
+最后想试试不用 Vbox 的共享文件夹，直接 windows 设置共享后挂载，最后可以访问正常了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;note danger&#34;&gt;
+&lt;p&gt;#资源访问报错&lt;br /&gt;
+ net::ERR_CONTENT_LENGTH_MISMATCH 200 (OK)&lt;br /&gt;
+#error log 日志&lt;br /&gt;
+ [alert] 82080#0: *53 sendfile () failed (22: Invalid argument) while sending response to client,&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;设置windows共享文件夹&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#设置windows共享文件夹&#34;&gt;#&lt;/a&gt; 设置 windows 共享文件夹&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;选择一个文件夹 [share]，右键 选择属性 弹出属性窗口 选择分页共享&lt;br /&gt;
+创建共享，分配权限，可以新建一个用户比如账密为 share, 专门用来访问这个共享文件夹&lt;br /&gt;
+成功后路径就是 //ip 地址 /share&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;linux挂载windows共享文件夹&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#linux挂载windows共享文件夹&#34;&gt;#&lt;/a&gt; Linux 挂载 windows 共享文件夹&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用 mount.cifs 来挂载 windows 共享文件夹&lt;br /&gt;
+参考链接 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuY25ibG9ncy5jb20veGlhLXdlaXdlbi9wLzc0MTY2NjYuaHRtbA==&#34;&gt;https://www.cnblogs.com/xia-weiwen/p/7416666.html&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;安装依赖&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装依赖&#34;&gt;#&lt;/a&gt; 安装依赖&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用 mount.cifs 需要 cifs-utils 软件包（以及 cifs-utils 依赖的软件包）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; cifs-utils&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;挂载共享文件夹&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#挂载共享文件夹&#34;&gt;#&lt;/a&gt; 挂载共享文件夹&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;挂载命令&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#参考&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; mount.cifs //&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;address&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;/&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;folder&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;mount point&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; -o &lt;span class=&#34;token assign-left variable&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;username&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;,passwd&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;pw&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#或者&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;mount&lt;/span&gt; -t cifs //&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;address&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;/&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;folder&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;mount point&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; -o &lt;span class=&#34;token assign-left variable&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;username&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;,passwd&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;pw&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 我的具体命令&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 先创建挂载点目录&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;sud &lt;span class=&#34;token function&#34;&gt;mkdir&lt;/span&gt; /mnt/www&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;mount&lt;/span&gt; -t cifs /mnt/www -o //192.168.0.179/share &lt;span class=&#34;token assign-left variable&#34;&gt;username&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;share&#34;&lt;/span&gt;,password&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;share&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
+&lt;p&gt;挂载成功后发现，nginx 静态资源能正常访问了 [思考为什么之前 Vbox 的共享文件夹不能访问]&lt;br /&gt;
+ 不过这样添加后，nginx 访问 php 项目报错 file_put_contents 权限问题，只能读，不能写&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;以上命令还有一些额外参数&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#参考&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; mount.cifs //&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;address&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;/&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;folder&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;mount point&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; -o &lt;span class=&#34;token assign-left variable&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;username&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;,passwd&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;pw&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;,uid&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token environment constant&#34;&gt;UID&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#先卸载原先的挂载&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;umount&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;mount point&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 我需要 www 权限 id 为 1001&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;id&lt;/span&gt; -u &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;username&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#我的具体命令&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;mount&lt;/span&gt; -t cifs //192.168.0.179/share /mnt/www -o &lt;span class=&#34;token assign-left variable&#34;&gt;username&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;share&#34;&lt;/span&gt;,password&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;share&#34;&lt;/span&gt;,uid&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1001&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
+&lt;p&gt;这样 nginx 下的 php 项目就能正常访问了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;开机时自动挂载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开机时自动挂载&#34;&gt;#&lt;/a&gt; 开机时自动挂载&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用 mount 挂载的方法在系统重新启动后就会失效，如果希望开机时自动挂载&lt;br /&gt;
+根据自己的具体清空将下面设置加入 /etc/fstab 文件最后面就可以了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;//192.168.0.179/share /mnt/www cifs defaults,username&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;share,password&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;share,uid&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1001&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;遇到的坑&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#遇到的坑&#34;&gt;#&lt;/a&gt; 遇到的坑&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;起先挂载是不顺利 一直报错&lt;br /&gt;
+参考链接 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4ODYyMTcvYXJ0aWNsZS9kZXRhaWxzLzEwMjc4MTAyMw==&#34;&gt;https://blog.csdn.net/u010886217/article/details/102781023&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;note danger&#34;&gt;
+&lt;p&gt;mount error(13): Permission denied&lt;br /&gt;
+Refer to the mount.cifs(8) manual page (e.g. man mount.cifs) and kernel log messages (dmesg)&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Windwos 的安全策略&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;win+r 然后输入 “gpedit.msc”&lt;/li&gt;
+&lt;li&gt;网络访问：本地账户的共享和安全模型&lt;/li&gt;
+&lt;li&gt;修改设置为 “经典”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img data-src=&#34;/images/linux/1.png&#34; alt=&#34;Alt&#34; /&gt;&lt;/p&gt;
+</content>
+        <category term="Linux" scheme="https://ambercc.gitee.io/categories/linux/" />
+        <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
+        <category term="Linux" scheme="https://ambercc.gitee.io/tags/Linux/" />
+        <updated>2022-01-21T03:33:53.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://ambercc.gitee.io/linux/vbox-share-folder/</id>
         <title>Vbox共享文件夹挂载</title>
-        <link rel="alternate" href="https://ambercc.gitee.io/vbox-share-folder/"/>
+        <link rel="alternate" href="https://ambercc.gitee.io/linux/vbox-share-folder/"/>
         <content type="html">&lt;h2 id=&#34;说明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#说明&#34;&gt;#&lt;/a&gt; 说明&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Vbox 的共享文件夹，方便本地开发，虚拟机中运行&lt;br /&gt;
@@ -30,21 +121,22 @@
 &lt;blockquote&gt;
 &lt;p&gt;不勾选自动挂载，则需要命令手动挂载&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;## WWW 共享文件夹名称 /mnt/www 挂载点&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; mount.vboxsf WWW /mnt/www&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# WWW 共享文件夹名称 /mnt/www 挂载点&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; mount.vboxsf WWW /mnt/www&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
 &lt;p&gt;也可以加入脚本中，开机自动运行&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;vi&lt;/span&gt; /etc/init.d/mount.sh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 系统 20.04.1-Ubuntu&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;vi&lt;/span&gt; /etc/init.d/mount.sh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
 &lt;p&gt;具体代码&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token shebang important&#34;&gt;#!/bin/bash&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;### BEGIN INIT INFO&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# Provides:          svnd.sh&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# Required-start:    $local_fs $remote_fs $network $syslog&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# Required-Stop:     $local_fs $remote_fs $network $syslog&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# Default-Start:     2 3 4 5&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# Default-Stop:      0 1 6&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# Short-Description: starts the svnd.sh daemon&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# Description:       starts svnd.sh using start-stop-daemon&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;### END INIT INFO&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; mount.vboxsf WWW /mnt/www&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-        <category term="教程" scheme="https://ambercc.gitee.io/categories/%E6%95%99%E7%A8%8B/" />
+        <category term="Linux" scheme="https://ambercc.gitee.io/categories/linux/" />
         <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
+        <category term="Linux" scheme="https://ambercc.gitee.io/tags/Linux/" />
         <updated>2022-01-19T07:53:10.000Z</updated>
     </entry>
     <entry>
-        <id>https://ambercc.gitee.io/linux-php-install-redis-ext-doc/</id>
+        <id>https://ambercc.gitee.io/linux/linux-php-install-redis-ext-doc/</id>
         <title>Linux下php安装redis拓展记录</title>
-        <link rel="alternate" href="https://ambercc.gitee.io/linux-php-install-redis-ext-doc/"/>
+        <link rel="alternate" href="https://ambercc.gitee.io/linux/linux-php-install-redis-ext-doc/"/>
         <content type="html">&lt;h2 id=&#34;安装过程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装过程&#34;&gt;#&lt;/a&gt; 安装过程&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;首先知道自己 php 的安装路径&lt;/p&gt;
@@ -58,10 +150,9 @@
 &lt;/blockquote&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;service&lt;/span&gt; php-fpm restart&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
         <category term="Linux" scheme="https://ambercc.gitee.io/categories/linux/" />
-        <category term="PHP" scheme="https://ambercc.gitee.io/categories/linux/PHP/" />
+        <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
         <category term="Linux" scheme="https://ambercc.gitee.io/tags/Linux/" />
         <category term="PHP" scheme="https://ambercc.gitee.io/tags/PHP/" />
-        <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
         <updated>2022-01-18T08:29:04.000Z</updated>
     </entry>
     <entry>
@@ -173,6 +264,8 @@ admin_id 用来区分是谁下载的，只给他显示自己下载的&lt;/p&gt;
 &lt;p&gt;参考链接 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211emlodWFuZXIvYXJ0aWNsZS9kZXRhaWxzLzEwNzg1Mzc1NQ==&#34;&gt;https://blog.csdn.net/muzihuaner/article/details/107853755&lt;/span&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </content>
+        <category term="教程" scheme="https://ambercc.gitee.io/categories/%E6%95%99%E7%A8%8B/" />
+        <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
         <updated>2021-12-31T09:21:26.000Z</updated>
     </entry>
     <entry>
@@ -488,8 +581,8 @@ xargs 是一个强有力的命令，它能够捕获一个命令的输出，然�
 &lt;/ul&gt;
 </content>
         <category term="Linux" scheme="https://ambercc.gitee.io/categories/linux/" />
-        <category term="Linux" scheme="https://ambercc.gitee.io/tags/Linux/" />
         <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
+        <category term="Linux" scheme="https://ambercc.gitee.io/tags/Linux/" />
         <updated>2021-10-27T06:15:09.000Z</updated>
     </entry>
     <entry>
