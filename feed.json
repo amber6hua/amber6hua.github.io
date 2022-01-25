@@ -7,6 +7,30 @@
     "home_page_url": "https://ambercc.gitee.io",
     "items": [
         {
+            "id": "https://ambercc.gitee.io/pm2-node-unlimit-restart/",
+            "url": "https://ambercc.gitee.io/pm2-node-unlimit-restart/",
+            "title": "pm2启动node项目无限重启",
+            "date_published": "2022-01-25T12:24:16.000Z",
+            "content_html": "<h2 id=\"说明\"><a class=\"anchor\" href=\"#说明\">#</a> 说明</h2>\n<blockquote>\n<p>用 node 写了一个机器人，开发时都是用 node 启动，并没有什么问题<br />\n用 pm2 启动后，项目一直重启<br />\n定位是由于 fs.writeFileSync 写入文件导致的<br />\n由于 pm2 策略，若文件变动，则重启项目</p>\n</blockquote>\n<h2 id=\"解决办法\"><a class=\"anchor\" href=\"#解决办法\">#</a> 解决办法</h2>\n<blockquote>\n<p>修改 ecosystem.config.js 配置</p>\n</blockquote>\n<figure class=\"highlight javascript\"><figcaption data-lang=\"javascript\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre><span class=\"token comment\">// 把变动的文件加入 ignore_watch </span></pre></td></tr><tr><td data-num=\"2\"></td><td><pre>ignore_watch <span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span><span class=\"token string\">\"data.json\"</span><span class=\"token punctuation\">]</span></pre></td></tr><tr><td data-num=\"3\"></td><td><pre></pre></td></tr><tr><td data-num=\"4\"></td><td><pre><span class=\"token comment\">// 或者关闭自动重启</span></pre></td></tr><tr><td data-num=\"5\"></td><td><pre>autorestart<span class=\"token operator\">:</span> <span class=\"token boolean\">false</span></pre></td></tr><tr><td data-num=\"6\"></td><td><pre></pre></td></tr><tr><td data-num=\"7\"></td><td><pre><span class=\"token comment\">// 或者关闭 watch</span></pre></td></tr><tr><td data-num=\"8\"></td><td><pre>watch<span class=\"token operator\">:</span> <span class=\"token boolean\">false</span></pre></td></tr></table></figure>",
+            "tags": [
+                "node",
+                "教程",
+                "node"
+            ]
+        },
+        {
+            "id": "https://ambercc.gitee.io/linux/vbox-v2rayn-proxy/",
+            "url": "https://ambercc.gitee.io/linux/vbox-v2rayn-proxy/",
+            "title": "vbox虚拟机ubuntu使用代理配合v2rayN",
+            "date_published": "2022-01-25T11:53:06.000Z",
+            "content_html": "<h2 id=\"说明\"><a class=\"anchor\" href=\"#说明\">#</a> 说明</h2>\n<blockquote>\n<p>因为本地主机都是用 v2rayN 翻墙，开发外网 API 也利用它的作为 http 代理<br />\n这里记录下，vbox 虚拟机作为运行环境时，也能用代理</p>\n</blockquote>\n<h2 id=\"踩坑\"><a class=\"anchor\" href=\"#踩坑\">#</a> 踩坑</h2>\n<blockquote>\n<p>v2rayN 顶部菜单有 设置 》 参数数组 》 v2rayN 设置 勾选 允许来自局域网的连接</p>\n</blockquote>\n<h2 id=\"配置\"><a class=\"anchor\" href=\"#配置\">#</a> 配置</h2>\n<figure class=\"highlight shell\"><figcaption data-lang=\"Bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre><span class=\"token comment\"># 编辑</span></pre></td></tr><tr><td data-num=\"2\"></td><td><pre><span class=\"token function\">vi</span> /etc/profile</pre></td></tr><tr><td data-num=\"3\"></td><td><pre><span class=\"token comment\">#最后一行加上 (proxy_ip:port proxy_ip 是本地主机 port 是 v2rayN 的 http 代理端口，)</span></pre></td></tr><tr><td data-num=\"4\"></td><td><pre><span class=\"token builtin class-name\">export</span> <span class=\"token assign-left variable\">http_proxy</span><span class=\"token operator\">=</span>http://proxy_ip:port     <span class=\"token comment\">#代表 http 代理</span></pre></td></tr><tr><td data-num=\"5\"></td><td><pre><span class=\"token comment\">#添加后执行</span></pre></td></tr><tr><td data-num=\"6\"></td><td><pre><span class=\"token builtin class-name\">source</span> /etc/profile</pre></td></tr></table></figure><h2 id=\"测试\"><a class=\"anchor\" href=\"#测试\">#</a> 测试</h2>\n<figure class=\"highlight shell\"><figcaption data-lang=\"Bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre><span class=\"token function\">curl</span> www.google.com</pre></td></tr><tr><td data-num=\"2\"></td><td><pre><span class=\"token comment\">#或者</span></pre></td></tr><tr><td data-num=\"3\"></td><td><pre><span class=\"token function\">wget</span> www.google.com</pre></td></tr></table></figure>",
+            "tags": [
+                "Linux",
+                "教程",
+                "Linux"
+            ]
+        },
+        {
             "id": "https://ambercc.gitee.io/node-java-urlencode/",
             "url": "https://ambercc.gitee.io/node-java-urlencode/",
             "title": "node和java的urlencode踩坑",
