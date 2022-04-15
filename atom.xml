@@ -91,19 +91,21 @@
  提供接口，把图片存储在自己公开的 github 仓库里，jsDelivr 加速&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;在线使用入口&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在线使用入口&#34;&gt;#&lt;/a&gt; 在线使用入口&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9waWN4Lnhwb2V0LmNu&#34;&gt;https://picx.xpoet.cn&lt;/span&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9waWN4Lnhwb2V0LmNu&#34;&gt;https://picx.xpoet.cn&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;准备一个public-仓库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#准备一个public-仓库&#34;&gt;#&lt;/a&gt; 准备一个 public 仓库&lt;/h3&gt;
 &lt;h3 id=&#34;准备一个带有-repo-权限的-github-token&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#准备一个带有-repo-权限的-github-token&#34;&gt;#&lt;/a&gt; 准备一个带有 repo 权限的 GitHub Token&lt;/h3&gt;
 &lt;blockquote&gt;
-&lt;p&gt;快速新建 Token&lt;br /&gt;
-&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3NldHRpbmdzL3Rva2Vucy9uZXc=&#34;&gt;https://github.com/settings/tokens/new&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;快速新建 Token&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3NldHRpbmdzL3Rva2Vucy9uZXc=&#34;&gt;https://github.com/settings/tokens/new&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;官方文档&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#官方文档&#34;&gt;#&lt;/a&gt; 官方文档&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9waWN4LWRvY3MueHBvZXQuY24=&#34;&gt;https://picx-docs.xpoet.cn&lt;/span&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9waWN4LWRvY3MueHBvZXQuY24=&#34;&gt;https://picx-docs.xpoet.cn&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
         <category term="教程" scheme="https://ambercc.gitee.io/categories/%E6%95%99%E7%A8%8B/" />
         <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
