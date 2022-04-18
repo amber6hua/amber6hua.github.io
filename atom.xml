@@ -817,7 +817,7 @@ return sumFormatter(rows,this.field)&lt;br /&gt;
         <content type="html">&lt;h2 id=&#34;layui加载和语言包加载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#layui加载和语言包加载&#34;&gt;#&lt;/a&gt; Layui 加载和语言包加载&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;由于需要使用 layui 的 css、js&lt;br /&gt;
- 并且发现 fastadmin 后台切换英文时，nice-validator 不能显示英文&lt;/p&gt;
+ 并且发现 fastadmin 后台切换英文时，nice-validator 不能显示英文的问题&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;至 layui 官网下载源码，放入 public/assets/libs 下 文件夹名 layui&lt;/li&gt;
