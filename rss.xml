@@ -312,9 +312,9 @@ Refer to the mount.cifs(8) manual page (e.g. man mount.cifs) and kernel log mess
 &lt;/div&gt;
 &lt;h2 id=&#34;说明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#说明&#34;&gt;#&lt;/a&gt; 说明&lt;/h2&gt;
 &lt;p&gt;之前关于 &lt;a href=&#34;/fastadmin/fastadmin-doc-6&#34;&gt;后台渲染导出 Excel&lt;/a&gt; 虽然使用 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL21rLWovUEhQX1hMU1hXcml0ZXI=&#34;&gt;PHP_XLSXWriter&lt;/span&gt; 轻量封装&lt;br /&gt;
-导出 excel，不用担心大数据量内存溢出，但是 nginx 超时，依旧影响导出大数据&lt;/p&gt;
+导出 excel，不用担心大数据量内存溢出，但是 nginx 超时，依旧影响导出大数据。&lt;/p&gt;
 &lt;h2 id=&#34;解决思路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解决思路&#34;&gt;#&lt;/a&gt; 解决思路&lt;/h2&gt;
-&lt;p&gt;因为 FastAdmin 基于 TP5, 所以使用 thinkphp-queue 队列，具体可以看文档怎么使用&lt;/p&gt;
+&lt;p&gt;因为 FastAdmin 基于 TP5, 所以使用 thinkphp-queue 队列，具体可以看文档怎么使用。&lt;/p&gt;
 &lt;p&gt;导出的数据超过一定量时，把导出数据需要的参数加入到队列中，让用户过段时间自行下载&lt;br /&gt;
 执行队列任务（根据传递的参数，查询需要导出的数据，然后导出 excel 到本地）&lt;/p&gt;
 &lt;h2 id=&#34;加入队列&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#加入队列&#34;&gt;#&lt;/a&gt; 加入队列&lt;/h2&gt;
