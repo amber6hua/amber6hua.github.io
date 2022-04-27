@@ -18,6 +18,8 @@
             <guid isPermalink="true">https://ambercc.gitee.io/linux/php-open-basedir/</guid>
             <title>php项目部署时踩坑(open_basedir等)</title>
             <link>https://ambercc.gitee.io/linux/php-open-basedir/</link>
+            <category term="Linux" scheme="https://ambercc.gitee.io/categories/linux/" />
+            <category term="PHP" scheme="https://ambercc.gitee.io/tags/PHP/" />
             <pubDate>Sun, 24 Apr 2022 11:42:52 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;blockquote&gt;
