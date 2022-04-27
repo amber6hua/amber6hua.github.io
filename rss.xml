@@ -10,10 +10,58 @@
         </author>
         <description>Amber Room</description>
         <language>zh-CN</language>
-        <pubDate>Fri, 15 Apr 2022 10:56:00 +0800</pubDate>
-        <lastBuildDate>Fri, 15 Apr 2022 10:56:00 +0800</lastBuildDate>
+        <pubDate>Sun, 24 Apr 2022 11:42:52 +0800</pubDate>
+        <lastBuildDate>Sun, 24 Apr 2022 11:42:52 +0800</lastBuildDate>
         <category term="六花" />
         <category term="amber" />
+        <item>
+            <guid isPermalink="true">https://ambercc.gitee.io/linux/php-open-basedir/</guid>
+            <title>php项目部署时踩坑(open_basedir等)</title>
+            <link>https://ambercc.gitee.io/linux/php-open-basedir/</link>
+            <pubDate>Sun, 24 Apr 2022 11:42:52 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;之前用宝塔部署 php TP5 项目时，明明已经安装过了，但总是自动跳转到 install.php&lt;br /&gt;
+ 于是关掉 open_basedir 就可以了（当时也不求甚解）&lt;br /&gt;
+再后来生产环境部署时，又碰上这个问题，这里记录下部署时踩坑&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;参考文章&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考文章&#34;&gt;#&lt;/a&gt; 参考文章&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy44ODQzNTguY29tL29wZW5fYmFzZWRpci8=&#34;&gt;http://www.884358.com/open_basedir/&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9hc2suZmFzdGFkbWluLm5ldC9xdWVzdGlvbi8yOTkyNS5odG1s&#34;&gt;https://ask.fastadmin.net/question/29925.html&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9hc2suZmFzdGFkbWluLm5ldC9xdWVzdGlvbi8xOTYyLmh0bWw=&#34;&gt;https://ask.fastadmin.net/question/1962.html&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9hc2suZmFzdGFkbWluLm5ldC9hcnRpY2xlLzMyMi5odG1s&#34;&gt;https://ask.fastadmin.net/article/322.html&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;open_basedir&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#open_basedir&#34;&gt;#&lt;/a&gt; open_basedir&lt;/h2&gt;
+&lt;h3 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;通过设置 open_basedir 将 PHP 所能打开的文件限制在指定的目录树，包括文件本身。本指令不受安全模式打开或者关闭的影响。&lt;br /&gt;
+当一个脚本试图打开一个文件时，该文件的位置将被检查。&lt;br /&gt;
+当文件在指定的目录树之外时 PHP 将拒绝打开它。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;特别是当服务器上有多个网站时，非常有必要设置 open_basedir，防止黑客跨站攻击。&lt;/p&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;解决办法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解决办法&#34;&gt;#&lt;/a&gt; 解决办法&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;修改配置 open_basedir （我的默认位置 /usr/local/nginx/conf/fastcgi.conf，具体看个人情况）&lt;br /&gt;
+测试环境或者直接禁用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#注意 $document_root 的参数是由 root html 那一行定义的，而 TP5 默认都是 root 根目录 /public&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;fastcgi_param PHP_ADMIN_VALUE &#34;open_basedir=$document_root/../&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;/tmp/&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;/proc/&#34;;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;权限问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#权限问题&#34;&gt;#&lt;/a&gt; 权限问题&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如 runtime uploads 等目录会因为权限不够造成启动或上传文件失败&lt;br /&gt;
+直接修改对应文件夹权限 或修改整个项目的权限组 如与 php nginx 相同的 www:www&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;chown&lt;/span&gt; -R 所有者:所属组 文件或目录&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#或者&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; -R &lt;span class=&#34;token number&#34;&gt;777&lt;/span&gt; 文件或目录&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;php上传文件常见配置修改&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#php上传文件常见配置修改&#34;&gt;#&lt;/a&gt; php 上传文件常见配置修改&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;php.ini&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#设置了在强制终止脚本前 PHP 等待脚本执行完毕的时间 如果上传视频等耗时长的大文件可以设置长的或者 set_time_limit (0);&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;max_execution_time&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#允许通过 HTTP 进行文件上传&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;file_uploads = On 默认值为on&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#设定文件上传的大小的最大值&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;upload_max_filesize = 20M&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#限制的是客户端通过 POST 方法进行一次表单提交时 PHP 程序所能够接收的最大数据量 此值的值设置的比 upload_max_filesize 略大即可&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;post_max_size = 21M&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#此变量可以以秒为单位对通过 POST、GET 以及 PUT 方式接收数据时间进行限制&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;max_input_time = 90&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#PHP 允许定义内存使用限额 也必须足够大&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;memory_limit = 128M&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
+&lt;p&gt;nginx&lt;br /&gt;
+ 默认路径（看个人安装） /usr/local/nginx/conf/nginx.conf&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#在 nginx 的配置文件里面加上 或者在自己的 server 内&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;client_max_body_size 20m&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://ambercc.gitee.io/linux/linux-php-install/</guid>
             <title>Centos下安装php7.1</title>
@@ -155,7 +203,8 @@
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#配置&#34;&gt;#&lt;/a&gt; 配置&lt;/h2&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 编辑&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;vi&lt;/span&gt; /etc/profile&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#最后一行加上 (proxy_ip:port proxy_ip 是本地主机 port 是 v2rayN 的 http 代理端口，)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;http_proxy&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;http://proxy_ip:port     &lt;span class=&#34;token comment&#34;&gt;#代表 http 代理&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#添加后执行&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;source&lt;/span&gt; /etc/profile&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;测试&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#测试&#34;&gt;#&lt;/a&gt; 测试&lt;/h2&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; www.google.com&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#或者&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; www.google.com&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; www.google.com&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#或者&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; www.google.com&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;取消代理-命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#取消代理-命令&#34;&gt;#&lt;/a&gt; 取消代理 命令&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;unset&lt;/span&gt; http_proxy&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;unset&lt;/span&gt; https_proxy&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://ambercc.gitee.io/node-java-urlencode/</guid>
@@ -911,230 +960,6 @@ return sumFormatter(rows,this.field)&lt;br /&gt;
 &lt;p&gt;例子&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;//data-url  按钮地址&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;//data-area 弹出框大小&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;a&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;javascript:;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;data-url&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;data-area&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;[&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;950px&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;, &lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;750px&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;]&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;btn btn-success btn-dialog&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&amp;#123;:__(&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;Switch&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;)&amp;#125;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;i&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;fa fa-list&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;i&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &amp;#123;:__(&#39;Switch&#39;)&amp;#125;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;a&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption data-lang=&#34;JavaScript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;field&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;operate&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; title&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;__&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Operate&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; table&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; table&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    buttons&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        name&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;copy&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        text&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;__&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Copy Bankcard&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        title&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;__&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Copy Bankcard&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        icon&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;fa fa-copy&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        classname&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;btn btn-xs btn-info btn-click&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token function-variable function&#34;&gt;click&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;t&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;row&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            Layer&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;点击事件&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://ambercc.gitee.io/sky-sword/sky-sword-food-menu/</guid>
-            <title>天涯明月刀菜谱</title>
-            <link>https://ambercc.gitee.io/sky-sword/sky-sword-food-menu/</link>
-            <category term="天刀" scheme="https://ambercc.gitee.io/categories/sky-sword/" />
-            <category term="天刀" scheme="https://ambercc.gitee.io/tags/%E5%A4%A9%E5%88%80/" />
-            <pubDate>Fri, 16 Jul 2021 17:46:06 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;大厨：QQ 四区 观沧海 雾鹤&lt;/p&gt;
-&lt;h1 id=&#34;秦川菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#秦川菜系&#34;&gt;#&lt;/a&gt; 秦川菜系&lt;/h1&gt;
-&lt;h2 id=&#34;葫芦鸡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#葫芦鸡&#34;&gt;#&lt;/a&gt; 葫芦鸡&lt;/h2&gt;
-&lt;p&gt;香料 调料 辅料 鸡肉&lt;/p&gt;
-&lt;h2 id=&#34;山药粥&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#山药粥&#34;&gt;#&lt;/a&gt; 山药粥&lt;/h2&gt;
-&lt;p&gt;大米 山药 调料 淀粉&lt;/p&gt;
-&lt;h2 id=&#34;水煮冰鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#水煮冰鱼&#34;&gt;#&lt;/a&gt; 水煮冰鱼&lt;/h2&gt;
-&lt;p&gt;冰鱼 辣椒 料酒 调料&lt;/p&gt;
-&lt;h2 id=&#34;萝卜烧排骨&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#萝卜烧排骨&#34;&gt;#&lt;/a&gt; 萝卜烧排骨&lt;/h2&gt;
-&lt;p&gt;排骨 萝卜 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;奶汤锅子鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#奶汤锅子鱼&#34;&gt;#&lt;/a&gt; 奶汤锅子鱼&lt;/h2&gt;
-&lt;p&gt;黄河鲤鱼 瘦肉 萝卜 调料&lt;/p&gt;
-&lt;h2 id=&#34;雪莲酥饼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#雪莲酥饼&#34;&gt;#&lt;/a&gt; 雪莲酥饼&lt;/h2&gt;
-&lt;p&gt;雪莲花瓣 面粉 料酒 香料&lt;/p&gt;
-&lt;h2 id=&#34;雪莲炖甲鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#雪莲炖甲鱼&#34;&gt;#&lt;/a&gt; 雪莲炖甲鱼&lt;/h2&gt;
-&lt;p&gt;雪莲 甲鱼 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;腊汁肉夹馍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#腊汁肉夹馍&#34;&gt;#&lt;/a&gt; 腊汁肉夹馍&lt;/h2&gt;
-&lt;p&gt;白饼 牛肉 香料 调料&lt;/p&gt;
-&lt;h2 id=&#34;羊肉泡馍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#羊肉泡馍&#34;&gt;#&lt;/a&gt; 羊肉泡馍&lt;/h2&gt;
-&lt;p&gt;白饼 羊肉 特质饴糖 辅料&lt;/p&gt;
-&lt;h1 id=&#34;东越菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#东越菜系&#34;&gt;#&lt;/a&gt; 东越菜系&lt;/h1&gt;
-&lt;h2 id=&#34;海鲜面&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#海鲜面&#34;&gt;#&lt;/a&gt; 海鲜面&lt;/h2&gt;
-&lt;p&gt;面粉 河虾 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;鲫鱼豆腐汤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#鲫鱼豆腐汤&#34;&gt;#&lt;/a&gt; 鲫鱼豆腐汤&lt;/h2&gt;
-&lt;p&gt;鲫鱼 豆腐 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;河豚玉脍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#河豚玉脍&#34;&gt;#&lt;/a&gt; 河豚玉脍&lt;/h2&gt;
-&lt;p&gt;河豚 料酒 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;白雪鸡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#白雪鸡&#34;&gt;#&lt;/a&gt; 白雪鸡&lt;/h2&gt;
-&lt;p&gt;鸡肉 鸭肉 糖 淀粉&lt;/p&gt;
-&lt;h2 id=&#34;香芋扣肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#香芋扣肉&#34;&gt;#&lt;/a&gt; 香芋扣肉&lt;/h2&gt;
-&lt;p&gt;五花肉 芋艿 调料 糖&lt;/p&gt;
-&lt;h2 id=&#34;鱼羊双鲜&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#鱼羊双鲜&#34;&gt;#&lt;/a&gt; 鱼羊双鲜&lt;/h2&gt;
-&lt;p&gt;羊肉 鳜鱼 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;清蒸鲈鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#清蒸鲈鱼&#34;&gt;#&lt;/a&gt; 清蒸鲈鱼&lt;/h2&gt;
-&lt;p&gt;河鲈 调酒 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;荷花鸭血&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#荷花鸭血&#34;&gt;#&lt;/a&gt; 荷花鸭血&lt;/h2&gt;
-&lt;p&gt;鸭肉 辣椒 荷花 调料&lt;/p&gt;
-&lt;h1 id=&#34;巴蜀菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#巴蜀菜系&#34;&gt;#&lt;/a&gt; 巴蜀菜系&lt;/h1&gt;
-&lt;h2 id=&#34;水煮鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#水煮鱼&#34;&gt;#&lt;/a&gt; 水煮鱼&lt;/h2&gt;
-&lt;p&gt;草鱼 辣椒 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;麻婆豆腐&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#麻婆豆腐&#34;&gt;#&lt;/a&gt; 麻婆豆腐&lt;/h2&gt;
-&lt;p&gt;豆腐 辣椒 辅料 香料&lt;/p&gt;
-&lt;h2 id=&#34;口水鸡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#口水鸡&#34;&gt;#&lt;/a&gt; 口水鸡&lt;/h2&gt;
-&lt;p&gt;鸡肉 辣椒 花生 调料&lt;/p&gt;
-&lt;h2 id=&#34;鱼香肉丝&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#鱼香肉丝&#34;&gt;#&lt;/a&gt; 鱼香肉丝&lt;/h2&gt;
-&lt;p&gt;瘦肉 豆瓣酱 辣椒 调料&lt;/p&gt;
-&lt;h2 id=&#34;回锅肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#回锅肉&#34;&gt;#&lt;/a&gt; 回锅肉&lt;/h2&gt;
-&lt;p&gt;五花肉 辣椒 豆瓣酱 调料&lt;/p&gt;
-&lt;h2 id=&#34;麻辣鲜笋&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#麻辣鲜笋&#34;&gt;#&lt;/a&gt; 麻辣鲜笋&lt;/h2&gt;
-&lt;p&gt;竹笋 辣椒 调料 香料&lt;/p&gt;
-&lt;h2 id=&#34;豆瓣青鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#豆瓣青鱼&#34;&gt;#&lt;/a&gt; 豆瓣青鱼&lt;/h2&gt;
-&lt;p&gt;青鱼 豆瓣酱 辣椒 调料&lt;/p&gt;
-&lt;h2 id=&#34;夫妻肺片&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#夫妻肺片&#34;&gt;#&lt;/a&gt; 夫妻肺片&lt;/h2&gt;
-&lt;p&gt;牛肉 辣椒 花生 香料&lt;/p&gt;
-&lt;h2 id=&#34;水煮肉片&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#水煮肉片&#34;&gt;#&lt;/a&gt; 水煮肉片&lt;/h2&gt;
-&lt;p&gt;瘦肉 鸡蛋 秘制底料 青菜&lt;/p&gt;
-&lt;h1 id=&#34;江南菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#江南菜系&#34;&gt;#&lt;/a&gt; 江南菜系&lt;/h1&gt;
-&lt;h2 id=&#34;三鲜炒饭&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三鲜炒饭&#34;&gt;#&lt;/a&gt; 三鲜炒饭&lt;/h2&gt;
-&lt;p&gt;大米 河虾 鸡蛋 调料&lt;/p&gt;
-&lt;h2 id=&#34;清蒸白鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#清蒸白鱼&#34;&gt;#&lt;/a&gt; 清蒸白鱼&lt;/h2&gt;
-&lt;p&gt;白鱼 调料 辅料 香料&lt;/p&gt;
-&lt;h2 id=&#34;江南青团&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#江南青团&#34;&gt;#&lt;/a&gt; 江南青团&lt;/h2&gt;
-&lt;p&gt;糯米 艾草 调料 香料&lt;/p&gt;
-&lt;h2 id=&#34;醉蟹&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#醉蟹&#34;&gt;#&lt;/a&gt; 醉蟹&lt;/h2&gt;
-&lt;p&gt;河蟹 调料 辅料 料酒&lt;/p&gt;
-&lt;h2 id=&#34;东坡肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#东坡肉&#34;&gt;#&lt;/a&gt; 东坡肉&lt;/h2&gt;
-&lt;p&gt;五花肉 糖 料酒 调料&lt;/p&gt;
-&lt;h2 id=&#34;火腿蒸甲鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#火腿蒸甲鱼&#34;&gt;#&lt;/a&gt; 火腿蒸甲鱼&lt;/h2&gt;
-&lt;p&gt;甲鱼 瘦肉 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;盐水鸭&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#盐水鸭&#34;&gt;#&lt;/a&gt; 盐水鸭&lt;/h2&gt;
-&lt;p&gt;鸭肉 调料 辅料 香料&lt;/p&gt;
-&lt;h2 id=&#34;松鼠鳜鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#松鼠鳜鱼&#34;&gt;#&lt;/a&gt; 松鼠鳜鱼&lt;/h2&gt;
-&lt;p&gt;鳜鱼 淀粉 糖 竹笋&lt;/p&gt;
-&lt;h2 id=&#34;霸王别姬&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#霸王别姬&#34;&gt;#&lt;/a&gt; 霸王别姬&lt;/h2&gt;
-&lt;p&gt;甲鱼 鸡肉 香蕈 竹笋&lt;/p&gt;
-&lt;h2 id=&#34;苏式糕点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#苏式糕点&#34;&gt;#&lt;/a&gt; 苏式糕点&lt;/h2&gt;
-&lt;p&gt;面粉 大米 大豆 鲜花&lt;/p&gt;
-&lt;h2 id=&#34;四鳃鲈鱼汤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#四鳃鲈鱼汤&#34;&gt;#&lt;/a&gt; 四鳃鲈鱼汤&lt;/h2&gt;
-&lt;p&gt;四鳃鲈鱼 竹笋 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;龙井虾仁&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#龙井虾仁&#34;&gt;#&lt;/a&gt; 龙井虾仁&lt;/h2&gt;
-&lt;p&gt;河虾 茶叶 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;茶香鸡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#茶香鸡&#34;&gt;#&lt;/a&gt; 茶香鸡&lt;/h2&gt;
-&lt;p&gt;鸡肉 茶叶 蜂蜜 香料&lt;/p&gt;
-&lt;h2 id=&#34;雪霞羹&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#雪霞羹&#34;&gt;#&lt;/a&gt; 雪霞羹&lt;/h2&gt;
-&lt;p&gt;豆腐 荷花 淀粉 香料&lt;/p&gt;
-&lt;h2 id=&#34;大汤黄鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#大汤黄鱼&#34;&gt;#&lt;/a&gt; 大汤黄鱼&lt;/h2&gt;
-&lt;p&gt;大黄鱼 竹笋 调料 辅料&lt;/p&gt;
-&lt;h1 id=&#34;燕云菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#燕云菜系&#34;&gt;#&lt;/a&gt; 燕云菜系&lt;/h1&gt;
-&lt;h2 id=&#34;烤鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#烤鱼&#34;&gt;#&lt;/a&gt; 烤鱼&lt;/h2&gt;
-&lt;p&gt;鲤鱼 调料 辅料 香料&lt;/p&gt;
-&lt;h2 id=&#34;烤肉串&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#烤肉串&#34;&gt;#&lt;/a&gt; 烤肉串&lt;/h2&gt;
-&lt;p&gt;五花肉 调料 辅料 香料&lt;/p&gt;
-&lt;h2 id=&#34;炖肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#炖肉&#34;&gt;#&lt;/a&gt; 炖肉&lt;/h2&gt;
-&lt;p&gt;五花肉 鸡肉 调料 香料&lt;/p&gt;
-&lt;h2 id=&#34;干烧鲤鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#干烧鲤鱼&#34;&gt;#&lt;/a&gt; 干烧鲤鱼&lt;/h2&gt;
-&lt;p&gt;鲤鱼 辣椒 料酒 调料&lt;/p&gt;
-&lt;h2 id=&#34;手抓羊肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#手抓羊肉&#34;&gt;#&lt;/a&gt; 手抓羊肉&lt;/h2&gt;
-&lt;p&gt;羊肉 辣椒 料酒 香料&lt;/p&gt;
-&lt;h2 id=&#34;驼峰炙&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#驼峰炙&#34;&gt;#&lt;/a&gt; 驼峰炙&lt;/h2&gt;
-&lt;p&gt;驼峰 辣椒 料酒 调料&lt;/p&gt;
-&lt;h1 id=&#34;荆湖菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#荆湖菜系&#34;&gt;#&lt;/a&gt; 荆湖菜系&lt;/h1&gt;
-&lt;h2 id=&#34;小炒肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#小炒肉&#34;&gt;#&lt;/a&gt; 小炒肉&lt;/h2&gt;
-&lt;p&gt;五花肉 调料 辅料 辣椒&lt;/p&gt;
-&lt;h2 id=&#34;一碗香&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一碗香&#34;&gt;#&lt;/a&gt; 一碗香&lt;/h2&gt;
-&lt;p&gt;五花肉 竹笋 鸡蛋 辣椒&lt;/p&gt;
-&lt;h2 id=&#34;剁椒鱼头&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#剁椒鱼头&#34;&gt;#&lt;/a&gt; 剁椒鱼头&lt;/h2&gt;
-&lt;p&gt;花鲢 辣椒 豆瓣酱 调料&lt;/p&gt;
-&lt;h2 id=&#34;百鸟朝凤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#百鸟朝凤&#34;&gt;#&lt;/a&gt; 百鸟朝凤&lt;/h2&gt;
-&lt;p&gt;鸡肉 瘦肉 香蕈 料酒&lt;/p&gt;
-&lt;h2 id=&#34;花菇无黄蛋&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#花菇无黄蛋&#34;&gt;#&lt;/a&gt; 花菇无黄蛋&lt;/h2&gt;
-&lt;p&gt;香蕈 竹笋 鸡蛋 辣椒&lt;/p&gt;
-&lt;h2 id=&#34;小炒黄牛肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#小炒黄牛肉&#34;&gt;#&lt;/a&gt; 小炒黄牛肉&lt;/h2&gt;
-&lt;p&gt;牛肉 辣椒 淀粉 辅料&lt;/p&gt;
-&lt;h2 id=&#34;叫花鸡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#叫花鸡&#34;&gt;#&lt;/a&gt; 叫花鸡&lt;/h2&gt;
-&lt;p&gt;荷叶 鸡肉 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;雷公鸭&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#雷公鸭&#34;&gt;#&lt;/a&gt; 雷公鸭&lt;/h2&gt;
-&lt;p&gt;鸭肉 糯米 荷叶 辅料&lt;/p&gt;
-&lt;h2 id=&#34;清蒸鲥鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#清蒸鲥鱼&#34;&gt;#&lt;/a&gt; 清蒸鲥鱼&lt;/h2&gt;
-&lt;p&gt;鲥鱼 瘦肉 料酒 辅料&lt;/p&gt;
-&lt;h1 id=&#34;通用菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#通用菜系&#34;&gt;#&lt;/a&gt; 通用菜系&lt;/h1&gt;
-&lt;h2 id=&#34;柴胡姜桂汤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#柴胡姜桂汤&#34;&gt;#&lt;/a&gt; 柴胡姜桂汤&lt;/h2&gt;
-&lt;p&gt;柴胡 调料 辅料 香料&lt;/p&gt;
-&lt;h2 id=&#34;清炒时蔬&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#清炒时蔬&#34;&gt;#&lt;/a&gt; 清炒时蔬&lt;/h2&gt;
-&lt;p&gt;青菜 调料 辅料 香料&lt;/p&gt;
-&lt;h2 id=&#34;菜包子&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#菜包子&#34;&gt;#&lt;/a&gt; 菜包子&lt;/h2&gt;
-&lt;p&gt;面粉 青菜 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;肉包子&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#肉包子&#34;&gt;#&lt;/a&gt; 肉包子&lt;/h2&gt;
-&lt;p&gt;面粉 五花肉 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;饺子&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#饺子&#34;&gt;#&lt;/a&gt; 饺子&lt;/h2&gt;
-&lt;p&gt;面粉 青菜 五花肉 调料&lt;/p&gt;
-&lt;h2 id=&#34;蛋炒饭&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#蛋炒饭&#34;&gt;#&lt;/a&gt; 蛋炒饭&lt;/h2&gt;
-&lt;p&gt;大米 鸡蛋 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;清蒸螃蟹&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#清蒸螃蟹&#34;&gt;#&lt;/a&gt; 清蒸螃蟹&lt;/h2&gt;
-&lt;p&gt;河蟹 调料 辅料 香料&lt;/p&gt;
-&lt;h2 id=&#34;麻辣小龙虾&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#麻辣小龙虾&#34;&gt;#&lt;/a&gt; 麻辣小龙虾&lt;/h2&gt;
-&lt;p&gt;小龙虾 辣椒 豆瓣酱 辅料&lt;/p&gt;
-&lt;h1 id=&#34;开封菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开封菜系&#34;&gt;#&lt;/a&gt; 开封菜系&lt;/h1&gt;
-&lt;h2 id=&#34;红烧鲫鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#红烧鲫鱼&#34;&gt;#&lt;/a&gt; 红烧鲫鱼&lt;/h2&gt;
-&lt;p&gt;鲫鱼 料酒 糖 辅料&lt;/p&gt;
-&lt;h2 id=&#34;大葱烧海参&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#大葱烧海参&#34;&gt;#&lt;/a&gt; 大葱烧海参&lt;/h2&gt;
-&lt;p&gt;海参 调料 辅料 料酒&lt;/p&gt;
-&lt;h2 id=&#34;汴京烤鸭&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#汴京烤鸭&#34;&gt;#&lt;/a&gt; 汴京烤鸭&lt;/h2&gt;
-&lt;p&gt;鸭肉 蜂蜜 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;红烧黄河鲤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#红烧黄河鲤&#34;&gt;#&lt;/a&gt; 红烧黄河鲤&lt;/h2&gt;
-&lt;p&gt;黄河鲤鱼 料酒 糖 调料&lt;/p&gt;
-&lt;h2 id=&#34;梅花汤饼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#梅花汤饼&#34;&gt;#&lt;/a&gt; 梅花汤饼&lt;/h2&gt;
-&lt;p&gt;面粉 鲜花 蜂蜜 糖&lt;/p&gt;
-&lt;h2 id=&#34;胡辣汤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#胡辣汤&#34;&gt;#&lt;/a&gt; 胡辣汤&lt;/h2&gt;
-&lt;p&gt;羊肉 面粉 淀粉 面筋&lt;/p&gt;
-&lt;h2 id=&#34;红烧牛肉面&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#红烧牛肉面&#34;&gt;#&lt;/a&gt; 红烧牛肉面&lt;/h2&gt;
-&lt;p&gt;面粉 牛肉 青菜 调料&lt;/p&gt;
-&lt;h2 id=&#34;花生糕&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#花生糕&#34;&gt;#&lt;/a&gt; 花生糕&lt;/h2&gt;
-&lt;p&gt;花生 糖 特制饴糖 香料&lt;/p&gt;
-&lt;h1 id=&#34;移花菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#移花菜系&#34;&gt;#&lt;/a&gt; 移花菜系&lt;/h1&gt;
-&lt;h2 id=&#34;炖鱼汤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#炖鱼汤&#34;&gt;#&lt;/a&gt; 炖鱼汤&lt;/h2&gt;
-&lt;p&gt;鲤鱼 鲫鱼 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;羊肉煲&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#羊肉煲&#34;&gt;#&lt;/a&gt; 羊肉煲&lt;/h2&gt;
-&lt;p&gt;羊肉 萝卜 料酒 调料&lt;/p&gt;
-&lt;h2 id=&#34;鲷鱼刺身&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#鲷鱼刺身&#34;&gt;#&lt;/a&gt; 鲷鱼刺身&lt;/h2&gt;
-&lt;p&gt;鲷鱼 调料 辅料 料酒&lt;/p&gt;
-&lt;h2 id=&#34;佛跳墙&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#佛跳墙&#34;&gt;#&lt;/a&gt; 佛跳墙&lt;/h2&gt;
-&lt;p&gt;鲍鱼 海参 料酒 五花肉&lt;/p&gt;
-&lt;h2 id=&#34;清汤鲍鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#清汤鲍鱼&#34;&gt;#&lt;/a&gt; 清汤鲍鱼&lt;/h2&gt;
-&lt;p&gt;鲍鱼 调料 淀粉 料酒&lt;/p&gt;
-&lt;h2 id=&#34;小炒鲍鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#小炒鲍鱼&#34;&gt;#&lt;/a&gt; 小炒鲍鱼&lt;/h2&gt;
-&lt;p&gt;鲍鱼 辣椒 料酒 辅料&lt;/p&gt;
-&lt;h2 id=&#34;凉拌明玉子&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#凉拌明玉子&#34;&gt;#&lt;/a&gt; 凉拌明玉子&lt;/h2&gt;
-&lt;p&gt;明玉子 调料 辅料 料酒&lt;/p&gt;
-&lt;h1 id=&#34;徐海菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#徐海菜系&#34;&gt;#&lt;/a&gt; 徐海菜系&lt;/h1&gt;
-&lt;h2 id=&#34;大盘鸡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#大盘鸡&#34;&gt;#&lt;/a&gt; 大盘鸡&lt;/h2&gt;
-&lt;p&gt;鸡肉 土豆 辣椒 调料&lt;/p&gt;
-&lt;h2 id=&#34;葱爆羊肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#葱爆羊肉&#34;&gt;#&lt;/a&gt; 葱爆羊肉&lt;/h2&gt;
-&lt;p&gt;羊肉 香料 辅料 料酒&lt;/p&gt;
-&lt;h2 id=&#34;手抓饭&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#手抓饭&#34;&gt;#&lt;/a&gt; 手抓饭&lt;/h2&gt;
-&lt;p&gt;大米 羊肉 萝卜 调料&lt;/p&gt;
-&lt;h2 id=&#34;酿皮&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#酿皮&#34;&gt;#&lt;/a&gt; 酿皮&lt;/h2&gt;
-&lt;p&gt;面粉 面筋 辣椒 花生&lt;/p&gt;
-&lt;h2 id=&#34;蜜汁羊腿&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#蜜汁羊腿&#34;&gt;#&lt;/a&gt; 蜜汁羊腿&lt;/h2&gt;
-&lt;p&gt;羊腿肉 蜂蜜 调料 香料&lt;/p&gt;
-&lt;h2 id=&#34;馕包肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#馕包肉&#34;&gt;#&lt;/a&gt; 馕包肉&lt;/h2&gt;
-&lt;p&gt;馕 羊肉 辣椒 调料&lt;/p&gt;
-&lt;h1 id=&#34;云滇菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#云滇菜系&#34;&gt;#&lt;/a&gt; 云滇菜系&lt;/h1&gt;
-&lt;h2 id=&#34;圆子鸡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#圆子鸡&#34;&gt;#&lt;/a&gt; 圆子鸡&lt;/h2&gt;
-&lt;p&gt;鸡肉 豆腐 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;竹笋豆腐汤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#竹笋豆腐汤&#34;&gt;#&lt;/a&gt; 竹笋豆腐汤&lt;/h2&gt;
-&lt;p&gt;豆腐 竹笋 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;竹笋焖肉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#竹笋焖肉&#34;&gt;#&lt;/a&gt; 竹笋焖肉&lt;/h2&gt;
-&lt;p&gt;五花肉 竹笋 料酒 调料&lt;/p&gt;
-&lt;h2 id=&#34;山官牛头&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#山官牛头&#34;&gt;#&lt;/a&gt; 山官牛头&lt;/h2&gt;
-&lt;p&gt;牛肉 调料 辅料 香料&lt;/p&gt;
-&lt;h2 id=&#34;爆炒见手青&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#爆炒见手青&#34;&gt;#&lt;/a&gt; 爆炒见手青&lt;/h2&gt;
-&lt;p&gt;见手青 辣椒 料酒 调料&lt;/p&gt;
-&lt;h2 id=&#34;酥炸见手青&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#酥炸见手青&#34;&gt;#&lt;/a&gt; 酥炸见手青&lt;/h2&gt;
-&lt;p&gt;见手青 辣椒 鸡蛋 香料&lt;/p&gt;
-&lt;h2 id=&#34;杜鹃醉鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#杜鹃醉鱼&#34;&gt;#&lt;/a&gt; 杜鹃醉鱼&lt;/h2&gt;
-&lt;p&gt;裸鲤 料酒 调料 辅料&lt;/p&gt;
-&lt;h1 id=&#34;襄州菜系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#襄州菜系&#34;&gt;#&lt;/a&gt; 襄州菜系&lt;/h1&gt;
-&lt;h2 id=&#34;糯米丸子&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#糯米丸子&#34;&gt;#&lt;/a&gt; 糯米丸子&lt;/h2&gt;
-&lt;p&gt;糯米 五花肉 鸡蛋 调料&lt;/p&gt;
-&lt;h2 id=&#34;糍粑&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#糍粑&#34;&gt;#&lt;/a&gt; 糍粑&lt;/h2&gt;
-&lt;p&gt;糯米 大豆 花生 香料&lt;/p&gt;
-&lt;h2 id=&#34;煿金煮玉&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#煿金煮玉&#34;&gt;#&lt;/a&gt; 煿金煮玉&lt;/h2&gt;
-&lt;p&gt;面粉 大米 竹笋 辅料&lt;/p&gt;
-&lt;h2 id=&#34;芋艿排骨汤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#芋艿排骨汤&#34;&gt;#&lt;/a&gt; 芋艿排骨汤&lt;/h2&gt;
-&lt;p&gt;排骨 芋艿 料酒 调料&lt;/p&gt;
-&lt;h2 id=&#34;荆沙甲鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#荆沙甲鱼&#34;&gt;#&lt;/a&gt; 荆沙甲鱼&lt;/h2&gt;
-&lt;p&gt;甲鱼 豆瓣酱 调料 辅料&lt;/p&gt;
-&lt;h2 id=&#34;芋儿鸡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#芋儿鸡&#34;&gt;#&lt;/a&gt; 芋儿鸡&lt;/h2&gt;
-&lt;p&gt;鸡肉 芋艿 辣椒 调料&lt;/p&gt;
-&lt;h2 id=&#34;开屏武昌鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开屏武昌鱼&#34;&gt;#&lt;/a&gt; 开屏武昌鱼&lt;/h2&gt;
-&lt;p&gt;武昌鱼 调料 辅料 料酒&lt;/p&gt;
-&lt;h2 id=&#34;粉蒸鮰鱼&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#粉蒸鮰鱼&#34;&gt;#&lt;/a&gt; 粉蒸鮰鱼&lt;/h2&gt;
-&lt;p&gt;江团 大米 豆瓣酱 调料&lt;/p&gt;
-&lt;h2 id=&#34;太极芋泥&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#太极芋泥&#34;&gt;#&lt;/a&gt; 太极芋泥&lt;/h2&gt;
-&lt;p&gt;芋艿 特制饴糖 调料 辅料&lt;/p&gt;
- ]]></description>
         </item>
     </channel>
 </rss>
