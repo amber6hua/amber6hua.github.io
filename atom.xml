@@ -20,6 +20,10 @@
 &lt;p&gt;php-fpm 默认 127.0.0.1:9000, 默认情况下监听端口 9000&lt;br /&gt;
  另外，也可以使 PHP-FPM 使用 Unix 套接字，这避免了 TCP 的开销&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;h2 id=&#34;参考链接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考链接&#34;&gt;#&lt;/a&gt; 参考链接&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8yOTY3MTEzNy9hcnRpY2xlL2RldGFpbHMvMTE1NTEzODk2&#34;&gt;https://blog.csdn.net/weixin_29671137/article/details/115513896&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;配置php-fpm&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#配置php-fpm&#34;&gt;#&lt;/a&gt; 配置 php-fpm&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;我的默认配置路径 （根据个人实际情况）&lt;br /&gt;
