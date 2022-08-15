@@ -18,6 +18,8 @@
             <guid isPermalink="true">https://ambercc.gitee.io/chrome-hevc/</guid>
             <title>Chrome支持HEVC</title>
             <link>https://ambercc.gitee.io/chrome-hevc/</link>
+            <category term="教程" scheme="https://ambercc.gitee.io/categories/%E6%95%99%E7%A8%8B/" />
+            <category term="教程" scheme="https://ambercc.gitee.io/tags/%E6%95%99%E7%A8%8B/" />
             <pubDate>Fri, 12 Aug 2022 17:46:22 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;p&gt;明明都是 mp4 格式，为什么有的视频，在 h5 播放器播放，只有声音，没有画面&lt;br /&gt;

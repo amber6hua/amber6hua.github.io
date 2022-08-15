@@ -12,7 +12,10 @@
             "title": "Chrome支持HEVC",
             "date_published": "2022-08-12T09:46:22.000Z",
             "content_html": "<h2 id=\"前言\"><a class=\"anchor\" href=\"#前言\">#</a> 前言</h2>\n<p>明明都是 mp4 格式，为什么有的视频，在 h5 播放器播放，只有声音，没有画面<br />\n常见的 mp4 编码为 H.264 能正常播放<br />\n而 H.265 (HEVC) 编码的视频就会发生无法正常播放的情况</p>\n<p>本来想找个好用的 h5 播放器，但是都不好用</p>\n<p>然后发现了个帖子，有位老哥之前做了可以让谷歌浏览器支持 HEVC</p>\n<p>最近谷歌浏览器也更新了 (version&gt;= 104.0.5084.0) 支持了 HEVC 解码</p>\n<h2 id=\"chrome设置启动参数\"><a class=\"anchor\" href=\"#chrome设置启动参数\">#</a> chrome 设置启动参数</h2>\n<p>在 chrome 桌面快捷方式设置 启动参数 --enable-features=&quot;PlatformHEVCDecoderSupport&quot;</p>\n<p>选择快捷方式图标<br />\n右键展开菜单<br />\n选择属性<br />\n快捷方式分页中 在” 目标 “输入框中 末尾加上 --enable-features=&quot;PlatformHEVCDecoderSupport&quot;<br />\n 然后重新打开浏览器，就可以了</p>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre><span class=\"token comment\"># 例子</span></pre></td></tr><tr><td data-num=\"2\"></td><td><pre><span class=\"token string\">\"C:\\Program Files\\Google\\Chrome\\Application<span class=\"token entity\" title=\"\\c\">\\c</span>hrome.exe\"</span> --enable-features<span class=\"token operator\">=</span><span class=\"token string\">\"PlatformHEVCDecoderSupport\"</span></pre></td></tr></table></figure><div class=\"note info\">\n<p>浏览器版本不够的不想更新的，可以根据参考链接实现</p>\n</div>\n<h2 id=\"参考链接\"><a class=\"anchor\" href=\"#参考链接\">#</a> 参考链接</h2>\n<ul>\n<li><span class=\"exturl\" data-url=\"aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3JlYWQvY3YxNjI5MzI4NS8=\">https://www.bilibili.com/read/cv16293285/</span></li>\n<li><span class=\"exturl\" data-url=\"aHR0cHM6Ly9naXRodWIuY29tL1N0YVpodS9lbmFibGUtY2hyb21pdW0taGV2Yy1oYXJkd2FyZS1kZWNvZGluZw==\">https://github.com/StaZhu/enable-chromium-hevc-hardware-decoding</span></li>\n</ul>\n",
-            "tags": []
+            "tags": [
+                "教程",
+                "教程"
+            ]
         },
         {
             "id": "https://ambercc.gitee.io/hexo/hello-world/",
