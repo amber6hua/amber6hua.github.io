@@ -10,10 +10,26 @@
         </author>
         <description>Amber Room</description>
         <language>zh-CN</language>
-        <pubDate>Fri, 13 Jan 2023 11:10:58 +0800</pubDate>
-        <lastBuildDate>Fri, 13 Jan 2023 11:10:58 +0800</lastBuildDate>
+        <pubDate>Thu, 02 Feb 2023 14:52:44 +0800</pubDate>
+        <lastBuildDate>Thu, 02 Feb 2023 14:52:44 +0800</lastBuildDate>
         <category term="六花" />
         <category term="amber" />
+        <item>
+            <guid isPermalink="true">https://amber6hua.github.io/linux/linux-php-switch/</guid>
+            <title>Linux 宝塔面板多版本php切换</title>
+            <link>https://amber6hua.github.io/linux/linux-php-switch/</link>
+            <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
+            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="PHP" scheme="https://amber6hua.github.io/tags/PHP/" />
+            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
+            <pubDate>Thu, 02 Feb 2023 14:52:44 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
+&lt;p&gt;虚拟机 Linux 中安装了宝塔面板，其中 PHP 可以安装多个版本，并且可以给对应站点选择对应 PHP 版本&lt;br /&gt;
+不过用 shell 命令 php -v 查看 PHP 版本却不清楚怎么切换，这里记录下&lt;/p&gt;
+&lt;h2 id=&#34;宝塔默认安装php的目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#宝塔默认安装php的目录&#34;&gt;#&lt;/a&gt; 宝塔默认安装 php 的目录&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/www/server/php/71&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/www/server/php/72&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/www/server/php/73&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;切换过程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#切换过程&#34;&gt;#&lt;/a&gt; 切换过程&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 查看默认版本命令&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ls&lt;/span&gt; -l /usr/bin/php&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 命令返回类似结果&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;lrwxrwxrwx &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt; root root &lt;span class=&#34;token number&#34;&gt;26&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;7&lt;/span&gt;月  &lt;span class=&#34;token number&#34;&gt;12&lt;/span&gt;  &lt;span class=&#34;token number&#34;&gt;2022&lt;/span&gt; /usr/bin/php -&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; /www/server/php/71/bin/php&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 切换默认 PHP 版本命令 (通过软链接)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ln&lt;/span&gt; -sf /www/server/php/72/bin/php /usr/bin/php&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://amber6hua.github.io/fastadmin/fastadmin-doc-11/</guid>
             <title>FastAdmin 个人记录 - 引入vue</title>
@@ -765,86 +781,6 @@ php7.4 开始 捆绑的 libzip 已被移除，编译时使用 --with-zip&lt;br /
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;node的处理方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#node的处理方法&#34;&gt;#&lt;/a&gt; node 的处理方法&lt;/h2&gt;
 &lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption data-lang=&#34;javascript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;token function-variable function&#34;&gt;urlEncodeJava&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;// string → urlCodeStr&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; urlCodeStr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;encodeURIComponent&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;string&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;replace&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token regex&#34;&gt;&lt;span class=&#34;token regex-delimiter&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token regex-source language-regex&#34;&gt;%20&lt;/span&gt;&lt;span class=&#34;token regex-delimiter&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token regex-flags&#34;&gt;gi&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;+&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;replace&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token regex&#34;&gt;&lt;span class=&#34;token regex-delimiter&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token regex-source language-regex&#34;&gt;(!)|(&#39;)|(\()|(\))|(\~)&lt;/span&gt;&lt;span class=&#34;token regex-delimiter&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token regex-flags&#34;&gt;gi&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token parameter&#34;&gt;item&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;%&#39;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; item&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;charCodeAt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;toLocaleUpperCase&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; urlCodeStr&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://amber6hua.github.io/linux/linux-mount-windows-share-folder/</guid>
-            <title>Linux挂载windows共享文件夹</title>
-            <link>https://amber6hua.github.io/linux/linux-mount-windows-share-folder/</link>
-            <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
-            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
-            <pubDate>Fri, 21 Jan 2022 11:33:53 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;说明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#说明&#34;&gt;#&lt;/a&gt; 说明&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本来 Vbox 虚拟机的共享文件夹用的好好的&lt;br /&gt;
-因为电脑突然断电，重新挂载共享文件夹后发现，nginx 无法访问共享文件夹的静态文件&lt;br /&gt;
-其他目录下，nginx 倒是访问好好的&lt;br /&gt;
-始终没找到解决办法&lt;br /&gt;
-最后想试试不用 Vbox 的共享文件夹，直接 windows 设置共享后挂载，最后可以访问正常了&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;note danger&#34;&gt;
-&lt;p&gt;#资源访问报错&lt;br /&gt;
- net::ERR_CONTENT_LENGTH_MISMATCH 200 (OK)&lt;br /&gt;
-#error log 日志&lt;br /&gt;
- [alert] 82080#0: *53 sendfile () failed (22: Invalid argument) while sending response to client,&lt;/p&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;设置windows共享文件夹&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#设置windows共享文件夹&#34;&gt;#&lt;/a&gt; 设置 windows 共享文件夹&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;选择一个文件夹 [share]，右键 选择属性 弹出属性窗口 选择分页共享&lt;br /&gt;
-创建共享，分配权限，可以新建一个用户比如账密为 share, 专门用来访问这个共享文件夹&lt;br /&gt;
-成功后路径就是 //ip 地址 /share&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;linux挂载windows共享文件夹&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#linux挂载windows共享文件夹&#34;&gt;#&lt;/a&gt; Linux 挂载 windows 共享文件夹&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;使用 mount.cifs 来挂载 windows 共享文件夹&lt;br /&gt;
-参考链接 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuY25ibG9ncy5jb20veGlhLXdlaXdlbi9wLzc0MTY2NjYuaHRtbA==&#34;&gt;https://www.cnblogs.com/xia-weiwen/p/7416666.html&lt;/span&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;安装依赖&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装依赖&#34;&gt;#&lt;/a&gt; 安装依赖&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;使用 mount.cifs 需要 cifs-utils 软件包（以及 cifs-utils 依赖的软件包）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; cifs-utils&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;挂载共享文件夹&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#挂载共享文件夹&#34;&gt;#&lt;/a&gt; 挂载共享文件夹&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;挂载命令&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#参考&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; mount.cifs //&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;address&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;/&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;folder&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;mount point&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; -o &lt;span class=&#34;token assign-left variable&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;username&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;,passwd&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;pw&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#或者&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;mount&lt;/span&gt; -t cifs //&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;address&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;/&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;folder&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;mount point&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; -o &lt;span class=&#34;token assign-left variable&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;username&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;,passwd&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;pw&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 我的具体命令&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 先创建挂载点目录&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;sud &lt;span class=&#34;token function&#34;&gt;mkdir&lt;/span&gt; /mnt/www&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;mount&lt;/span&gt; -t cifs /mnt/www -o //192.168.0.179/share &lt;span class=&#34;token assign-left variable&#34;&gt;username&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;share&#34;&lt;/span&gt;,password&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;share&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
-&lt;p&gt;挂载成功后发现，nginx 静态资源能正常访问了 [思考为什么之前 Vbox 的共享文件夹不能访问]&lt;br /&gt;
- 不过这样添加后，nginx 访问 php 项目报错 file_put_contents 权限问题，只能读，不能写&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;以上命令还有一些额外参数&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#参考&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; mount.cifs //&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;address&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;/&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;folder&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;mount point&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; -o &lt;span class=&#34;token assign-left variable&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;username&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;,passwd&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;pw&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;,uid&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token environment constant&#34;&gt;UID&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#先卸载原先的挂载&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;umount&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;mount point&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 我需要 www 权限 id 为 1001 也可以设置，dir_mode=0777,file_mode=0777&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;id&lt;/span&gt; -u &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;username&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#我的具体命令&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;mount&lt;/span&gt; -t cifs //192.168.0.179/share /mnt/www -o &lt;span class=&#34;token assign-left variable&#34;&gt;username&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;share&#34;&lt;/span&gt;,password&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;share&#34;&lt;/span&gt;,uid&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1001&lt;/span&gt;,dir_mode&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;0777,file_mode&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;0777&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
-&lt;p&gt;这样 nginx 下的 php 项目就能正常访问了&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;开机时自动挂载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开机时自动挂载&#34;&gt;#&lt;/a&gt; 开机时自动挂载&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;使用 mount 挂载的方法在系统重新启动后就会失效，如果希望开机时自动挂载&lt;br /&gt;
-根据自己的具体情况将下面设置加入 /etc/fstab 文件最后面就可以了。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;//192.168.0.179/share /mnt/www cifs defaults,username&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;share,password&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;share,uid&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1001&lt;/span&gt;,dir_mode&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;0777,file_mode&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;0777 &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;进阶&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#进阶&#34;&gt;#&lt;/a&gt; 进阶&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;vbox 网络 之前一直选择桥接模式，并且设置了固定 IP, 方便局域网内的其他主机访问。&lt;br /&gt;
-但是家庭和工作网络环境差异，IP 网段差异，不能正常使用虚拟机。&lt;br /&gt;
-可以设置双网卡，比如，一个桥接，一个 host-only,&lt;br /&gt;
- 其中 host-only 模式下，默认网段 192.168.56.* ，宿主机默认 IP 192.168.56.1&lt;br /&gt;
- 可以根据个人需要设置，并且不会因为网络环境改变，影响虚拟机的使用&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;遇到的坑&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#遇到的坑&#34;&gt;#&lt;/a&gt; 遇到的坑&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;起先挂载是不顺利 一直报错&lt;br /&gt;
-参考链接 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4ODYyMTcvYXJ0aWNsZS9kZXRhaWxzLzEwMjc4MTAyMw==&#34;&gt;https://blog.csdn.net/u010886217/article/details/102781023&lt;/span&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;note danger&#34;&gt;
-&lt;p&gt;mount error(13): Permission denied&lt;br /&gt;
-Refer to the mount.cifs(8) manual page (e.g. man mount.cifs) and kernel log messages (dmesg)&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Windwos 的安全策略&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;win+r 然后输入 “gpedit.msc”&lt;/li&gt;
-&lt;li&gt;网络访问：本地账户的共享和安全模型&lt;/li&gt;
-&lt;li&gt;修改设置为 “经典”&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img data-src=&#34;/images/linux/1.png&#34; alt=&#34;Alt&#34; /&gt;&lt;/p&gt;
- ]]></description>
         </item>
     </channel>
 </rss>
