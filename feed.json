@@ -7,6 +7,17 @@
     "home_page_url": "https://amber6hua.github.io",
     "items": [
         {
+            "id": "https://amber6hua.github.io/onedrive-vercel-index/",
+            "url": "https://amber6hua.github.io/onedrive-vercel-index/",
+            "title": "Onedrive Vercel Index 记录部署大致流程",
+            "date_published": "2023-04-19T07:10:04.000Z",
+            "content_html": "<h2 id=\"前言\"><a class=\"anchor\" href=\"#前言\">#</a> 前言</h2>\n<p>heroku 不让白嫖了<br />\n换 Vercel 继续白嫖</p>\n<h2 id=\"项目地址\"><a class=\"anchor\" href=\"#项目地址\">#</a> 项目地址</h2>\n<p><span class=\"exturl\" data-url=\"aHR0cHM6Ly9naXRodWIuY29tL3NwZW5jZXJ3b29vL29uZWRyaXZlLXZlcmNlbC1pbmRleC8=\">Onedrive Vercel Index</span></p>\n<h2 id=\"部署\"><a class=\"anchor\" href=\"#部署\">#</a> 部署</h2>\n<p><span class=\"exturl\" data-url=\"aHR0cHM6Ly9vdmkuc3dvLm1vZS9kb2NzL2dldHRpbmctc3RhcnRlZA==\">部署文档</span></p>\n<ul>\n<li>\n<p>fork 项目</p>\n</li>\n<li>\n<p>修改 config/site.config.js</p>\n<ul>\n<li>userPrincipleName 修改成自己 onedrive 账户</li>\n<li>baseDirectory 修改成需要展示的目录， 值为 / 表示展示全部</li>\n<li>(也可以在 vercel 对应项目的 setting 下 设置 Environment Variables)</li>\n</ul>\n</li>\n<li>\n<p>注册 <span class=\"exturl\" data-url=\"aHR0cHM6Ly92ZXJjZWwuY29tLw==\">Vercel</span> 成功后，导入刚刚 fork 的项目</p>\n</li>\n<li>\n<p>进入 setting 设置 Environment Variables</p>\n<ul>\n<li>添加 REDIS_URL</li>\n</ul>\n</li>\n<li>\n<p><span class=\"exturl\" data-url=\"aHR0cHM6Ly92ZXJjZWwuY29tL2ludGVncmF0aW9ucw==\">Vercel Integrations</span> 提供免费 redis 服务 <span class=\"exturl\" data-url=\"aHR0cHM6Ly92ZXJjZWwuY29tL2ludGVncmF0aW9ucy91cHN0YXNo\">upstash</span></p>\n<ul>\n<li>add Integrations 并进入 <span class=\"exturl\" data-url=\"aHR0cHM6Ly9jb25zb2xlLnVwc3Rhc2guY29tLw==\">upstash 控制台</span></li>\n<li>创建一个实例</li>\n<li>复制 redis:// 。。。 到 REDIS_URL</li>\n<li>注意如果勾选 ssl 则地址开头为 rediss://:</li>\n</ul>\n</li>\n<li>\n<p>重新加载后进入 Onedrive Vercel Index</p>\n</li>\n<li>\n<p>配置正确的情况下，会得到怎么绑定 onedrive 的页面，根据提示操作</p>\n</li>\n</ul>\n",
+            "tags": [
+                "教程",
+                "教程"
+            ]
+        },
+        {
             "id": "https://amber6hua.github.io/fastadmin/fastadmin-doc-12/",
             "url": "https://amber6hua.github.io/fastadmin/fastadmin-doc-12/",
             "title": "FastAdmin 个人记录 - 自定义搜索渲染",
@@ -225,18 +236,6 @@
             "tags": [
                 "教程",
                 "教程"
-            ]
-        },
-        {
-            "id": "https://amber6hua.github.io/pm2-node-unlimit-restart/",
-            "url": "https://amber6hua.github.io/pm2-node-unlimit-restart/",
-            "title": "pm2启动node项目无限重启",
-            "date_published": "2022-01-25T12:24:16.000Z",
-            "content_html": "<h2 id=\"说明\"><a class=\"anchor\" href=\"#说明\">#</a> 说明</h2>\n<blockquote>\n<p>用 node 写了一个机器人，开发时都是用 node 启动，并没有什么问题<br />\n用 pm2 启动后，项目一直重启<br />\n定位是由于 fs.writeFileSync 写入文件导致的<br />\n由于 pm2 策略，若文件变动，则重启项目</p>\n</blockquote>\n<h2 id=\"解决办法\"><a class=\"anchor\" href=\"#解决办法\">#</a> 解决办法</h2>\n<blockquote>\n<p>修改 ecosystem.config.js 配置</p>\n</blockquote>\n<figure class=\"highlight javascript\"><figcaption data-lang=\"javascript\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre><span class=\"token comment\">// 把变动的文件加入 ignore_watch </span></pre></td></tr><tr><td data-num=\"2\"></td><td><pre>ignore_watch <span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span><span class=\"token string\">\"data.json\"</span><span class=\"token punctuation\">]</span></pre></td></tr><tr><td data-num=\"3\"></td><td><pre></pre></td></tr><tr><td data-num=\"4\"></td><td><pre><span class=\"token comment\">// 或者关闭自动重启</span></pre></td></tr><tr><td data-num=\"5\"></td><td><pre>autorestart<span class=\"token operator\">:</span> <span class=\"token boolean\">false</span></pre></td></tr><tr><td data-num=\"6\"></td><td><pre></pre></td></tr><tr><td data-num=\"7\"></td><td><pre><span class=\"token comment\">// 或者关闭 watch</span></pre></td></tr><tr><td data-num=\"8\"></td><td><pre>watch<span class=\"token operator\">:</span> <span class=\"token boolean\">false</span></pre></td></tr></table></figure>",
-            "tags": [
-                "node",
-                "教程",
-                "node"
             ]
         }
     ]

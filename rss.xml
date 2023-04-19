@@ -10,10 +10,63 @@
         </author>
         <description>Amber Room</description>
         <language>zh-CN</language>
-        <pubDate>Fri, 03 Mar 2023 10:31:21 +0800</pubDate>
-        <lastBuildDate>Fri, 03 Mar 2023 10:31:21 +0800</lastBuildDate>
+        <pubDate>Wed, 19 Apr 2023 15:10:04 +0800</pubDate>
+        <lastBuildDate>Wed, 19 Apr 2023 15:10:04 +0800</lastBuildDate>
         <category term="六花" />
         <category term="amber" />
+        <item>
+            <guid isPermalink="true">https://amber6hua.github.io/onedrive-vercel-index/</guid>
+            <title>Onedrive Vercel Index 记录部署大致流程</title>
+            <link>https://amber6hua.github.io/onedrive-vercel-index/</link>
+            <category term="教程" scheme="https://amber6hua.github.io/categories/%E6%95%99%E7%A8%8B/" />
+            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+            <pubDate>Wed, 19 Apr 2023 15:10:04 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
+&lt;p&gt;heroku 不让白嫖了&lt;br /&gt;
+换 Vercel 继续白嫖&lt;/p&gt;
+&lt;h2 id=&#34;项目地址&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#项目地址&#34;&gt;#&lt;/a&gt; 项目地址&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3NwZW5jZXJ3b29vL29uZWRyaXZlLXZlcmNlbC1pbmRleC8=&#34;&gt;Onedrive Vercel Index&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;部署&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#部署&#34;&gt;#&lt;/a&gt; 部署&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9vdmkuc3dvLm1vZS9kb2NzL2dldHRpbmctc3RhcnRlZA==&#34;&gt;部署文档&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;fork 项目&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;修改 config/site.config.js&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;userPrincipleName 修改成自己 onedrive 账户&lt;/li&gt;
+&lt;li&gt;baseDirectory 修改成需要展示的目录， 值为 / 表示展示全部&lt;/li&gt;
+&lt;li&gt;(也可以在 vercel 对应项目的 setting 下 设置 Environment Variables)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;注册 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly92ZXJjZWwuY29tLw==&#34;&gt;Vercel&lt;/span&gt; 成功后，导入刚刚 fork 的项目&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入 setting 设置 Environment Variables&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;添加 REDIS_URL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly92ZXJjZWwuY29tL2ludGVncmF0aW9ucw==&#34;&gt;Vercel Integrations&lt;/span&gt; 提供免费 redis 服务 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly92ZXJjZWwuY29tL2ludGVncmF0aW9ucy91cHN0YXNo&#34;&gt;upstash&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;add Integrations 并进入 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jb25zb2xlLnVwc3Rhc2guY29tLw==&#34;&gt;upstash 控制台&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;创建一个实例&lt;/li&gt;
+&lt;li&gt;复制 redis:// 。。。 到 REDIS_URL&lt;/li&gt;
+&lt;li&gt;注意如果勾选 ssl 则地址开头为 rediss://:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重新加载后进入 Onedrive Vercel Index&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置正确的情况下，会得到怎么绑定 onedrive 的页面，根据提示操作&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://amber6hua.github.io/fastadmin/fastadmin-doc-12/</guid>
             <title>FastAdmin 个人记录 - 自定义搜索渲染</title>
@@ -786,27 +839,6 @@ php7.4 开始 捆绑的 libzip 已被移除，编译时使用 --with-zip&lt;br /
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9waWN4LWRvY3MueHBvZXQuY24=&#34;&gt;跳转地址&lt;/span&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
  ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://amber6hua.github.io/pm2-node-unlimit-restart/</guid>
-            <title>pm2启动node项目无限重启</title>
-            <link>https://amber6hua.github.io/pm2-node-unlimit-restart/</link>
-            <category term="node" scheme="https://amber6hua.github.io/categories/node/" />
-            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
-            <category term="node" scheme="https://amber6hua.github.io/tags/node/" />
-            <pubDate>Tue, 25 Jan 2022 20:24:16 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;说明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#说明&#34;&gt;#&lt;/a&gt; 说明&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;用 node 写了一个机器人，开发时都是用 node 启动，并没有什么问题&lt;br /&gt;
-用 pm2 启动后，项目一直重启&lt;br /&gt;
-定位是由于 fs.writeFileSync 写入文件导致的&lt;br /&gt;
-由于 pm2 策略，若文件变动，则重启项目&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;解决办法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解决办法&#34;&gt;#&lt;/a&gt; 解决办法&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;修改 ecosystem.config.js 配置&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption data-lang=&#34;javascript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 把变动的文件加入 ignore_watch &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ignore_watch &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;data.json&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 或者关闭自动重启&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;autorestart&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;false&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 或者关闭 watch&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;watch&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;false&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
         </item>
     </channel>
 </rss>
