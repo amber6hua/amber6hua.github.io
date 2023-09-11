@@ -10,10 +10,161 @@
         </author>
         <description>Amber Room</description>
         <language>zh-CN</language>
-        <pubDate>Wed, 30 Aug 2023 14:21:29 +0800</pubDate>
-        <lastBuildDate>Wed, 30 Aug 2023 14:21:29 +0800</lastBuildDate>
+        <pubDate>Thu, 07 Sep 2023 09:12:12 +0800</pubDate>
+        <lastBuildDate>Thu, 07 Sep 2023 09:12:12 +0800</lastBuildDate>
         <category term="六花" />
         <category term="amber" />
+        <item>
+            <guid isPermalink="true">https://amber6hua.github.io/n1-coreelec/</guid>
+            <title>N1 从网心云到CoreElec</title>
+            <link>https://amber6hua.github.io/n1-coreelec/</link>
+            <category term="教程" scheme="https://amber6hua.github.io/categories/%E6%95%99%E7%A8%8B/" />
+            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+            <pubDate>Thu, 07 Sep 2023 09:12:12 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
+&lt;p&gt;一直想整个 N1 玩一下，终于在某鱼花了 98 入手了，在等待的到货的过程中，在百度、恩山看了几天的文章教程。&lt;br /&gt;
+在众多大神的固件中纠结徘徊，一开始想刷 Armbian, 然后有想刷小钢炮，最后决定刷 CoreElec。&lt;/p&gt;
+&lt;p&gt;卖家之前装的是网心云，需要利用拆机短接救砖的方法，刷回官方镜像。比如 v2.19 固件（小于 22 不需要降级）&lt;br /&gt;
+开启 ADB 调试，连接上显示器和鼠标，用鼠标点击斐讯 N1 官方固件的那个版本号 3 4 次，出现 【ADB 调试开启】的字样即可&lt;/p&gt;
+&lt;h2 id=&#34;准备工具&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#准备工具&#34;&gt;#&lt;/a&gt; 准备工具&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;U 盘或 SD 卡 + 读卡器（听说闪迪的好，正好我就是。读卡器是随便买的杂牌，我都有）&lt;/li&gt;
+&lt;li&gt;双公 USB 线&lt;/li&gt;
+&lt;li&gt;微型螺丝刀（那种很小很细的双头螺丝刀）&lt;/li&gt;
+&lt;li&gt;网线&lt;/li&gt;
+&lt;li&gt;HDMI 线&lt;/li&gt;
+&lt;li&gt;支持 HDMI 的电视或者显示器&lt;/li&gt;
+&lt;li&gt;USB 接口鼠标&lt;/li&gt;
+&lt;li&gt;电脑 (win7 win10 win11, 系统越老应该越稳定)&lt;/li&gt;
+&lt;li&gt;能导电的小物件（我拆了坏的耳机的线控，找到了一块小铁片，前面试了几个东西，短接都不成功）&lt;/li&gt;
+&lt;li&gt;软件
+&lt;ul&gt;
+&lt;li&gt;Win32DiskImager (制作 u 盘启动)&lt;/li&gt;
+&lt;li&gt;晶晨线刷工具 Amlogic USB_Burning_Tool&lt;/li&gt;
+&lt;li&gt;SSH 工具 (PuTTY、SecureCRT 等)&lt;/li&gt;
+&lt;li&gt;N1 进线刷工具包文件&lt;/li&gt;
+&lt;li&gt;N1U 盘启动脚本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;固件镜像
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL0RhbWVubHkvY29yZWVsZWMvcmVsZWFzZXMv&#34;&gt;CoreELEC 20.1 for Phicomm N1&lt;/span&gt; 感谢 Damenly，什么新我用什么&lt;/li&gt;
+&lt;li&gt;szkifen 大的斐讯 N1 专用 EMUELEC3.1 官方纯净版 (链接：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMTIzNnNjQkJYaTdzVk1jX2NtQVdrdlE=&#34;&gt;https://pan.baidu.com/s/1236scBBXi7sVMc_cmAWkvQ&lt;/span&gt; 提取码：n950)&lt;/li&gt;
+&lt;li&gt;v2.19 官方固件&lt;/li&gt;
+&lt;li&gt;其他安卓固件，如 W 大固件 (可选)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;reboot_update.apk (安装到安卓固件里的 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMUo2NUx4b3V3ZWczdmY5STlISC0wLWc=&#34;&gt;https://pan.baidu.com/s/1J65Lxouweg3vf9I9HH-0-g&lt;/span&gt; 提取码: i7mf)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;工具箱链接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#工具箱链接&#34;&gt;#&lt;/a&gt; 工具箱链接&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9maWxlLnpodXltLmNvbS8/ZGlyPS9OMQ==&#34;&gt;https://file.zhuym.com/?dir=/N1&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9yb20ubmFub2RtLm5ldC9OMS8=&#34;&gt;https://rom.nanodm.net/N1/&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;拆机短接救砖包括网心云等非安卓系统无法通过usb启动的同样可以&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#拆机短接救砖包括网心云等非安卓系统无法通过usb启动的同样可以&#34;&gt;#&lt;/a&gt; 拆机短接救砖 (包括网心云等非安卓系统，无法通过 USB 启动的同样可以)&lt;/h2&gt;
+&lt;p&gt;参考链接&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTlKNDExYzdaZg==&#34;&gt;https://www.bilibili.com/video/BV19J411c7Zf&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucmlnaHQuY29tLmNuL2ZvcnVtL3RocmVhZC02MjE4NTk0LTEtMS5odG1s&#34;&gt;https://www.right.com.cn/forum/thread-6218594-1-1.html&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;拆机&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#拆机&#34;&gt;#&lt;/a&gt; 拆机&lt;/h3&gt;
+&lt;p&gt;撕开底部 4 处垫脚，露出螺丝孔，用之前准备的微型螺丝刀，卸下螺丝。最后找东西，大胆的撬开底盖。露出主板。找到需要短接的两个点。&lt;/p&gt;
+&lt;h3 id=&#34;晶晨线刷工具-amlogic-usb_burning_tool&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#晶晨线刷工具-amlogic-usb_burning_tool&#34;&gt;#&lt;/a&gt; 晶晨线刷工具 Amlogic USB_Burning_Tool&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;安装 USB_Burning_Tool&lt;/li&gt;
+&lt;li&gt;导入镜像包&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;短接救砖&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#短接救砖&#34;&gt;#&lt;/a&gt; 短接救砖&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;先用双公头，一端连接 N1 盒子，靠近 HDMI 口的 USB 接口。另一端连接电脑 USB（台式机最好接后面，不过我用的是笔记本，还是 WIN11 的系统）&lt;/li&gt;
+&lt;li&gt;准备好电源，先不接入 N1 盒子。&lt;/li&gt;
+&lt;li&gt;用能导电的小物件，短接两个点，然后接入电源。&lt;/li&gt;
+&lt;li&gt;成功的话，会读取到设备，否则可能是介质不导电，或者短接不成功，多试几次，&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;刷入官方固件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#刷入官方固件&#34;&gt;#&lt;/a&gt; 刷入官方固件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;具体步骤还是看&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTlKNDExYzdaZg==&#34;&gt;韩风大佬的救砖视频&lt;/span&gt;，刷入官方固件，到此救砖成功&lt;/li&gt;
+&lt;li&gt;之后为了刷其他镜像，需要开启 ADB 调试 (连接上显示器和鼠标，用鼠标点击斐讯 N1 官方固件的那个版本号 3 4 次，出现 【ADB 调试开启】的字样即可)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;刷入安卓固件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#刷入安卓固件&#34;&gt;#&lt;/a&gt; 刷入安卓固件&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;还是韩风大佬的视频 4 大固件任意刷 （根据需要刷其他安卓固件，我选的是 W 大的固件）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMW1KNDExZzdmUw==&#34;&gt;https://www.bilibili.com/video/BV1mJ411g7fS&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装coreelec&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装coreelec&#34;&gt;#&lt;/a&gt; 安装 CoreElec&lt;/h2&gt;
+&lt;p&gt;成功进入大佬的安卓固件，通过 N1 U 盘启动脚本，进入 CoreElec。&lt;br /&gt;
+但是画面一直卡在 905d 的 logo 界面，或者 Recovery 界面，换了几种版本，仍然不行。&lt;br /&gt;
+在安卓固件中安装 reboot_update.apk 也不行。&lt;br /&gt;
+最后发现使用刷入 emuelec 3.1 镜像的成功 U 盘启动了。&lt;br /&gt;
+之后再换 CoreElec 镜像的 U 盘能正常启动了。&lt;br /&gt;
+这里总结下过程。&lt;/p&gt;
+&lt;p&gt;参考链接&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucmlnaHQuY29tLmNuL2ZvcnVtL3RocmVhZC00MTMwNTQ3LTEtMS5odG1s&#34;&gt;https://www.right.com.cn/forum/thread-4130547-1-1.html&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuem5kcy5jb20vZm9ydW0ucGhwP21vZD12aWV3dGhyZWFkJmFtcDt0aWQ9MTE4OTI2MyZhbXA7cGFnZT0x&#34;&gt;https://www.znds.com/forum.php?mod=viewthread&amp;amp;tid=1189263&amp;amp;page=1&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucmlnaHQuY29tLmNuL0ZPUlVNL2ZvcnVtLnBocD9tb2Q9dmlld3RocmVhZCZhbXA7dGlkPTQxMTM0OTU=&#34;&gt;https://www.right.com.cn/FORUM/forum.php?mod=viewthread&amp;amp;tid=4113495&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;划重点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#划重点&#34;&gt;#&lt;/a&gt; 划重点&lt;/h3&gt;
+&lt;p&gt;优盘启动每次都进安卓恢复界面，小机器人倒地，启动不了，据说可能是挑盘，n1 插 u 盘进不去系统，机器人倒地&lt;br /&gt;
+可以先刷 emuelec 进 u 盘，插 n1 启动后，再刷 coreelec 进 u 盘，&lt;br /&gt;
+n1 就能正确引导进 coreelec，只要能进一次优盘系统，以后就都能优盘启动了， 而且不挑盘。&lt;br /&gt;
+具体原因，可能是缺少 aml_autoscript 这个文件&lt;/p&gt;
+&lt;h3 id=&#34;进入安卓系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#进入安卓系统&#34;&gt;#&lt;/a&gt; 进入安卓系统&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;用 HDMI 连接显示器，直接的看到系统界面&lt;/li&gt;
+&lt;li&gt;连接 WiFi 或者直接网线连接，获取 ip, 后面 N1 U 盘启动脚本，要用到。&lt;/li&gt;
+&lt;li&gt;安装 reboot_update.apk (看一些教程说会卡 logo, 之前没有刷机经验，就直接安装了，所以不清楚有没有效果，后来人可以先不装)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;制作emuelec-31-u盘启动&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#制作emuelec-31-u盘启动&#34;&gt;#&lt;/a&gt; 制作 emuelec 3.1 U 盘启动&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;格式化 U 盘&lt;/li&gt;
+&lt;li&gt;打开 Win32DiskImager&lt;/li&gt;
+&lt;li&gt;选择要刷入的镜像，如 emuelec 3.1&lt;/li&gt;
+&lt;li&gt;选择 U 盘&lt;/li&gt;
+&lt;li&gt;写入&lt;/li&gt;
+&lt;li&gt;成功后，点击 OK，弹出 U 盘。(因为 U 盘变成了启动盘，系统提示 U 盘有问题，不用管直接关掉)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;n1-u盘启动-emuelec&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#n1-u盘启动-emuelec&#34;&gt;#&lt;/a&gt; N1 U 盘启动 emuelec&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;制作好的 U 盘，插入靠近 HDMI 口的 USB 接口。&lt;/li&gt;
+&lt;li&gt;另一个 USB 接口，插入双公 USB 线，并且和电脑相连供电。(供不供电都可以自己尝试下，因为我就用了各种镜像，各种方式试过)&lt;/li&gt;
+&lt;li&gt;通过 N1 U 盘启动脚本，点击 U 盘启动.bat, 根据提示输入 N1 的 ip，回车确认，开始重启。(这步很关键，因为连接了显示器，可以看到画面一直卡在 905d 的 logo 界面，或者 Recovery 界面。)&lt;/li&gt;
+&lt;li&gt;成功进入 emuelec 系统。(第一次进入系统都要花点时间初始化)&lt;/li&gt;
+&lt;li&gt;初始化之后断电，去掉 U 盘，去掉供电。再接电重启 N1 盒子待用。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;制作coreelec-u盘启动盘&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#制作coreelec-u盘启动盘&#34;&gt;#&lt;/a&gt; 制作 CoreElec U 盘启动盘&lt;/h3&gt;
+&lt;p&gt;重复 制作 emuelec 3.1 U 盘启动 的步骤，当然镜像换成 CoreElec 的，我直接用目前最新的镜像&lt;br /&gt;
+ Damenly 的 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL0RhbWVubHkvY29yZWVsZWMvcmVsZWFzZXMv&#34;&gt;CoreELEC 20.1 for Phicomm N1&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;n1-u盘启动-coreelec-201&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#n1-u盘启动-coreelec-201&#34;&gt;#&lt;/a&gt; N1 U 盘启动 CoreElec 20.1&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;因为之前成功进入 emuelec，启动其他 U 盘系统就简单多了&lt;/li&gt;
+&lt;li&gt;插上 CoreElec 的启动盘，依然是靠近 HDMI 口的 USB 接口，不用插供电&lt;/li&gt;
+&lt;li&gt;通过 N1 U 盘启动脚本，重启。&lt;/li&gt;
+&lt;li&gt;这次启动 CoreElec 就没有卡 Logo 了，成功进入系统。&lt;/li&gt;
+&lt;li&gt;根据提示设置，记得开启 ssh 和 smb&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;写入emmc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#写入emmc&#34;&gt;#&lt;/a&gt; 写入 emmc&lt;/h3&gt;
+&lt;p&gt;到上一步其实已经 ok 了，盒子能通过不同启动 U 盘使用各自系统，方便自由。&lt;br /&gt;
+也可以把系统写入 N1 emmc 里，就不用通过 U 盘启动了。&lt;br /&gt;
+当然写入 emmc 后，系统不是安卓没有 adb，想改刷别的系统，依然可以用拆机短接救砖的办法或者 ddbr 方法 (没试过，这里记录下)&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9sdW90aWFueWkudmMvMTM0Ni5odG1sL2NvbW1lbnQtcGFnZS0x&#34;&gt; 使用 ddbr 恢复官改系统&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;参考链接&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8zNzg3MjQzNDg=&#34;&gt;https://zhuanlan.zhihu.com/p/378724348&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 使用 ssh 工具 (PuTTY、SecureCRT 等) 远程连接 ssh root@&amp;lt;N1 的 ip&gt; 如下，&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 如果之前进入系统时，没有设置密码的话，默认密码是 coreelec,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ssh&lt;/span&gt; root@192.168.1.10&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 执行 /flash 目录下的命令 写入 emmc&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/flash/installtoemmc&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 第一个选 yes 剩下的全部 y（执行完毕会自动重启）-&gt; 重启后关机拔下 U 盘再次重启。如果一切顺利，此时盒子应该顺利从 EMMC 启动 Coreelec 了&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucmlnaHQuY29tLmNuL2ZvcnVtL3RocmVhZC00MTI3MjE3LTEtMS5odG1s&#34;&gt;https://www.right.com.cn/forum/thread-4127217-1-1.html&lt;/span&gt;&lt;br /&gt;
+ 本来是按照 Damenly 提供的脚本，想写入 emmc，结果抄作业失败了。&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;部分工具保存到github&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#部分工具保存到github&#34;&gt;#&lt;/a&gt; 部分工具保存到 github&lt;/h2&gt;
+&lt;p&gt;国内访问 cdn 地址 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jZG4uc3RhdGljYWx5LmNvbS9naC9hbWJlcjZodWEvY2RuQG1hc3Rlci9uMS8=&#34;&gt;https://cdn.staticaly.com/gh/amber6hua/cdn@master/n1/&lt;/span&gt;&amp;lt;跟文件名&amp;gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2FtYmVyNmh1YS9jZG4vdHJlZS9tYXN0ZXIvbjE=&#34;&gt;https://github.com/amber6hua/cdn/tree/master/n1&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://amber6hua.github.io/linux/vbox-openwrt/</guid>
             <title>Vbox虚拟机Docker安装Openwrt</title>
@@ -775,64 +926,6 @@ vi /etc/systemd/system/nginx.service&lt;br /&gt;
  /usr/local/webserver/nginx/conf/vhost/app.conf&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;server &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    listen &lt;span class=&#34;token number&#34;&gt;80&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    server_name  _&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    root   /data/www/om/public&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    index  index.php index.html index.htm&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;gzip&lt;/span&gt;  on&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    gzip_min_length  1k&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    gzip_buffers     &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt; 16k&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    gzip_http_version &lt;span class=&#34;token number&#34;&gt;1.1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    gzip_comp_level &lt;span class=&#34;token number&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    gzip_types       text/plain application/x-javascript text/css application/xml text/javascript application/x-httpd-php application/javascript application/json&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    gzip_disable &lt;span class=&#34;token string&#34;&gt;&#34;MSIE [1-6]\.&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    gzip_vary on&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    location / &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token comment&#34;&gt;#主要是这一段一定要确保存在&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt;-e &lt;span class=&#34;token variable&#34;&gt;$request_filename&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                    rewrite  ^&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;.*&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;$  /index.php?s&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;/&lt;span class=&#34;token variable&#34;&gt;$1&lt;/span&gt;  last&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                    &lt;span class=&#34;token builtin class-name&#34;&gt;break&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token comment&#34;&gt;#结束&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token comment&#34;&gt;#autoindex  on;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    location ~ /&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;.+&lt;span class=&#34;token punctuation&#34;&gt;\&lt;/span&gt;.php&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;/.+&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;*$ &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;# try_files $uri =404;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;# rewrite /(.+\.php)(/.+)*$ /hello.html last;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;# try_files $uri =404;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        client_max_body_size 10m&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        fastcgi_pass_header Authorization&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        fastcgi_split_path_info ^&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;.+&lt;span class=&#34;token punctuation&#34;&gt;\&lt;/span&gt;.php&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;/.+&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;$&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        fastcgi_pass &lt;span class=&#34;token number&#34;&gt;127.0&lt;/span&gt;.0.1:9000&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        fastcgi_index index.php&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        include fastcgi_params&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;36&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        fastcgi_param SCRIPT_FILENAME &lt;span class=&#34;token variable&#34;&gt;$document_root&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$fastcgi_script_name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;37&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;# fastcgi_param SCRIPT_FILENAME /var/www/html$fastcgi_script_name;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;38&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        fastcgi_param PATH_INFO &lt;span class=&#34;token variable&#34;&gt;$fastcgi_path_info&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;39&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        fastcgi_param PHP_ADMIN_VALUE &lt;span class=&#34;token string&#34;&gt;&#34;open_basedir=&lt;span class=&#34;token variable&#34;&gt;$document_root&lt;/span&gt;/../:/tmp/:/proc/&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;40&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;41&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;42&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    location ~ .*&lt;span class=&#34;token punctuation&#34;&gt;\&lt;/span&gt;.&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;gif&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;jpg&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;jpeg&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;png&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;bmp&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;swf&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;flv&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;mp4&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;ico&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;$&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;43&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;44&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token comment&#34;&gt;#允许跨域请求&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;45&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          add_header Access-Control-Allow-Origin &lt;span class=&#34;token string&#34;&gt;&#39;*&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;46&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          add_header Access-Control-Allow-Headers X-Requested-With&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;47&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          add_header Access-Control-Allow-Methods GET,POST,OPTIONS&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;48&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;49&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          expires 30d&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;50&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          access_log off&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;51&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;52&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://amber6hua.github.io/python-asyncio-eventloop/</guid>
-            <title>Python Asyncio EventLoop 个人理解</title>
-            <link>https://amber6hua.github.io/python-asyncio-eventloop/</link>
-            <category term="python" scheme="https://amber6hua.github.io/categories/python/" />
-            <category term="python" scheme="https://amber6hua.github.io/tags/python/" />
-            <pubDate>Thu, 12 May 2022 16:01:51 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;之前尝试用 python 的 telethon 开发时，由于不太了解 python 遇到不少坑&lt;br /&gt;
-幸运的是通过 Google 从前人哪里找到了解决办法&lt;br /&gt;
-其中一个问题让我影响深刻，为了弄清楚为什么，我又回头了解 asyncio eventLoop&lt;br /&gt;
- 这个过程让我更加了解 python&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;runtimeerror-there-is-no-current-event-loop-in-thread-thread-1&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#runtimeerror-there-is-no-current-event-loop-in-thread-thread-1&#34;&gt;#&lt;/a&gt; RuntimeError: There is no current event loop in thread &#39;Thread-1&#39;.&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;意思是线程中没有当前事件循环&lt;br /&gt;
-字我都认识，但是组合起来后，没看懂什么意思&lt;br /&gt;
-不过幸好找到了解决办法，加上下面的两行代码就行，顺利解决了&lt;br /&gt;
-不过虽然解决了，但我还是不知道为什么，于是便抽空仔细阅读了关于 asyncio 的内容&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;new_loop &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; asyncio.new_event_loop&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;asyncio.set_event_loop&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;new_loop&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;参考地址&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考地址&#34;&gt;#&lt;/a&gt; 参考地址&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0MjE2MjkvYXJ0aWNsZS9kZXRhaWxzLzEwMDE2MzAxNA==&#34;&gt;https://blog.csdn.net/u013421629/article/details/100163014&lt;/span&gt; (解决办法)&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvNTEzMTEzODMvcHl0aG9uLWZsYXNrLXdpdGgtdGVsZXRob24=&#34;&gt;https://stackoverflow.com/questions/51311383/python-flask-with-telethon&lt;/span&gt; (里面说和 asyncio 有关)&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0MzQxNDIzL2FydGljbGUvZGV0YWlscy8xMDI4NzQyNjM=&#34;&gt;https://blog.csdn.net/qq_34341423/article/details/102874263&lt;/span&gt; (eventLoop 的使用)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;探究过程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#探究过程&#34;&gt;#&lt;/a&gt; 探究过程&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;之前有看到关于 EventLoop 的介绍，但是没心思看下去&lt;br /&gt;
-自己遇到的了问题，才有探究的动力&lt;br /&gt;
-于是我试着通过代码了解它&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;首先写一段代码-简单了解-asyncio-eventloop&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#首先写一段代码-简单了解-asyncio-eventloop&#34;&gt;#&lt;/a&gt; 首先写一段代码 简单了解 asyncio eventLoop&lt;/h3&gt;
-&lt;p&gt;文件名 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3Rlc3QucHk=&#34;&gt;test.py&lt;/span&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;import&lt;/span&gt; asyncio&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;async def coroutine_example&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    await asyncio.sleep&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    print&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;task&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; __name__ &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;__main__&#39;&lt;/span&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    coro &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; coroutine_example&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    loop &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; asyncio.get_event_loop&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    loop.run_until_complete&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;coro&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    loop.close&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
-&lt;p&gt;async await 很熟悉的异步语法糖&lt;br /&gt;
-测试过程中发现 必须加入 run_until_complete 才能执行，直接执行就会提示错误&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;在线程thread中执行eventloop&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在线程thread中执行eventloop&#34;&gt;#&lt;/a&gt; 在线程 (thread) 中执行 EventLoop&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在阅读文章时，看到这么一句话&lt;br /&gt;
- get_event_loop () 只会在主线程帮您创建新的 event loop，而在其他线程中调用 get_event_loop () 则会报错&lt;br /&gt;
-结合之前遇到的问题，所以是因为在线程中执行 EventLoop，引发了错误&lt;br /&gt;
-写了个简单的关于线程代码，并调用 EventLoop&lt;br /&gt;
- 通过注释，新建 eventLoop 部分代码，验证了非主线程没有 EventLoop&lt;br /&gt;
-python3.7 以后 asyncio.run (coroutine_example ()) 就能代替上面 4 行代码的效果&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;文件名 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3RocmVhZC5weQ==&#34;&gt;thread.py&lt;/span&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;import&lt;/span&gt; asyncio&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;time&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;from threading &lt;span class=&#34;token function&#34;&gt;import&lt;/span&gt; Thread&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;from &lt;span class=&#34;token builtin class-name&#34;&gt;test&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;import&lt;/span&gt; coroutine_example&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;def func&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    print&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;f&lt;span class=&#34;token string&#34;&gt;&#34;&amp;#123;name&amp;#125;开始&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    time.sleep&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0.5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    print&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;f&lt;span class=&#34;token string&#34;&gt;&#34;&amp;#123;name&amp;#125;结束&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token comment&#34;&gt;#新建 eventLoop&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    new_loop &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; asyncio.new_event_loop&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    asyncio.set_event_loop&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;new_loop&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token comment&#34;&gt;#执行异步方法&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    loop &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; asyncio.get_event_loop&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    loop.run_until_complete&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;coroutine_example&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;))&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token comment&#34;&gt;# asyncio.run(coroutine_example())&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; __name__ &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;__main__&#39;&lt;/span&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    t1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; Thread&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;target&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;func, &lt;span class=&#34;token assign-left variable&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;线程1&#34;&lt;/span&gt;,&lt;span class=&#34;token punctuation&#34;&gt;))&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    t2 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; Thread&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;target&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;func, &lt;span class=&#34;token assign-left variable&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;线程2&#34;&lt;/span&gt;,&lt;span class=&#34;token punctuation&#34;&gt;))&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    t1.start&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    t2.start&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    print&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;主线程结束&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;个人理解总结&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#个人理解总结&#34;&gt;#&lt;/a&gt; 个人理解总结&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;python async 异步 需要通过 loop.run_until_complete 启动&lt;br /&gt;
-默认主线程有 eventLoop，可以直接 get_event_loop&lt;br /&gt;
- 其他线程执行 async 异步，需要新创建 eventLoop, new_event_loop 后才能获取 get_event_loop，不然会提示错误&lt;br /&gt;
- python3.7 以后， asyncio.run 以更简洁代码的启动 async&lt;/p&gt;
-&lt;/blockquote&gt;
- ]]></description>
         </item>
     </channel>
 </rss>
