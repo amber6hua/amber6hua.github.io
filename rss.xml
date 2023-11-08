@@ -19,8 +19,8 @@
             <title>CoreElec环境 Docker Macvlan 宿主机与容器不能互通</title>
             <link>https://amber6hua.github.io/coreelec-docker-macvlan/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
+            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <pubDate>Tue, 19 Sep 2023 10:38:55 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;p&gt;N1 盒子刷了 CoreElec，并且安装了 docker, 可玩性更高了。&lt;br /&gt;
@@ -79,15 +79,29 @@ docker 安装了 openwrt, 由于 macvaln 为了安全而禁止宿主机与容器
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2FtYmVyNmh1YS9jZG4vdHJlZS9tYXN0ZXIvbjEvc2VydmljZS5zeXN0ZW0uZG9ja2VyLTE5LjUuMTM0LnppcA==&#34;&gt;https://github.com/amber6hua/cdn/tree/master/n1/service.system.docker-19.5.134.zip&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;下载后上传到 CoreElec, 进入【插件】，然后选择【从 zip 文件安装】&lt;/p&gt;
 &lt;h3 id=&#34;利用以下命令可以直观的发生了什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#利用以下命令可以直观的发生了什么&#34;&gt;#&lt;/a&gt; 利用以下命令可以直观的发生了什么&lt;/h3&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;route -n &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ip&lt;/span&gt; route show&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ip&lt;/span&gt; addr&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;route -n &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ip&lt;/span&gt; route show&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ip&lt;/span&gt; addr&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;我的环境出现的问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#我的环境出现的问题&#34;&gt;#&lt;/a&gt; 我的环境出现的问题&lt;/h2&gt;
+&lt;p&gt;vi ~/.config/autostart.sh&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;完全按照上面的开机脚本使用过程中，发现一些问题&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;不能访问外网&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#不能访问外网&#34;&gt;#&lt;/a&gt; 不能访问外网&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我注释第二行和最后一行后，可以正常访问外网了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token shebang important&#34;&gt;#!/bin/bash&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ifconfig&lt;/span&gt; eth0 promisc&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#/opt/sbin/ip addr flush dev eth0&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/opt/sbin/ip &lt;span class=&#34;token function&#34;&gt;link&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;add&lt;/span&gt; macvlan &lt;span class=&#34;token function&#34;&gt;link&lt;/span&gt; eth0 &lt;span class=&#34;token builtin class-name&#34;&gt;type&lt;/span&gt; macvlan mode bridge&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/opt/sbin/ip &lt;span class=&#34;token function&#34;&gt;link&lt;/span&gt; &lt;span class=&#34;token builtin class-name&#34;&gt;set&lt;/span&gt; macvlan up&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/opt/sbin/ip route del &lt;span class=&#34;token number&#34;&gt;192.168&lt;/span&gt;.3.0/24 dev eth0&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/opt/sbin/ip route del default&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/opt/sbin/ip route &lt;span class=&#34;token function&#34;&gt;add&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;192.168&lt;/span&gt;.3.0/24 dev macvlan&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/opt/sbin/ip route &lt;span class=&#34;token function&#34;&gt;add&lt;/span&gt; default via &lt;span class=&#34;token number&#34;&gt;192.168&lt;/span&gt;.3.14 dev macvlan&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;connmanctl services &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;grep&lt;/span&gt; -vi &lt;span class=&#34;token variable&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;ifconfig&lt;/span&gt; eth0&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;grep&lt;/span&gt; HW&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;awk&lt;/span&gt; -F: &lt;span class=&#34;token string&#34;&gt;&#39;&amp;#123;print $7&amp;#125;&#39;&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;awk&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;&amp;#123;system(&#34;connmanctl config &#34;$3&#34; --ipv4 manual 192.168.3.20 255.255.255.0 192.168.3.1&#34;)&amp;#125;&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#connmanctl services | grep eth|awk &#39;&amp;#123;system(&#34;connmanctl config &#34;$3&#34; --nameservers 114.114.114.114&#34;)&amp;#125;&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;运行一段时间路由冲突&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#运行一段时间路由冲突&#34;&gt;#&lt;/a&gt; 运行一段时间路由冲突&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不晓得为什么运行一段时间后，会自动生成一个路由规则，造成冲突&lt;br /&gt;
+为此增加了一个定时任务，定时删除路由&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;crontab&lt;/span&gt; -e&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#定时任务 每天执行一次删除路由&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt; * * * /opt/sbin/ip route del &lt;span class=&#34;token number&#34;&gt;192.168&lt;/span&gt;.3.0/24 dev eth0&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://amber6hua.github.io/linux/autobangumi/</guid>
             <title>部署 AutoBangumi 自动追番工具</title>
             <link>https://amber6hua.github.io/linux/autobangumi/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
+            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <pubDate>Mon, 11 Sep 2023 17:11:39 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;ul&gt;
@@ -293,8 +307,8 @@ n1 就能正确引导进 coreelec，只要能进一次优盘系统，以后就�
             <title>Vbox虚拟机Docker安装Openwrt</title>
             <link>https://amber6hua.github.io/linux/vbox-openwrt/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
+            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <pubDate>Wed, 30 Aug 2023 14:21:29 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;p&gt;之前就好奇什么是软路由旁路由，但是没有设备&lt;br /&gt;
@@ -344,8 +358,8 @@ VBox 虚拟机 ubuntu 镜像&lt;br /&gt;
             <title>Aria2 + Rclone 远程主机下载并上传OneDrive</title>
             <link>https://amber6hua.github.io/linux/aria2-rclone/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
+            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <pubDate>Wed, 16 Aug 2023 14:03:48 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;p&gt;Play With Docker 是 Dockers hub 提供的免费的远程主机，并且自带 docker 环境，方便用户安装 docker 容器并测试，&lt;br /&gt;
@@ -576,8 +590,8 @@ vi /root/.aria2c/script.conf&lt;/p&gt;
             <title>Linux 宝塔面板多版本php切换</title>
             <link>https://amber6hua.github.io/linux/linux-php-switch/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
+            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="PHP" scheme="https://amber6hua.github.io/tags/PHP/" />
             <pubDate>Thu, 02 Feb 2023 14:52:44 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
