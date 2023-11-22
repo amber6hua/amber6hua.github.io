@@ -19,8 +19,8 @@
             <title>CoreElec环境 Docker Macvlan 宿主机与容器不能互通</title>
             <link>https://amber6hua.github.io/coreelec-docker-macvlan/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <pubDate>Tue, 19 Sep 2023 10:38:55 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;p&gt;N1 盒子刷了 CoreElec，并且安装了 docker, 可玩性更高了。&lt;br /&gt;
@@ -100,8 +100,8 @@ docker 安装了 openwrt, 由于 macvaln 为了安全而禁止宿主机与容器
             <title>部署 AutoBangumi 自动追番工具</title>
             <link>https://amber6hua.github.io/linux/autobangumi/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <pubDate>Mon, 11 Sep 2023 17:11:39 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;ul&gt;
@@ -307,8 +307,8 @@ n1 就能正确引导进 coreelec，只要能进一次优盘系统，以后就�
             <title>Vbox虚拟机Docker安装Openwrt</title>
             <link>https://amber6hua.github.io/linux/vbox-openwrt/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <pubDate>Wed, 30 Aug 2023 14:21:29 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;p&gt;之前就好奇什么是软路由旁路由，但是没有设备&lt;br /&gt;
@@ -358,8 +358,8 @@ VBox 虚拟机 ubuntu 镜像&lt;br /&gt;
             <title>Aria2 + Rclone 远程主机下载并上传OneDrive</title>
             <link>https://amber6hua.github.io/linux/aria2-rclone/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <pubDate>Wed, 16 Aug 2023 14:03:48 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;p&gt;Play With Docker 是 Dockers hub 提供的免费的远程主机，并且自带 docker 环境，方便用户安装 docker 容器并测试，&lt;br /&gt;
@@ -590,8 +590,8 @@ vi /root/.aria2c/script.conf&lt;/p&gt;
             <title>Linux 宝塔面板多版本php切换</title>
             <link>https://amber6hua.github.io/linux/linux-php-switch/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="PHP" scheme="https://amber6hua.github.io/tags/PHP/" />
             <pubDate>Thu, 02 Feb 2023 14:52:44 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
