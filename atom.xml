@@ -8,9 +8,86 @@
     <author>
       <name>六花丶紫</name>
     </author>
-    <updated>2023-11-23T07:10:39.000Z</updated>
+    <updated>2023-12-22T08:27:58.000Z</updated>
     <category term="六花" />
     <category term="amber" />
+    <entry>
+        <id>https://amber6hua.github.io/cloudflare-tunnels/</id>
+        <title>记录Cloudflare内网穿透的使用</title>
+        <link rel="alternate" href="https://amber6hua.github.io/cloudflare-tunnels/"/>
+        <content type="html">&lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
+&lt;p&gt;突然发现不用绑定信用卡，也能白嫖 Cloudflare 的内网穿透了。&lt;br /&gt;
+在此记录下使用过程。&lt;/p&gt;
+&lt;h2 id=&#34;参考连接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考连接&#34;&gt;#&lt;/a&gt; 参考连接&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuY25ibG9ncy5jb20va2VsbGV5LWgvcC8xNzUxNjA1My5odG1s&#34;&gt;https://www.cnblogs.com/kelley-h/p/17516053.html&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC82MjAxMzU0ODU=&#34;&gt;https://zhuanlan.zhihu.com/p/620135485&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21hamlheXUwMDAvYXJ0aWNsZS9kZXRhaWxzLzEzMjg1ODAyNg==&#34;&gt;https://blog.csdn.net/majiayu000/article/details/132858026&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;申请免费域名&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#申请免费域名&#34;&gt;#&lt;/a&gt; 申请免费域名&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;快 2024 年了，好多免费申请域名办法，都无用了&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuZnJlZW5vbS5jb20v&#34;&gt; Freenom&lt;/span&gt; 停止申请了&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9uaWMuZXUub3JnL2FyZi9lbi8=&#34;&gt; eu.org&lt;/span&gt; 审核也是遥遥无期&lt;br /&gt;
+最后只能去&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudnBzb3IuY24vcHJvZHVjdC9kb21haW4tYnV5&#34;&gt;硅云&lt;/span&gt; 申请 top 域名，先白嫖个一年再说&lt;br /&gt;
+申请过程很顺利，就是嫌麻烦，要绑定还要实名，但是没办法。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;注册cloudflare&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#注册cloudflare&#34;&gt;#&lt;/a&gt; 注册 Cloudflare&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kYXNoLmNsb3VkZmxhcmUuY29tLw==&#34;&gt;注册 Cloudflare&lt;/span&gt;,qq 油箱就能注册&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;绑定个人域名&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#绑定个人域名&#34;&gt;#&lt;/a&gt; 绑定个人域名&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;注册成功后登录首页&lt;/li&gt;
+&lt;li&gt;从左侧菜单栏，点击 [网站] 项，[添加站点]&lt;/li&gt;
+&lt;li&gt;输入前面申请的顶级域名
+&lt;ul&gt;
+&lt;li&gt;选中 Free 免费的计划&lt;/li&gt;
+&lt;li&gt;不用 [添加记录]，直接点击继续&lt;/li&gt;
+&lt;li&gt;根据提示，进入申请的域名管理界面，复制 cloudfare 提供的 dns 服务器，修改域名 dns&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;如何进入域名管理界面&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#如何进入域名管理界面&#34;&gt;#&lt;/a&gt; 如何进入域名管理界面&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudnBzb3IuY24vY2VudGVyL3BlcnNvbmFsL215UHJvZHVjdC9kb21haW4=&#34;&gt;硅云&lt;/span&gt;申请的域名&lt;br /&gt;
+可以在后台管理界面，我的产品 =》域名 =》域名列表，看到申请好的域名。&lt;br /&gt;
+最后一列点击 [操作]，直接进入 [域名管理界面]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;创建web内网穿透&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建web内网穿透&#34;&gt;#&lt;/a&gt; 创建 web 内网穿透&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;回到首页，看到左侧菜单栏 [Zero Trust], 点击进入&lt;/li&gt;
+&lt;li&gt;点击进入 Access =&amp;gt; Tunnels 设置内网穿透的页面&lt;/li&gt;
+&lt;li&gt;点击 [Create a tunnel] 按钮，开始添加内网穿透应用
+&lt;ul&gt;
+&lt;li&gt;首先随便取个名字。保存后，提供了各种客户端安装方式。（因为我本身有 docker 环境，直接复制提供的代码，用 docker 安装，很方便）&lt;/li&gt;
+&lt;li&gt;Public Hostname 分页，点击 [Add a public hostname] 按钮添加，域名和内网关联。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Subdomain 填写 www 或者其他二级域名。Domain 选择之前添加域名&lt;/li&gt;
+&lt;li&gt;单纯的想通过 web 访问内网应用，type 类型选择 http 就行。URL 填 ip: 端口&lt;/li&gt;
+&lt;li&gt;这样基本的内网穿透就完成了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;进阶-ssh内网穿透&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#进阶-ssh内网穿透&#34;&gt;#&lt;/a&gt; 进阶 - ssh 内网穿透&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;需要远程访问，type 类型选择 ssh，并不能直接访问，还需要在访问端安装 cloudflared&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;安装cloudflared&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装cloudflared&#34;&gt;#&lt;/a&gt; 安装 cloudflared&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这里介绍下 linux 下的安装&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;centos amd64架构&#34;&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; -L &lt;span class=&#34;token string&#34;&gt;&#39;https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64&#39;&lt;/span&gt; -o /usr/bin/cloudflared &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; +x /usr/bin/cloudflared&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Ubuntu&#34;&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; dpkg -i cloudflared-linux-amd64.deb&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;h3 id=&#34;编辑配置文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#编辑配置文件&#34;&gt;#&lt;/a&gt; 编辑配置文件&lt;/h3&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;vi&lt;/span&gt; ~/.ssh/config&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Host ssh.example.com&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ProxyCommand /usr/local/bin/cloudflared access &lt;span class=&#34;token function&#34;&gt;ssh&lt;/span&gt; --hostname %h&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;ssh远程连接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ssh远程连接&#34;&gt;#&lt;/a&gt; ssh 远程连接&lt;/h3&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ssh&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;username&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;@ssh.example.com&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
+        <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+        <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
+        <updated>2023-12-22T08:27:58.000Z</updated>
+    </entry>
     <entry>
         <id>https://amber6hua.github.io/fastadmin/fastadmin-doc-14/</id>
         <title>FastAdmin 个人记录 - 管理员分组搜索(多对多结构)</title>
@@ -923,62 +1000,5 @@ xdebug.remote_host 设置 dbgp_proxy_hostname_or_ip&lt;br /&gt;
         <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
         <category term="hexo" scheme="https://amber6hua.github.io/tags/hexo/" />
         <updated>2022-08-01T09:41:43.226Z</updated>
-    </entry>
-    <entry>
-        <id>https://amber6hua.github.io/onedrive-download-aria/</id>
-        <title>OneDrive SharePoint 利用Aria下载</title>
-        <link rel="alternate" href="https://amber6hua.github.io/onedrive-download-aria/"/>
-        <content type="html">&lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
-&lt;p&gt;记录在 windows 下 OneDrive SharePoint 下载的两种办法 ，并且利用到 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2FyaWEyL2FyaWEyL3JlbGVhc2Vz&#34;&gt; Aria2 下载器&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;油猴脚本 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ncmVhc3lmb3JrLm9yZy96aC1DTi9zY3JpcHRzLzQzMjQxNS1vbmVkcml2ZS0lRTYlOTYlODclRTQlQkIlQjYlRTQlQjglOEIlRTglQkQlQkQlRTclOUIlQjQlRTklOTMlQkU=&#34;&gt;onedrive - 文件下载直链&lt;/span&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;python 脚本 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2dhb3dhbmxpYW5nL09uZURyaXZlU2hhcmVMaW5rUHVzaEFyaWEy&#34;&gt;OneDriveShareLinkPushAria2&lt;/span&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;启动aria2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#启动aria2&#34;&gt;#&lt;/a&gt; 启动 Aria2&lt;/h2&gt;
-&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2FyaWEyL2FyaWEyL3JlbGVhc2Vz&#34;&gt; Aria2 下载器&lt;/span&gt;&lt;br /&gt;
-解压后获得 Aria2 的文件夹&lt;br /&gt;
-免安装，直接执行 aria2.exe 文件&lt;/p&gt;
-&lt;p&gt;图形化界面 aria2Ng/index.html&lt;/p&gt;
-&lt;div class=&#34;note info&#34;&gt;
-&lt;p&gt;踩坑&lt;br /&gt;
-默认下载内容中有 torrent 种子文件时，会自动下载&lt;br /&gt;
-不需要的话修改，修改配置文件 aria2.conf&lt;br /&gt;
- 当下载的是一个种子 (以.torrent 结尾) 时，自动开始 BT 任务，默认:true&lt;br /&gt;
-follow-torrent=false&lt;/p&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;油猴脚本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#油猴脚本&#34;&gt;#&lt;/a&gt; 油猴脚本&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;首先要给浏览器安装一个的拓展程序 TamperMonkey Beta (油猴)&lt;/li&gt;
-&lt;li&gt;然后 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ncmVhc3lmb3JrLm9yZw==&#34;&gt;Greasy Fork&lt;/span&gt; 脚本网站中找到 onedrive - 文件下载直链&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;使用方便，但是不能区分文件夹&lt;br /&gt;
-&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ncmVhc3lmb3JrLm9yZy96aC1DTi9zY3JpcHRzLzQzMjQxNS1vbmVkcml2ZS0lRTYlOTYlODclRTQlQkIlQjYlRTQlQjglOEIlRTglQkQlQkQlRTclOUIlQjQlRTklOTMlQkU=&#34;&gt; onedrive - 文件下载直链&lt;/span&gt;&lt;br /&gt;
-获得 OneDrive（Sharepoint，支持世纪互联） 文件下载直链的 TamperMonkey 插件。支持 IDM 批量下载、Aria2 推送下载&lt;/p&gt;
-&lt;h2 id=&#34;python脚本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#python脚本&#34;&gt;#&lt;/a&gt; python 脚本&lt;/h2&gt;
-&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2dhb3dhbmxpYW5nL09uZURyaXZlU2hhcmVMaW5rUHVzaEFyaWEy&#34;&gt;OneDriveShareLinkPushAria2&lt;/span&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;ShareLink 分享的资源多，但是没法像百度网盘一样直接保存到自己的网盘中，下载内容多的时候也麻烦&lt;br /&gt;
-这个脚本，通过把下载内容推送到 Aria2，并且包含目录层级&lt;br /&gt;
-从 OneDrive 或 SharePoint 共享链接提取下载 URL 并将其推送到 aria2，即使在无图形界面的系统中 (如 Linux) 依然可以使用。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;下载完成后，需要准备好 python 环境&lt;br /&gt;
-具体使用就不介绍了，除了分享链接，都是使用默认配置&lt;/p&gt;
-&lt;div class=&#34;note info&#34;&gt;
-&lt;p&gt;使用过程中 遇到下载的内容只有 507b&lt;br /&gt;
- 看 issues 是请求频繁问题&lt;br /&gt;
-我是在推送之前增加了一秒延迟&lt;br /&gt;
- &lt;code&gt;# todo&lt;/code&gt;  下就是我加的代码&lt;/p&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3huLS1tYWluLWZ0NGd1OWg5MjdoLnB5&#34;&gt;大致在 main.py&lt;/span&gt; 的 326 行&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; time&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 省略部分代码&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; i&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;FSObjType&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;1&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token comment&#34;&gt;# 省略部分代码&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token comment&#34;&gt;# todo&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; fileCount &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;num&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                time&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;sleep&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; fileCount &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;num&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token keyword&#34;&gt;break&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; num &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;or&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token builtin&#34;&gt;isinstance&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;num&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;list&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;and&lt;/span&gt; fileCount &lt;span class=&#34;token keyword&#34;&gt;in&lt;/span&gt; num&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token comment&#34;&gt;# todo&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                time&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;sleep&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token keyword&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;\t&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; layers&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;文件 [%d]：%s\t独特ID：%s\t正在推送&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                      &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;fileCount&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; i&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;FileLeafRef&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; i&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;UniqueId&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token comment&#34;&gt;# 省略部分代码&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token comment&#34;&gt;# exit(0)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token keyword&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;\t&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; layers&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;文件 [%d]：%s\t独特ID：%s\t非目标文件&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                      &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;fileCount&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; i&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;FileLeafRef&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; i&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;UniqueId&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-        <category term="教程" scheme="https://amber6hua.github.io/categories/%E6%95%99%E7%A8%8B/" />
-        <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
-        <updated>2022-07-27T03:40:51.000Z</updated>
     </entry>
 </feed>
