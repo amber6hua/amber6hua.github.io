@@ -80,8 +80,7 @@ Use web browser to automatically authenticate? 选择 y 使用 web browser 验�
             <guid isPermalink="true">https://amber6hua.github.io/docker/docker-go-build/</guid>
             <title>Docker 简单的Go项目构建示例</title>
             <link>https://amber6hua.github.io/docker/docker-go-build/</link>
-            <category term="Golang" scheme="https://amber6hua.github.io/categories/Golang/" />
-            <category term="Docker" scheme="https://amber6hua.github.io/categories/Golang/docker/" />
+            <category term="Docker" scheme="https://amber6hua.github.io/categories/docker/" />
             <category term="Docker" scheme="https://amber6hua.github.io/tags/Docker/" />
             <category term="Golang" scheme="https://amber6hua.github.io/tags/Golang/" />
             <pubDate>Thu, 06 Jun 2024 11:26:16 +0800</pubDate>
@@ -106,8 +105,7 @@ Use web browser to automatically authenticate? 选择 y 使用 web browser 验�
             <guid isPermalink="true">https://amber6hua.github.io/docker/nginx-proxy-cloudflare/</guid>
             <title>Docker部署Nginx反代和cloudflare站点配置</title>
             <link>https://amber6hua.github.io/docker/nginx-proxy-cloudflare/</link>
-            <category term="教程" scheme="https://amber6hua.github.io/categories/%E6%95%99%E7%A8%8B/" />
-            <category term="Docker" scheme="https://amber6hua.github.io/categories/%E6%95%99%E7%A8%8B/docker/" />
+            <category term="Docker" scheme="https://amber6hua.github.io/categories/docker/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="Docker" scheme="https://amber6hua.github.io/tags/Docker/" />
             <pubDate>Fri, 29 Dec 2023 15:51:01 +0800</pubDate>
@@ -129,8 +127,8 @@ Use web browser to automatically authenticate? 选择 y 使用 web browser 验�
             <title>记录Cloudflare内网穿透的使用</title>
             <link>https://amber6hua.github.io/cloudflare-tunnels/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
+            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <pubDate>Fri, 22 Dec 2023 16:27:58 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;p&gt;突然发现不用绑定信用卡，也能白嫖 Cloudflare 的内网穿透了。&lt;br /&gt;
@@ -231,10 +229,9 @@ Use web browser to automatically authenticate? 选择 y 使用 web browser 验�
             <guid isPermalink="true">https://amber6hua.github.io/docker/coreelec-docker-macvlan/</guid>
             <title>CoreElec环境 Docker Macvlan 宿主机与容器不能互通</title>
             <link>https://amber6hua.github.io/docker/coreelec-docker-macvlan/</link>
-            <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="Docker" scheme="https://amber6hua.github.io/categories/linux/docker/" />
-            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="Docker" scheme="https://amber6hua.github.io/categories/docker/" />
             <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
+            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="Docker" scheme="https://amber6hua.github.io/tags/Docker/" />
             <pubDate>Tue, 19 Sep 2023 10:38:55 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
@@ -315,8 +312,8 @@ docker 安装了 openwrt, 由于 macvaln 为了安全而禁止宿主机与容器
             <title>部署 AutoBangumi 自动追番工具</title>
             <link>https://amber6hua.github.io/linux/autobangumi/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
+            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <pubDate>Mon, 11 Sep 2023 17:11:39 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;ul&gt;
@@ -522,8 +519,8 @@ n1 就能正确引导进 coreelec，只要能进一次优盘系统，以后就�
             <title>Vbox虚拟机Docker安装Openwrt</title>
             <link>https://amber6hua.github.io/linux/vbox-openwrt/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
+            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <pubDate>Wed, 30 Aug 2023 14:21:29 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;p&gt;之前就好奇什么是软路由旁路由，但是没有设备&lt;br /&gt;
@@ -578,8 +575,8 @@ VBox 虚拟机 ubuntu 镜像&lt;br /&gt;
             <title>Aria2 + Rclone 远程主机下载并上传OneDrive</title>
             <link>https://amber6hua.github.io/linux/aria2-rclone/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
+            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <pubDate>Wed, 16 Aug 2023 14:03:48 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;p&gt;Play With Docker 是 Dockers hub 提供的免费的远程主机，并且自带 docker 环境，方便用户安装 docker 容器并测试，&lt;br /&gt;
@@ -663,8 +660,7 @@ vi /root/.aria2c/script.conf&lt;/p&gt;
             <guid isPermalink="true">https://amber6hua.github.io/docker/docker-cloud-pc/</guid>
             <title>Play With Docker 白嫖个人云电脑</title>
             <link>https://amber6hua.github.io/docker/docker-cloud-pc/</link>
-            <category term="教程" scheme="https://amber6hua.github.io/categories/%E6%95%99%E7%A8%8B/" />
-            <category term="Docker" scheme="https://amber6hua.github.io/categories/%E6%95%99%E7%A8%8B/docker/" />
+            <category term="Docker" scheme="https://amber6hua.github.io/categories/docker/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="Docker" scheme="https://amber6hua.github.io/tags/Docker/" />
             <pubDate>Thu, 25 May 2023 15:08:16 +0800</pubDate>
@@ -775,8 +771,7 @@ vi /root/.aria2c/script.conf&lt;/p&gt;
             <guid isPermalink="true">https://amber6hua.github.io/docker/docker-networks/</guid>
             <title>docker-compose.yml networks</title>
             <link>https://amber6hua.github.io/docker/docker-networks/</link>
-            <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="Docker" scheme="https://amber6hua.github.io/categories/linux/docker/" />
+            <category term="Docker" scheme="https://amber6hua.github.io/categories/docker/" />
             <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="Docker" scheme="https://amber6hua.github.io/tags/Docker/" />
             <pubDate>Wed, 01 Mar 2023 16:21:48 +0800</pubDate>
@@ -812,8 +807,8 @@ vi /root/.aria2c/script.conf&lt;/p&gt;
             <title>Linux 宝塔面板多版本php切换</title>
             <link>https://amber6hua.github.io/linux/linux-php-switch/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
+            <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="PHP" scheme="https://amber6hua.github.io/tags/PHP/" />
             <pubDate>Thu, 02 Feb 2023 14:52:44 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
