@@ -16,7 +16,7 @@
         <category term="amber" />
         <item>
             <guid isPermalink="true">https://amber6hua.github.io/onedrive-rclone-remote/</guid>
-            <title>onedrive-rclone-remote</title>
+            <title>远程ssh Rclone 如何获取OneDrive token</title>
             <link>https://amber6hua.github.io/onedrive-rclone-remote/</link>
             <category term="教程" scheme="https://amber6hua.github.io/categories/%E6%95%99%E7%A8%8B/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
@@ -49,7 +49,7 @@ Use web browser to automatically authenticate? 选择 y 使用 web browser 验�
             <guid isPermalink="true">https://amber6hua.github.io/docker/docker-tusd/</guid>
             <title>Docker 部署 tusd上传服务器</title>
             <link>https://amber6hua.github.io/docker/docker-tusd/</link>
-            <category term="Docker" scheme="https://amber6hua.github.io/categories/Docker/" />
+            <category term="Docker" scheme="https://amber6hua.github.io/categories/docker/" />
             <category term="Docker" scheme="https://amber6hua.github.io/tags/Docker/" />
             <pubDate>Tue, 18 Jun 2024 15:05:17 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
@@ -81,7 +81,7 @@ Use web browser to automatically authenticate? 选择 y 使用 web browser 验�
             <title>Docker 简单的Go项目构建示例</title>
             <link>https://amber6hua.github.io/docker/docker-go-build/</link>
             <category term="Golang" scheme="https://amber6hua.github.io/categories/Golang/" />
-            <category term="Docker" scheme="https://amber6hua.github.io/categories/Golang/Docker/" />
+            <category term="Docker" scheme="https://amber6hua.github.io/categories/Golang/docker/" />
             <category term="Docker" scheme="https://amber6hua.github.io/tags/Docker/" />
             <category term="Golang" scheme="https://amber6hua.github.io/tags/Golang/" />
             <pubDate>Thu, 06 Jun 2024 11:26:16 +0800</pubDate>
@@ -107,7 +107,7 @@ Use web browser to automatically authenticate? 选择 y 使用 web browser 验�
             <title>Docker部署Nginx反代和cloudflare站点配置</title>
             <link>https://amber6hua.github.io/docker/nginx-proxy-cloudflare/</link>
             <category term="教程" scheme="https://amber6hua.github.io/categories/%E6%95%99%E7%A8%8B/" />
-            <category term="Docker" scheme="https://amber6hua.github.io/categories/%E6%95%99%E7%A8%8B/Docker/" />
+            <category term="Docker" scheme="https://amber6hua.github.io/categories/%E6%95%99%E7%A8%8B/docker/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="Docker" scheme="https://amber6hua.github.io/tags/Docker/" />
             <pubDate>Fri, 29 Dec 2023 15:51:01 +0800</pubDate>
@@ -232,7 +232,7 @@ Use web browser to automatically authenticate? 选择 y 使用 web browser 验�
             <title>CoreElec环境 Docker Macvlan 宿主机与容器不能互通</title>
             <link>https://amber6hua.github.io/docker/coreelec-docker-macvlan/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="Docker" scheme="https://amber6hua.github.io/categories/linux/Docker/" />
+            <category term="Docker" scheme="https://amber6hua.github.io/categories/linux/docker/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="Docker" scheme="https://amber6hua.github.io/tags/Docker/" />
@@ -664,7 +664,7 @@ vi /root/.aria2c/script.conf&lt;/p&gt;
             <title>Play With Docker 白嫖个人云电脑</title>
             <link>https://amber6hua.github.io/docker/docker-cloud-pc/</link>
             <category term="教程" scheme="https://amber6hua.github.io/categories/%E6%95%99%E7%A8%8B/" />
-            <category term="Docker" scheme="https://amber6hua.github.io/categories/%E6%95%99%E7%A8%8B/Docker/" />
+            <category term="Docker" scheme="https://amber6hua.github.io/categories/%E6%95%99%E7%A8%8B/docker/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
             <category term="Docker" scheme="https://amber6hua.github.io/tags/Docker/" />
             <pubDate>Thu, 25 May 2023 15:08:16 +0800</pubDate>
@@ -776,7 +776,7 @@ vi /root/.aria2c/script.conf&lt;/p&gt;
             <title>docker-compose.yml networks</title>
             <link>https://amber6hua.github.io/docker/docker-networks/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="Docker" scheme="https://amber6hua.github.io/categories/linux/Docker/" />
+            <category term="Docker" scheme="https://amber6hua.github.io/categories/linux/docker/" />
             <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="Docker" scheme="https://amber6hua.github.io/tags/Docker/" />
             <pubDate>Wed, 01 Mar 2023 16:21:48 +0800</pubDate>
