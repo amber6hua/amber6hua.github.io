@@ -8,9 +8,93 @@
     <author>
       <name>六花丶紫</name>
     </author>
-    <updated>2024-06-19T05:58:11.000Z</updated>
+    <updated>2024-08-06T08:40:15.000Z</updated>
     <category term="六花" />
     <category term="amber" />
+    <entry>
+        <id>https://amber6hua.github.io/hax-vps/</id>
+        <title>Hax VPS 仅ipv6怎么玩</title>
+        <link rel="alternate" href="https://amber6hua.github.io/hax-vps/"/>
+        <content type="html">&lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oYXguY28uaWQv&#34;&gt;Hax VPS&lt;/span&gt; 仅支持 ipv6 7 天续期&lt;/p&gt;
+&lt;h2 id=&#34;linux系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#linux系统&#34;&gt;#&lt;/a&gt; linux 系统&lt;/h2&gt;
+&lt;p&gt;Debian 11&lt;br /&gt;
+ 支持 LXC&lt;/p&gt;
+&lt;h2 id=&#34;参考链接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考链接&#34;&gt;#&lt;/a&gt; 参考链接&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubm9kZXNlZWsuY29tL3Bvc3QtNTQ3MDQtMQ==&#34;&gt;https://www.nodeseek.com/post-54704-1&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;为ipv6-vps添加一个ipv4地址&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#为ipv6-vps添加一个ipv4地址&#34;&gt;#&lt;/a&gt; 为 ipv6 VPS 添加一个 ipv4 地址&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2ZzY2FybWVuL3dhcnAtc2g=&#34;&gt;warp-sh&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;因为有些 Linux 的源只有 ipv4，所以 ipv6 的机器可以先通过 warp 获取一个 ipv4 地址。&lt;/p&gt;
+&lt;p&gt;确保你的 LXC VPS 已经开启 tun/tap，如果没开启 warp 装不上&lt;br /&gt;
+ LXC 查看 tun/tap 是否开启，ls /dev/net/, 如果返回 tun 则正常，不返回则未开启。&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; update &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; -y&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;bash&lt;/span&gt; menu.sh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
+&lt;p&gt;显示菜单&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;1.  为 IPv6 only 添加 WARP IPv4 网络接口 (bash menu.sh 4) &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; 2.  为 IPv6 only 添加 WARP IPv6 网络接口 (bash menu.sh 6) &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; 3.  为 IPv6 only 添加 WARP 双栈网络接口 (bash menu.sh d) &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; 4.  打开 WARP (warp o) &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; 5.  安装 CloudFlare Client 并设置为 Proxy 模式 (bash menu.sh c) &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; 6.  更换支持 Netflix 的 IP (warp i) &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; 7.  永久关闭 WARP 网络接口，并删除 WARP、 Linux Client 和 WireProxy (warp u) &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; 8.  刷 WARP+ 流量 (warp p) &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; 9.  升级内核、安装BBR、DD脚本 (warp b) &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; 10. 同步最新版本 (warp v) &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; 11. WARP 解锁 Netflix 等流媒体专业一键(支持多平台、多方式和 TG 通知) &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; 12. 安装 iptable + dnsmasq + ipset，让 WARP IPv4 only 接管流媒体流量 (不适用于 IPv6 only VPS) (bash menu.sh e) &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; 13. 安装 wireproxy，让 WARP 在本地创建一个 socks5 代理 (bash menu.sh w) &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; 14. 安装 CloudFlare Client 并设置为 WARP 模式 (bash menu.sh l) &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; 0.  退出脚本&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;ipv6 only 的机器选择 第一项 即可，然后一路回车全部默认即可。&lt;br /&gt;
+成功后会会出现如下提示&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;后台获取 WARP IP 中&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;最大尝试3次……&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;第1次尝试&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;已成功获取 WARP Free 网络&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token key atrule&#34;&gt;工作模式&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 全局&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;==============================================================&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;IPv4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 104.28.243.190 法国  Cloudflare&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; Inc.&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;IPv6&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 2001&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;41d0&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;a&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;f&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;3c14 法国  OVH SAS&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;恭喜！WARP Free 已开启，总耗时:18秒， 脚本当天运行次数:，累计运行次数&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;IPv6 优先 &lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token key atrule&#34;&gt;工作模式&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 全局&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;至此，你的 VPS 已经拥有 ipv4 仅出口和端口全部开放的 ipv6 地址了&lt;/p&gt;
+&lt;p&gt;除了不能通过 ipv4 访问，其它与普通 VPS 无异了。&lt;/p&gt;
+&lt;h2 id=&#34;自定义ipv6-dns&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#自定义ipv6-dns&#34;&gt;#&lt;/a&gt; 自定义 ipv6 DNS&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;vi&lt;/span&gt; /etc/resolv.conf&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
+&lt;p&gt;修改为如下内容&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;nameserver &lt;span class=&#34;token number&#34;&gt;2606&lt;/span&gt;:4700:4700::1111&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;nameserver &lt;span class=&#34;token number&#34;&gt;2001&lt;/span&gt;:4860:4860::8888&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;nameserver &lt;span class=&#34;token number&#34;&gt;2001&lt;/span&gt;:4860:4860::8844&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;nameserver &lt;span class=&#34;token number&#34;&gt;1.1&lt;/span&gt;.1.1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;nameserver &lt;span class=&#34;token number&#34;&gt;8.8&lt;/span&gt;.8.8&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;nameserver &lt;span class=&#34;token number&#34;&gt;8.8&lt;/span&gt;.4.4&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;github映射hosts文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#github映射hosts文件&#34;&gt;#&lt;/a&gt; github 映射 hosts 文件&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;vi&lt;/span&gt; /etc/hosts&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
+&lt;p&gt;添加如下内容&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;2a01:4f8:c010:d56::2 github.com
+2a01:4f8:c010:d56::3 api.github.com
+2a01:4f8:c010:d56::4 codeload.github.com
+2a01:4f8:c010:d56::5 objects.githubusercontent.com
+2a01:4f8:c010:d56::6 ghcr.io
+2a01:4f8:c010:d56::7 pkg.github.com npm.pkg.github.com maven.pkg.github.com nuget.pkg.github.com rubygems.pkg.github.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;修改apt源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改apt源&#34;&gt;#&lt;/a&gt; 修改 apt 源&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;备份源列表&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;cp&lt;/span&gt; /etc/apt/sources.list /etc/apt/sources.list.bak&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
+&lt;p&gt;修改 ipv6 源列表&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;vi&lt;/span&gt; /etc/apt/sources.list&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
+&lt;p&gt;修改为如下内容&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;deb https://mirrors6.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# deb-src https://mirrors6.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;deb https://mirrors6.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# deb-src https://mirrors6.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;deb https://mirrors6.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# deb-src https://mirrors6.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 以下安全更新软件源包含了官方源与镜像站配置，如有需要可自行修改注释切换&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;deb https://security.debian.org/debian-security bullseye-security main contrib non-free&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# deb-src https://security.debian.org/debian-security bullseye-security main contrib non-free&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;安装docker&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装docker&#34;&gt;#&lt;/a&gt; 安装 docker&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; -fsSL https://get.docker.com -o get-docker.sh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; get-docker.sh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;安装哪吒客户端-nezha-agent&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装哪吒客户端-nezha-agent&#34;&gt;#&lt;/a&gt; 安装哪吒客户端 nezha-agent&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;安装脚本，根据提示输入对应参数&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -o nezha.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; +x nezha.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; ./nezha.sh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 国内源&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; -L https://gitee.com/naibahq/nezha/raw/master/script/install.sh -o nezha.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; +x nezha.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;CN&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;true ./nezha.sh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <updated>2024-08-06T08:40:15.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://amber6hua.github.io/coreelec-ipv6/</id>
+        <title>CoreElec开启ipv6</title>
+        <link rel="alternate" href="https://amber6hua.github.io/coreelec-ipv6/"/>
+        <content type="html">&lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
+&lt;p&gt;CoreELEC 启用 IPV6&lt;br /&gt;
+CoreELEC 默认是不开启 IPV6 的，需要手动开启&lt;/p&gt;
+&lt;h2 id=&#34;操作步骤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#操作步骤&#34;&gt;#&lt;/a&gt; 操作步骤&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;新建并且编辑 /etc/sysctl.d/ipv6.conf 文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;vi&lt;/span&gt; /etc/sysctl.d/ipv6.conf&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
+&lt;p&gt;编辑上述文件，写入以下内容：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;net.ipv6.conf.all.disable_ipv6 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;net.ipv6.conf.default.disable_ipv6 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;net.ipv6.conf.eth0.disable_ipv6 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
+&lt;p&gt;保存退出，执行以下命令&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;systemctl restart systemd-sysctl&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;增加开机启动&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#增加开机启动&#34;&gt;#&lt;/a&gt; 增加开机启动&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;vi&lt;/span&gt; /storage/.config/autostart.sh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
+&lt;p&gt;追加内容&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/usr/bin/systemctl restart systemd-sysctl&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <category term="教程" scheme="https://amber6hua.github.io/categories/%E6%95%99%E7%A8%8B/" />
+        <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+        <updated>2024-08-06T08:30:07.000Z</updated>
+    </entry>
     <entry>
         <id>https://amber6hua.github.io/onedrive-rclone-remote/</id>
         <title>远程ssh Rclone 如何获取OneDrive token</title>
@@ -844,182 +928,5 @@ vi /root/.aria2c/script.conf&lt;/p&gt;
         <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
         <category term="FastAdmin" scheme="https://amber6hua.github.io/tags/FastAdmin/" />
         <updated>2023-01-13T03:10:58.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://amber6hua.github.io/fastadmin/fastadmin-doc-10/</id>
-        <title>FastAdmin 个人记录 - 重构$where条件</title>
-        <link rel="alternate" href="https://amber6hua.github.io/fastadmin/fastadmin-doc-10/"/>
-        <content type="html">&lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;FastAdmin 中的 table 自定义搜索，有时候需要重构 where 条件&lt;br /&gt;
- list ($where, $sort, $order, $offset, $limit) = $this-&amp;gt;buildparams ();&lt;br /&gt;
- 经过 buildparams 处理后不好修改&lt;br /&gt;
-可以在 buildparams 之前处理&lt;br /&gt;
-下面记录 php 和 js 两种处理方式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;方式一-php&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方式一-php&#34;&gt;#&lt;/a&gt; 方式一 php&lt;/h2&gt;
-&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$filter&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;json_decode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$this&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token property&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;filter&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token constant boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token variable&#34;&gt;$op&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;json_decode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$this&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token property&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string double-quoted-string&#34;&gt;&#34;op&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;trim&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token constant boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token variable&#34;&gt;$where0&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$filter&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;groupIds&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token comment&#34;&gt;// 自定义处理&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token comment&#34;&gt;// 处理完可以去掉也可以覆盖重构&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token keyword&#34;&gt;unset&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$filter&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;groupIds&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$op&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;groupIds&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token variable&#34;&gt;$this&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token property&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;filter&#39;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;json_encode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$filter&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token constant boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token variable&#34;&gt;$this&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token property&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&gt;&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string single-quoted-string&#34;&gt;&#39;op&#39;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;json_encode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$op&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token constant boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;方式二-js&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方式二-js&#34;&gt;#&lt;/a&gt; 方式二 js&lt;/h2&gt;
-&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption data-lang=&#34;javascript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;table&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;bootstrapTable&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token comment&#34;&gt;// 省略...&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function-variable function&#34;&gt;queryParams&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; filter &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;parse&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;params&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;filter&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; op &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;parse&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;params&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;op&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;// 重构搜索条件&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        filter&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;game.game_mode&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        filter&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;game.play_mode&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        op&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;game.game_mode&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;=&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        op&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;game.play_mode&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;=&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        params&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;filter &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;stringify&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;filter&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        params&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;op &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;stringify&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;op&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;params&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; params&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-        <category term="FastAdmin" scheme="https://amber6hua.github.io/categories/fastadmin/" />
-        <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
-        <category term="FastAdmin" scheme="https://amber6hua.github.io/tags/FastAdmin/" />
-        <updated>2022-09-16T05:55:58.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://amber6hua.github.io/php-xdebug-phpstorm/</id>
-        <title>PhpStorm配置和使用Xdebug调试</title>
-        <link rel="alternate" href="https://amber6hua.github.io/php-xdebug-phpstorm/"/>
-        <content type="html">&lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
-&lt;p&gt;PhpStorm 里面的功能太多了，其中的调试功能也容易让人摸不着头脑&lt;br /&gt;
-这里记录下 PhpStorm 配置和使用 xdebug 调试的过程&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;参考链接&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuamV0YnJhaW5zLmNvbS9oZWxwL3BocHN0b3JtL2RlYnVnZ2luZy13aXRoLXBocHN0b3JtLXVsdGltYXRlLWd1aWRlLmh0bWwjcXVpY2stc3RhcnQ=&#34;&gt;https://www.jetbrains.com/help/phpstorm/debugging-with-phpstorm-ultimate-guide.html#quick-start&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;准备工作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#准备工作&#34;&gt;#&lt;/a&gt; 准备工作&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;php 安装 xdebug 拓展 (2.x 和 3.x 的配置有区别)&lt;/li&gt;
-&lt;li&gt;浏览器安装 xdebug 插件 (以 chrome 为例，需要科学上网) &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jaHJvbWUuZ29vZ2xlLmNvbS93ZWJzdG9yZS9kZXRhaWwveGRlYnVnLWhlbHBlci9lYWRuZGZqcGxnaWVsZGpiaWdqYWttZGdrbW9hYWFvYw==&#34;&gt;Xdebug Helper&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;PhpStorm (当前版本 2022.1.4 影响不大看个人)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;phpini-xdebug配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#phpini-xdebug配置&#34;&gt;#&lt;/a&gt; php.ini Xdebug 配置&lt;/h2&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Xdebug 2.x&#34;&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;xdebug&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token assign-left variable&#34;&gt;zend_extension&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;&amp;lt;path to xdebug extension&gt;&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;xdebug.remote_enable&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;xdebug.remote_host&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;127.0&lt;/span&gt;.0.1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;xdebug.remote_port&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;&amp;lt;the port (9000 by default) to which Xdebug connects&gt;&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Xdebug 3.x&#34;&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;xdebug&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token assign-left variable&#34;&gt;zend_extension&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;&amp;lt;path to xdebug extension&gt;&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;xdebug.mode&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;debug&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;xdebug.client_host&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;127.0&lt;/span&gt;.0.1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;xdebug.client_port&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;&amp;lt;the port (9003 by default) to which Xdebug connects&gt;&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;以我的开发环境为例 xdebug 2.x (共享文件夹，本地目录映射虚拟机为例)&lt;br /&gt;
- remote_host=192.168.0.* (个人 PC 的局域网 ip 地址)&lt;br /&gt;
- remote_port=19000 (端口默认 9000) 可以自定义设置端口，只要不冲突就行&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;note info&#34;&gt;
-&lt;p&gt;额外参数介绍&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;开启 xdebug 时，默认 overload_var_dump=2，因为习我惯 var_dump () 默认的打印，可以设置 0 关掉&lt;br /&gt;
- xdebug.overload_var_dump=0&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;PhpStorm 支持在 Just-In-Time (JIT) 模式下使用 Xdebug, 默认 xdebug.remote_mode=req 一般情况不用设置&lt;br /&gt;
- xdebug.remote_mode=jit&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;通过 DBGP 代理进行&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuamV0YnJhaW5zLmNvbS9oZWxwL3BocHN0b3JtL211bHRpdXNlci1kZWJ1Z2dpbmctdmlhLXhkZWJ1Zy1wcm94aWVzLmh0bWwjdHJvdWJsZXNob290aW5n&#34;&gt;多用户调试&lt;/span&gt;&lt;br /&gt;
-官网描述&lt;br /&gt;
- xdebug.idekey 设置并为其指定一个您选择的值。此值将用于在 Xdebug 代理服务器上注册您的 IDE。&lt;br /&gt;
-xdebug.remote_host 设置 dbgp_proxy_hostname_or_ip&lt;br /&gt;
- (具体没试过，不会用到多用户调试，所以看之前别人的教程，一般调试，这个根本不用设置)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;phpstorm配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#phpstorm配置&#34;&gt;#&lt;/a&gt; PhpStorm 配置&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;PhpStorm 支持使用两种最流行的工具进行调试：Xdebug 和 Zend Debugger, 这里介绍 Xdebug&lt;br /&gt;
- 使用 PhpStorm，可以通过 主菜单 运行 / 调试配置 或 不使用它来启动 PHP 调试会话。后一种方法也称为零配置调试。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;在-phpstorm-中配置-xdebug&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在-phpstorm-中配置-xdebug&#34;&gt;#&lt;/a&gt; 在 PhpStorm 中配置 Xdebug&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;首先在 主菜单 文件 / 配置 | PHP &amp;gt; 调试 配置中&lt;br /&gt;
-主要配置就 Xdebug 里的调试端口号 要和 php.ini 的一致 也可以填写多个用逗号分隔 如 9000,9003,19000&lt;br /&gt;
- 其他设置默认就行&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.staticaly.com/gh/amber6hua/cdn@master/image-hosting/image.6bga6pflkcg0.webp&#34; alt=&#34;1-0&#34; /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;零配置调试&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#零配置调试&#34;&gt;#&lt;/a&gt; 零配置调试&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在零配置调试的情况下，您不需要创建任何调试配置。&lt;br /&gt;
-相反，您在浏览器中手动打开 PHP 应用程序的起始页面，然后从浏览器激活调试引擎，同时 PhpStorm 侦听传入的调试器连接。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&#34;浏览器激活调试引擎&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#浏览器激活调试引擎&#34;&gt;#&lt;/a&gt; 浏览器激活调试引擎&lt;/h4&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.staticaly.com/gh/amber6hua/cdn@master/image-hosting/image.qj47w9kfrqo.webp&#34; alt=&#34;1-1&#34; /&gt;&lt;/p&gt;
-&lt;h4 id=&#34;phpstorm-侦听传入的调试器连接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#phpstorm-侦听传入的调试器连接&#34;&gt;#&lt;/a&gt; PhpStorm 侦听传入的调试器连接&lt;/h4&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.staticaly.com/gh/amber6hua/cdn@master/image-hosting/ALYJ25F77I~35A~%7DABYLJCQ.4bzeezdb94o.webp&#34; alt=&#34;1-2&#34; /&gt;&lt;/p&gt;
-&lt;h4 id=&#34;启动调试会话&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#启动调试会话&#34;&gt;#&lt;/a&gt; 启动调试会话&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在浏览器中重新加载页面并返回到 PhpStorm，弹出对话框，选择接受 图 1&lt;br /&gt;
- 此时会自动创建一个服务器配置 可以在主菜单 文件 / 设置 | PHP &amp;gt; 服务器 查看 图 2&lt;br /&gt;
- 重新加载页面，发现还是没有进入调试模式&lt;br /&gt;
-查看配置后发现，映射路径只映射了 public 目录，手动加上了根目录的映射后，打上断点，再次重新加载，成功进入调试会话 图 3&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;图 1&lt;br /&gt;
-&lt;img data-src=&#34;https://cdn.staticaly.com/gh/amber6hua/cdn@master/image-hosting/image.6judc6uwmxo0.webp&#34; alt=&#34;1-3&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;图 2&lt;br /&gt;
-&lt;img data-src=&#34;https://cdn.staticaly.com/gh/amber6hua/cdn@master/image-hosting/image.jc96wzwzuzs.webp&#34; alt=&#34;1-4&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;图 3&lt;br /&gt;
-&lt;img data-src=&#34;https://cdn.staticaly.com/gh/amber6hua/cdn@master/image-hosting/image.19x866m9o58g.webp&#34; alt=&#34;1-5&#34; /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;根据配置模板创建配置调试&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#根据配置模板创建配置调试&#34;&gt;#&lt;/a&gt; 根据配置模板创建配置调试&lt;/h3&gt;
-&lt;h4 id=&#34;手动创建服务器配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#手动创建服务器配置&#34;&gt;#&lt;/a&gt; 手动创建服务器配置&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;上面讲到零配置调试，会自动创建一个服务器配置，如果已经有了就不需要创建，没有则手动创建一个&lt;br /&gt;
- (主菜单 文件 / 设置 | PHP&amp;gt; 服务器)&lt;br /&gt;
- 因为我的环境在 linux 虚拟机里，所以需要做映射&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;主机填项目的 ip 或者 域名 (测试 ip 需要做映射)&lt;/li&gt;
-&lt;li&gt;端口号 (项目的端口号)&lt;/li&gt;
-&lt;li&gt;调试器选择 (xdebug)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.staticaly.com/gh/amber6hua/cdn@master/image-hosting/image.1kih9l21q7nk.webp&#34; alt=&#34;1-6&#34; /&gt;&lt;/p&gt;
-&lt;h4 id=&#34;使用-php-网页调试配置进行调试-php-web-page&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-php-网页调试配置进行调试-php-web-page&#34;&gt;#&lt;/a&gt; 使用 PHP 网页调试配置进行调试 (PHP web page)&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;从主菜单中，选择 运行 / 编辑配置。&lt;br /&gt;
-点击左上角 + 选择模板 PHP 网页 (PHP web page)，开始配置&lt;br /&gt;
-配置完成后点击右上角的加调试按钮&lt;br /&gt;
-自动打开浏览器，开始调试&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.staticaly.com/gh/amber6hua/cdn@master/image-hosting/image.47ealiycpu40.webp&#34; alt=&#34;1-7&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;选择刚刚配置好的服务器&lt;/li&gt;
-&lt;li&gt;起始也看个人，一般默认 /&lt;/li&gt;
-&lt;li&gt;选择浏览器，看个人&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.staticaly.com/gh/amber6hua/cdn@master/image-hosting/image.2l1nvnyex600.webp&#34; alt=&#34;1-8&#34; /&gt;&lt;/p&gt;
-&lt;h4 id=&#34;使用-php-远程调试配置进行调试-php-remote-debug&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-php-远程调试配置进行调试-php-remote-debug&#34;&gt;#&lt;/a&gt; 使用 PHP 远程调试配置进行调试 (PHP Remote Debug)&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;从主菜单中，选择 运行 / 编辑配置。&lt;br /&gt;
-点击左上角 + 选择模板 PHP 远程调试 (PHP Remote Debug)，开始配置&lt;br /&gt;
-配置完成后点击右上角的加调试按钮，启动调试会话&lt;br /&gt;
-需要手动打开网站，并且需要设置浏览器 xdebug 插件&lt;br /&gt;
-右键 xdebug 图标，展开下拉菜单，点击” 选项 “，IDE 密钥选择 phpstorm&lt;br /&gt;
- 这样就能开始调试了&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.staticaly.com/gh/amber6hua/cdn@master/image-hosting/image.209xe9kit400.webp&#34; alt=&#34;1-9&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;选择刚刚配置好的服务器&lt;/li&gt;
-&lt;li&gt;IDE 键 (会话 ID) 自定义填写 一般填 PHPSTORM，以对应浏览器 xdebug 插件的 IDE 密钥&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;配置窗口&lt;br /&gt;
-&lt;img data-src=&#34;https://cdn.staticaly.com/gh/amber6hua/cdn@master/image-hosting/image.2cc933tob8g0.webp&#34; alt=&#34;1-10&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;浏览器 xdebug 插件 选项配置&lt;br /&gt;
-&lt;img data-src=&#34;https://cdn.staticaly.com/gh/amber6hua/cdn@master/image-hosting/image.1zcudivno6tc.webp&#34; alt=&#34;1-11&#34; /&gt;&lt;/p&gt;
-&lt;h4 id=&#34;总结&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#总结&#34;&gt;#&lt;/a&gt; 总结&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;零配置调试&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;只要开启右上角监听调试的开关，和启用浏览器插件 xdebug&lt;br /&gt;
- 重新加载网页，就能进入调试会话 (并且会自动创建一个服务器配置)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;PHP 网页调试&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;需要手动创建服务器配置&lt;br /&gt;
-点击右上角，调试按钮，能自动打开网页&lt;br /&gt;
-会自动创建 为数字的 IDE key&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;PHP 远程调试&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;需要手动创建服务器配置&lt;br /&gt;
-点击右上角，调试按钮，需要手动打开网页&lt;br /&gt;
-并且预设的 IDE key 需要和浏览器插件 xdebug 内 IDE key 的相同&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
-        <category term="PHP" scheme="https://amber6hua.github.io/categories/PHP/" />
-        <category term="PHP" scheme="https://amber6hua.github.io/tags/PHP/" />
-        <updated>2022-08-30T02:39:04.000Z</updated>
     </entry>
 </feed>
