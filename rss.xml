@@ -251,8 +251,8 @@ Use web browser to automatically authenticate? 选择 y 使用 web browser 验�
             <title>记录Cloudflare内网穿透的使用</title>
             <link>https://amber6hua.github.io/cloudflare-tunnels/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <pubDate>Fri, 22 Dec 2023 16:27:58 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;p&gt;突然发现不用绑定信用卡，也能白嫖 Cloudflare 的内网穿透了。&lt;br /&gt;
@@ -354,8 +354,8 @@ Use web browser to automatically authenticate? 选择 y 使用 web browser 验�
             <title>CoreElec环境 Docker Macvlan 宿主机与容器不能互通</title>
             <link>https://amber6hua.github.io/docker/coreelec-docker-macvlan/</link>
             <category term="Docker" scheme="https://amber6hua.github.io/categories/docker/" />
-            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="Docker" scheme="https://amber6hua.github.io/tags/Docker/" />
             <pubDate>Tue, 19 Sep 2023 10:38:55 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
@@ -414,7 +414,8 @@ docker 安装了 openwrt, 由于 macvaln 为了安全而禁止宿主机与容器
 &lt;p&gt;由于无法访问插件库，在网上找了个可用的 docker 插件，离线安装&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2FtYmVyNmh1YS9jZG4vdHJlZS9tYXN0ZXIvbjEvc2VydmljZS5zeXN0ZW0uZG9ja2VyLTE5LjUuMTM0LnppcA==&#34;&gt;https://github.com/amber6hua/cdn/tree/master/n1/service.system.docker-19.5.134.zip&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;下载后上传到 CoreElec, 进入【插件】，然后选择【从 zip 文件安装】&lt;/p&gt;
-&lt;h3 id=&#34;利用以下命令可以直观的发生了什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#利用以下命令可以直观的发生了什么&#34;&gt;#&lt;/a&gt; 利用以下命令可以直观的发生了什么&lt;/h3&gt;
+&lt;p&gt;安装 docker-compose&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 下载 docker-compose 到 /storage/.opt/sbin 目录，相当于 linux 的 /usr/bin 目录，可以全局访问 docker-compose&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; -L &lt;span class=&#34;token string&#34;&gt;&#34;https://ghproxy.com/https://github.com/docker/compose/releases/latest/download/docker-compose-&lt;span class=&#34;token variable&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;uname&lt;/span&gt; -s&lt;span class=&#34;token variable&#34;&gt;)&lt;/span&gt;&lt;/span&gt;-&lt;span class=&#34;token variable&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;uname&lt;/span&gt; -m&lt;span class=&#34;token variable&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&#34;&lt;/span&gt; -o /storage/.opt/sbin/docker-compose&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 添加执行权限&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; +x /storage/.opt/sbin/docker-compose&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 检查是否安装成功&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;docker-compose --version&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;利用以下命令可以直观的发生了什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#利用以下命令可以直观的发生了什么&#34;&gt;#&lt;/a&gt; 利用以下命令可以直观的发生了什么&lt;/h3&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;route -n &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ip&lt;/span&gt; route show&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ip&lt;/span&gt; addr&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;我的环境出现的问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#我的环境出现的问题&#34;&gt;#&lt;/a&gt; 我的环境出现的问题&lt;/h2&gt;
 &lt;p&gt;vi ~/.config/autostart.sh&lt;/p&gt;
 &lt;blockquote&gt;
@@ -436,8 +437,8 @@ docker 安装了 openwrt, 由于 macvaln 为了安全而禁止宿主机与容器
             <title>部署 AutoBangumi 自动追番工具</title>
             <link>https://amber6hua.github.io/linux/autobangumi/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <pubDate>Mon, 11 Sep 2023 17:11:39 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;ul&gt;
@@ -643,8 +644,8 @@ n1 就能正确引导进 coreelec，只要能进一次优盘系统，以后就�
             <title>Vbox虚拟机Docker安装Openwrt</title>
             <link>https://amber6hua.github.io/linux/vbox-openwrt/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <pubDate>Wed, 30 Aug 2023 14:21:29 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;p&gt;之前就好奇什么是软路由旁路由，但是没有设备&lt;br /&gt;
@@ -699,8 +700,8 @@ VBox 虚拟机 ubuntu 镜像&lt;br /&gt;
             <title>Aria2 + Rclone 远程主机下载并上传OneDrive</title>
             <link>https://amber6hua.github.io/linux/aria2-rclone/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <pubDate>Wed, 16 Aug 2023 14:03:48 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;p&gt;Play With Docker 是 Dockers hub 提供的免费的远程主机，并且自带 docker 环境，方便用户安装 docker 容器并测试，&lt;br /&gt;
@@ -931,8 +932,8 @@ vi /root/.aria2c/script.conf&lt;/p&gt;
             <title>Linux 宝塔面板多版本php切换</title>
             <link>https://amber6hua.github.io/linux/linux-php-switch/</link>
             <category term="Linux" scheme="https://amber6hua.github.io/categories/linux/" />
-            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="教程" scheme="https://amber6hua.github.io/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="Linux" scheme="https://amber6hua.github.io/tags/Linux/" />
             <category term="PHP" scheme="https://amber6hua.github.io/tags/PHP/" />
             <pubDate>Thu, 02 Feb 2023 14:52:44 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
